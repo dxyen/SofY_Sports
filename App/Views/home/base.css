@@ -1,0 +1,67 @@
+:root {
+    --color-primary: #F9E404;
+    --color-active: #7e7b23;
+    --color-title: #FFFFFF;
+    --color-content: #848484;
+    --color-background: #575650;
+    --font-baumans: "Baumans", sans-serif;
+    --font-poppins: "Poppins", sans-serif;
+}
+* {
+    box-sizing: inherit;
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+img {
+    width: 100%;
+}
+ul, h3, h6, p {
+  font-size: inherit;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+  line-height: 1.8rem;
+  box-sizing: border-box;
+  font-family: var(--font-poppins);
+  color: var(--color-title);
+}
+
+body {
+  font-size: 1.6rem;
+}
+svg * {
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.container {
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.container-fluid {
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.space {
+  height: 30px;
+}
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
