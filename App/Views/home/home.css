@@ -1,0 +1,205 @@
+/* product */
+.product {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.product__items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 40px;
+}
+.product__item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    transition: all 0.2s ease-out;
+    box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.062);
+    overflow: hidden;
+    position: relative;
+}
+.product__item:hover {
+    border-radius: 15px;
+    border-color: #f9fc5f88;
+    box-shadow: 2px 5px 15px 0 rgb(0 0 0 / 20%);
+}
+
+.product__item img {
+    display: block;
+    width: 250px;
+    height: 300px;
+    border-radius: 5px;
+    margin-top: 5px;
+    transition: all 0.3s ease-in-out;
+}
+.product__item > .eye {
+    position: absolute;
+    width: 35px;
+    height: 15px;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    margin-top: -100px;
+}
+.product__item:hover .eye {
+    top: 70%;
+    opacity: 1;
+}
+.product__item:hover img {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+.product__item__name {
+    font-weight: 400;
+    font-size: 2.2rem;
+    margin-top: 10px;
+    line-height: 3.3rem;
+    transition: all 0.3s ease-in-out;
+}
+.product__item:hover {
+    color: var(--color-primary);
+    text-shadow: 1px 1px rgb(242, 240, 197);
+}
+.product__item__description {
+    font-size: 1.3rem;
+    color: var(--color-content);
+    margin-bottom: 5px;
+}
+
+/* promotion */
+.promotion__background {
+    background-color: rgb(229, 230, 202);
+}
+.promotion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1265px;
+    padding: 0 15px;
+    margin: 0 auto;
+    position: relative;
+}
+.promotion__item {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 120px;
+    padding-right: 120px;
+}
+.promotion__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+.promotion__info__name {
+    font-size: 3rem;
+    line-height: 4.5rem;
+}
+.promotion__info__description {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    color: var(--color-content);
+    margin-bottom: 20px;
+}
+.promotion__item img {
+    width: 320px;
+    height: 350px;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+.promotion__item img:hover {
+    transform: scale(1.1);
+}
+.promotion__price {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+.promotion__price__1 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 2.2rem;
+    color: var(--color-primary);
+    margin: 8px;
+    text-shadow: 1px 1px rgb(121, 120, 103);
+}
+.promotion__price__2 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--color-content);
+    text-decoration: line-through;
+    opacity: 0.8;
+    margin-top: 7px;
+}
+.promotion__btn__roll-left .lefty {
+    position: absolute;
+    margin-top: -220px;
+    margin-left: -600px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 30px;
+    color: var(--color-content);
+}
+
+.promotion__btn__roll-right .righty {
+    position: absolute;
+    margin-top: -220px;
+    margin-left: 582px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 30px;
+    color: var(--color-content);
+}
+.lefty:hover {
+    color: var(--color-primary);
+    transition: all 0.3s ease-in-out;
+}
+.lefty:active {
+    color: rgb(73, 73, 55);
+}
+.righty:hover {
+    color: var(--color-primary);
+    transition: all 0.3s ease-in-out;
+}
+.righty:active {
+    color: rgb(73, 73, 55);
+}
+
+
+
+
+
+
+
+
+
+
+/* back top */
+.backtop {
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    cursor: pointer;
+}

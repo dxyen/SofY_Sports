@@ -40,7 +40,7 @@
 }
 .header__menu__item__active::before {
     position: absolute;
-    bottom: -27px;
+    bottom: -28px;
     left: 0;
     right: 0;
     height: 3px;
@@ -157,7 +157,7 @@
 }
 /* banner */
 .banner {
-    z-index: -999;
+    /* z-index: 99; */
     position: relative;
 }
 .banner__img {
@@ -209,6 +209,7 @@
 }
 .connect__logo a:hover {
     background-color: var(--color-primary);
+    transition: all 0.5s;
 }
 .connect__logo a {
     display: block;
