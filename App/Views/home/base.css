@@ -123,6 +123,12 @@ svg * {
   color: var(--color-primary);
   text-shadow: 1px 1px rgb(121, 120, 103);
 }
+.rating__all {
+  color: var(--color-primary);
+  text-shadow: 1px 1px rgb(121, 120, 103);
+  font-size: 1.2rem;
+}
+
 .paging {
   display: flex;
   justify-content: center;
@@ -146,4 +152,81 @@ svg * {
   left: 18px;
   background: var(--color-primary);
   border-radius: 47px;
+}
+
+.paging__numbers {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+.paging__numbers .righty {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--color-title_black);
+  border: 2px solid var(--color-primary);
+  
+}
+.paging__numbers__left .lefty {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--color-title_black);
+  border: 2px solid var(--color-primary);
+}
+.lefty:hover {
+  color: var(--color-primary);
+  transition: all 0.3s ease-in-out;
+}
+.lefty:active {
+  color: rgb(73, 73, 55);
+  box-shadow: 0 0 1px 4px var(--color-active);
+  transition: all 0.1s ease-out;
+}
+.righty:hover {
+  color: var(--color-primary);
+  transition: all 0.3s ease-in-out;
+}
+.righty:active {
+  color: rgb(73, 73, 55);
+  box-shadow: 0 0 1px 4px var(--color-active);
+  transition: all 0.1s ease-out;
+}
+.paging__number {
+  margin: 0px 5px;
+  border-radius: 50%;
+  padding: 5px;
+  background-color: #fff;
+  color: var(--color-title_black);
+  border: 2px solid var(--color-primary);
+  font-weight: 500;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  line-height: 2.2rem;
+  vertical-align: middle;
+}
+.paging__number:hover {
+  background-color: var(--color-primary);
+  transition: all 0.3s ease-out;
+}
+.paging__number:active {
+  box-shadow: 0 0 1px 4px var(--color-active);
+  transition: all 0.1s ease-out;
+}
+.paging__number__active {
+  background-color: var(--color-primary);
+  color: var(--color-title_black);
 }

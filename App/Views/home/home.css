@@ -12,6 +12,8 @@
 .product__item {
     display: flex;
     align-items: center;
+    width: 310px;
+    height: 390px;
     flex-direction: column;
     justify-content: space-between;
     border-radius: 10px;
@@ -24,6 +26,7 @@
     border-radius: 15px;
     border-color: #f9fc5f88;
     box-shadow: 2px 5px 15px 0 rgb(0 0 0 / 20%);
+    color: var(--color-primary);
 }
 
 .product__item img {
@@ -36,11 +39,11 @@
 }
 .product__item > .eye {
     position: absolute;
-    width: 35px;
-    height: 15px;
+    font-size: 3.1rem;
     transition: all 0.3s ease-in-out;
     opacity: 0;
-    margin-top: -100px;
+    color: var(--color-primary);
+    margin-top: -125px;
 }
 .product__item:hover .eye {
     top: 70%;
@@ -56,10 +59,6 @@
     margin-top: 10px;
     line-height: 3.3rem;
     transition: all 0.3s ease-in-out;
-}
-.product__item:hover {
-    color: var(--color-primary);
-    text-shadow: 1px 1px rgb(242, 240, 197);
 }
 .product__item__description {
     font-size: 1.3rem;
@@ -104,15 +103,28 @@
     color: var(--color-content);
     margin-bottom: 20px;
 }
-.promotion__item img {
+.promotion__item__img img {
     width: 320px;
     height: 350px;
     border-radius: 10px;
     transition: all 0.3s ease-in-out;
-    cursor: pointer;
+    position: relative;
 }
-.promotion__item img:hover {
+.promotion__item__img > .eye {
+    position: absolute;
+    font-size: 3.1rem;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    color: var(--color-primary);
+    margin-left: -181px;
+    margin-top: 160px;
+}
+.promotion__item__img:hover .eye {
+    opacity: 1;
+}
+.promotion__item__img img:hover {
     transform: scale(1.1);
+    opacity: 0.9;
 }
 .promotion__price {
     display: flex;
@@ -140,52 +152,112 @@
     position: absolute;
     margin-top: -220px;
     margin-left: -600px;
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     cursor: pointer;
-    font-size: 30px;
-    color: var(--color-content);
+    font-size: 2rem;
+    color: var(--color-title_black);
+    border: 2px solid var(--color-primary);
 }
 
 .promotion__btn__roll-right .righty {
     position: absolute;
     margin-top: -220px;
     margin-left: 582px;
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     cursor: pointer;
-    font-size: 30px;
+    font-size: 2rem;
+    color: var(--color-title_black);
+    border: 2px solid var(--color-primary);
+}
+
+/* all items */
+
+.all__products {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.all__items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.all__item img {
+    width: 220px;
+    height: 270px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+.all__item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-family: var(--font-poppins);
+    text-align: center;
+    padding: 10px;
+    border-radius: 15px;
+    width: 280px;
+    height: 425px;
+    position: relative;
+}
+.all__item > .eye {
+    position: absolute;
+    font-size: 3.1rem;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    color: var(--color-primary);
+    margin-top: -115px;
+}
+.all__item:hover .eye {
+    /* top: 70%; */
+    opacity: 1;
+}
+.all__item:hover {
+    border-radius: 15px;
+    border-color: #f9fc5f88;
+    box-shadow: 2px 5px 15px 0 rgb(0 0 0 / 20%);
+    transition: all 0.3s ease-in-out;
+    color: var(--color-title_black);
+}
+.all__item:hover img {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+.all__item__name {
+    line-height: 2.3rem;
+    font-weight: 500;
+    font-size: 1.8rem;
+    margin-top: 15px;
+}
+.all__item__prices {
+    display: flex;
+    justify-content: space-evenly;
+    align-self: stretch;
+    margin: 0px 0px;
+}
+.all__item__price__1 {
+    font-weight: bolder;
+    font-size: 1.8rem;
+}
+.all__item__price__2 {
+    font-weight: 500;
     color: var(--color-content);
+    font-size: 1.4rem;
+    text-decoration-line: line-through;
+    margin-top: 2px;
 }
-.lefty:hover {
-    color: var(--color-primary);
-    transition: all 0.3s ease-in-out;
-}
-.lefty:active {
-    color: rgb(73, 73, 55);
-}
-.righty:hover {
-    color: var(--color-primary);
-    transition: all 0.3s ease-in-out;
-}
-.righty:active {
-    color: rgb(73, 73, 55);
-}
-
-
-
-
-
-
-
 
 
 
