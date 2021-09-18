@@ -3,7 +3,7 @@
     z-index: 999;
     display: flex;
     height: 70px;
-    width: 1365px;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
 
@@ -60,8 +60,9 @@
     color: var(--color-primary);
     transition: all 0.2s;
 }
-.header__search__button img{
-    margin-top: -5px;
+.header__icons {
+    color: var(--color-primary);
+    font-size: 2.5rem;
 }
 .header__search input[type="text"] {
     outline: none;
@@ -76,7 +77,9 @@
 .header__info {
     display: flex;
     align-items: center;
-    margin-right: 40px;
+    margin-right: 30px;
+    margin-left: 5px;
+
 }
 .header__cart {
     margin-right: 30px;
@@ -85,6 +88,9 @@
     display: flex;
 }
 .header__cart__amount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: var(--color-primary);
     margin-left: 3px;
     font-family: var(--font-baumans);
@@ -100,6 +106,7 @@
 }
 .header__user{
     position: relative;
+    cursor: pointer;
 }
 .header__user:hover .header__user__dropdown {
     display: block;
@@ -161,7 +168,7 @@
     position: relative;
 }
 .banner__img {
-    width: 1440px;
+    width: 100%;
     top: 0px;
     height: 700px;
 }
@@ -236,4 +243,49 @@
     margin-left: 12px;
     font-family: var(--font-baumans);
     font-weight: 600;
+}
+
+/* css responsive */
+@media only screen and (max-width: 768px) {
+    /* .header {
+        background-color: var(--color-background);
+        position: relative;
+    } */
+    .sticky {
+        position: absolute;
+    }
+    .header__logo img {
+        margin-left: 0px;
+    }
+    .header__menu,
+    .header__search {
+      display: none;
+    }
+    .banner {
+        height: 100%;
+        width: 100%;
+    }
+    .banner__img {
+        width: 100%;
+        height: 100%;
+    }
+    .banner__info {
+        position: absolute;
+        margin-top: -150px;
+    }
+    .banner__info h1 {
+        color: var(--color-primary);
+        font-family: 'Brush Script MT', cursive;
+        font-weight: 500;
+        font-size: 4rem;
+        line-height: 0.2;
+    }
+
+    .connect {
+        display: block;
+        margin-left: 10%;
+    }
+    .connect__items {
+        margin: 10px 0px 0px 0px;
+    }
 }
