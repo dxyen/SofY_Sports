@@ -17,10 +17,12 @@
             <input type="text" placeholder="Tìm kiếm ...">
         </div>
         <div class="header__info noselect">
-            <div class="header__cart">
-                <i class="header__icons fas fa-cart-arrow-down"></i>
-                <p class="header__cart__amount">03</p>
-            </div>
+            <a href="#/">
+                <div class="header__cart">
+                    <i class="header__icons fas fa-cart-arrow-down"></i>
+                    <p class="header__cart__amount">03</p>
+                </div>
+            </a>
             <div class="header__user">
                 <div class="header__user__avt">
                     <i class="header__icons fas fa-user"></i>
@@ -28,8 +30,8 @@
                 <div class="header__user__dropdown">
                     <ul>
                     <li><a href="#">Thông tin</a></li>
-                    <li><a href="#">Giỏ hàng</a></li>
                     <li><a href="<?= DOCUMENT_ROOT ?>/account">Đăng nhập</a></li>
+                    <li><a href="<?= DOCUMENT_ROOT ?>/account/register">Đăng ký</a></li>
                     </ul>
                 </div>
             </div>

@@ -51,54 +51,16 @@
     <section class="container product noselect">
         <h3 class="title">Danh mục sản phẩm</h3>
         <ul class="product__items">
-            <a href="#/">
-                <li class="product__item">
-                    <img src="<?=IMAGES_URL?>/dmbongba.jpg" alt=" Ảnh bóng đá">
-                    <i class="eye fas fa-eye"></i>
-                    <div class="product__item__name">Dụng cụ bóng đá</div>
-                    <div class="product__item__description">Open without 14px Lorlor sitod tempor</div>
-                </li>
-            </a>
-            <a href="#/">
-                <li class="product__item">
-                    <img src="<?=IMAGES_URL?>/dmcaulong.jpg" alt=" Ảnh bóng đá">
-                    <i class="eye fas fa-eye"></i>
-                    <div class="product__item__name">Dụng cụ cầu lông</div>
-                    <div class="product__item__description">Open without 14pxr sitod tempor</div>
-                </li>
-            </a>
-            <a href="#/">
-                <li class="product__item">
-                    <img src="<?=IMAGES_URL?>/dmbongchuyen.jpg" alt=" Ảnh bóng đá">
-                    <i class="eye fas fa-eye"></i>
-                    <div class="product__item__name">Dụng cụ bóng chuyền</div>
-                    <div class="product__item__description">Open without 14px sitod tempor</div>
-                </li>
-            </a>
-            <a href="#/">
-                <li class="product__item">
-                    <img src="<?=IMAGES_URL?>/dmtennis.jpg" alt=" Ảnh bóng đá">
-                    <i class="eye fas fa-eye"></i>
-                    <div class="product__item__name">Dụng cụ Tennis</div>
-                    <div class="product__item__description">Open withousum dolor sitod tempor</div>
-                </li>
-            </a>
-            <a href="#/">
-                <li class="product__item">
-                    <img src="<?=IMAGES_URL?>/dmgym.jpg" alt=" Ảnh bóng đá">
-                    <i class="eye fas fa-eye"></i>
-                    <div class="product__item__name">Dụng cụ Gym</div>
-                    <div class="product__item__description">Open withor sitod tempor</div>
-                </li>
-            </a>
-            <a href="#/">
-                <li class="product__item">
-                    <img src="<?=IMAGES_URL?>/dmboiloi.jpg" alt=" Ảnh bóng đá">
-                    <i class="eye fas fa-eye"></i>
-                    <div class="product__item__name">Dụng cụ bơi lội</div>
-                    <div class="product__item__description">Open without 14px Lorem ipsum dolor sitod tempor</div>
-                </li>
-            </a>
+            <?php foreach($data['categories'] as $index => $categories) :?>
+                <a href="#/">
+                    <li class="product__item">
+                        <img src="<?=IMAGES_URL?>/<?=$categories['image']?>" alt=" Ảnh bóng đá">
+                        <i class="eye fas fa-eye"></i>
+                        <div class="product__item__name"><?=$categories['name']?></div>
+                        <div class="product__item__description"><?=$categories['description']?></div>
+                    </li>
+                </a>
+            <?php endforeach ?> 
         </ul>
     </section>
 </div>
@@ -107,7 +69,6 @@
 <!-- space -->
 <div class="container"><div class="space"></div></div>
 <!-- end space -->
-
 <!-- promotion list -->
 <div class="wrapper">
     <div class="promotion__background">
@@ -115,7 +76,7 @@
             <h3 class="title">Khuyến mãi hot</h3>
                 <div class="promotion__item">
                     <a class="promotion__item__img" href="#/">
-                        <img src="<?=IMAGES_URL?>/dmbongba.jpg" alt="">
+                        <img src="<?=IMAGES_URL?>/dmbongda.jpg" alt="">
                         <i class="eye fas fa-eye"></i>
                     </a>
                     <div class="promotion__info">
@@ -170,207 +131,40 @@
     <section class="container all__products">
         <h3 class="title">Sản Phẩm</h3>
         <div class="all__items">
-            <a class="all__item__link" href="#/">
-                <div class="all__item">
-                    <img src="<?=IMAGES_URL?>/dmbongba.jpg" alt="ảnh sản phẩm">
-                    <i class="eye fas fa-eye"></i>
-                    <div class="all__item__name">Áo đấu Barcalona</div>
-                    <div class="rating__all">
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i far fa-star"></i>
+            <?php foreach($data['items'] as $index => $items) :?>
+                <a class="all__item__link" href="#/">
+                    <div class="all__item">
+                        <img src="<?= IMAGES_ITEMS_URL ?>/<?= $items['image']?>" alt="ảnh sản phẩm">
+                        <i class="eye fas fa-eye"></i>
+                        <div class="all__item__name"><?= $items['name']?></div>
+                        <div class="rating__all">
+                            <i class="rating__all__i fas fa-star"></i>
+                            <i class="rating__all__i fas fa-star"></i>
+                            <i class="rating__all__i fas fa-star"></i>
+                            <i class="rating__all__i fas fa-star"></i>
+                            <i class="rating__all__i far fa-star"></i>
+                        </div>
+                        <div class="all__item__prices">
+                            <div class="all__item__price__1"><?= number_format($items['price'], 0, '', ',') ?>đ</div>
+                            <div class="all__item__price__2">300.000đ</div>
+                        </div>
+                        <button class="btny btny__primary">Thêm vào giỏ hàng +</button>
                     </div>
-                    <div class="all__item__prices">
-                        <div class="all__item__price__1">150.000đ</div>
-                        <div class="all__item__price__2">300.000đ</div>
-                    </div>
-                    <button class="btny btny__primary">Thêm vào giỏ hàng +</button>
-                </div>
-            </a>
-            <a class="all__item__link" href="#/">
-                <div class="all__item">
-                    <img src="<?=IMAGES_URL?>/dmbongba.jpg" alt="ảnh sản phẩm">
-                    <i class="eye fas fa-eye"></i>
-                    <div class="all__item__name">Áo đấu Barcalona</div>
-                    <div class="rating__all">
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i far fa-star"></i>
-                    </div>
-                    <div class="all__item__prices">
-                        <div class="all__item__price__1">150.000đ</div>
-                        <div class="all__item__price__2">300.000đ</div>
-                    </div>
-                    <button class="btny btny__primary">Thêm vào giỏ hàng +</button>
-                </div>
-            </a>
-            <a class="all__item__link" href="#/">
-                <div class="all__item">
-                    <img src="<?=IMAGES_URL?>/dmbongba.jpg" alt="ảnh sản phẩm">
-                    <i class="eye fas fa-eye"></i>
-                    <div class="all__item__name">Áo đấu Barcalona</div>
-                    <div class="rating__all">
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i far fa-star"></i>
-                    </div>
-                    <div class="all__item__prices">
-                        <div class="all__item__price__1">150.000đ</div>
-                        <div class="all__item__price__2">300.000đ</div>
-                    </div>
-                    <button class="btny btny__primary">Thêm vào giỏ hàng +</button>
-                </div>
-            </a>
-            <a class="all__item__link" href="#/">
-                <div class="all__item">
-                    <img src="<?=IMAGES_URL?>/dmbongba.jpg" alt="ảnh sản phẩm">
-                    <i class="eye fas fa-eye"></i>
-                    <div class="all__item__name">Áo đấu Barcalona</div>
-                    <div class="rating__all">
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i far fa-star"></i>
-                    </div>
-                    <div class="all__item__prices">
-                        <div class="all__item__price__1">150.000đ</div>
-                        <div class="all__item__price__2">300.000đ</div>
-                    </div>
-                    <button class="btny btny__primary">Thêm vào giỏ hàng +</button>
-                </div>
-            </a>
-            <a class="all__item__link" href="#/">
-                <div class="all__item">
-                    <img src="<?=IMAGES_URL?>/dmbongba.jpg" alt="ảnh sản phẩm">
-                    <i class="eye fas fa-eye"></i>
-                    <div class="all__item__name">Áo đấu Barcalona</div>
-                    <div class="rating__all">
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i far fa-star"></i>
-                    </div>
-                    <div class="all__item__prices">
-                        <div class="all__item__price__1">150.000đ</div>
-                        <div class="all__item__price__2">300.000đ</div>
-                    </div>
-                    <button class="btny btny__primary">Thêm vào giỏ hàng +</button>
-                </div>
-            </a>
-            <a class="all__item__link" href="#/">
-                <div class="all__item">
-                    <img src="<?=IMAGES_URL?>/dmbongba.jpg" alt="ảnh sản phẩm">
-                    <i class="eye fas fa-eye"></i>
-                    <div class="all__item__name">Áo đấu Barcalona</div>
-                    <div class="rating__all">
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i far fa-star"></i>
-                    </div>
-                    <div class="all__item__prices">
-                        <div class="all__item__price__1">150.000đ</div>
-                        <div class="all__item__price__2">300.000đ</div>
-                    </div>
-                    <button class="btny btny__primary">Thêm vào giỏ hàng +</button>
-                </div>
-            </a>
-            <a class="all__item__link" href="#/">
-                <div class="all__item">
-                    <img src="<?=IMAGES_URL?>/dmbongba.jpg" alt="ảnh sản phẩm">
-                    <i class="eye fas fa-eye"></i>
-                    <div class="all__item__name">Áo đấu Barcalona</div>
-                    <div class="rating__all">
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i far fa-star"></i>
-                    </div>
-                    <div class="all__item__prices">
-                        <div class="all__item__price__1">150.000đ</div>
-                        <div class="all__item__price__2">300.000đ</div>
-                    </div>
-                    <button class="btny btny__primary">Thêm vào giỏ hàng +</button>
-                </div>
-            </a>
-            <a class="all__item__link" href="#/">
-                <div class="all__item">
-                    <img src="<?=IMAGES_URL?>/dmbongba.jpg" alt="ảnh sản phẩm">
-                    <i class="eye fas fa-eye"></i>
-                    <div class="all__item__name">Áo đấu Barcalona</div>
-                    <div class="rating__all">
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i far fa-star"></i>
-                    </div>
-                    <div class="all__item__prices">
-                        <div class="all__item__price__1">150.000đ</div>
-                        <div class="all__item__price__2">300.000đ</div>
-                    </div>
-                    <button class="btny btny__primary">Thêm vào giỏ hàng +</button>
-                </div>
-            </a>
-            <a class="all__item__link" href="#/">
-                <div class="all__item">
-                    <img src="<?=IMAGES_URL?>/dmbongba.jpg" alt="ảnh sản phẩm">
-                    <i class="eye fas fa-eye"></i>
-                    <div class="all__item__name">Áo đấu Barcalona</div>
-                    <div class="rating__all">
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i far fa-star"></i>
-                    </div>
-                    <div class="all__item__prices">
-                        <div class="all__item__price__1">150.000đ</div>
-                        <div class="all__item__price__2">300.000đ</div>
-                    </div>
-                    <button class="btny btny__primary">Thêm vào giỏ hàng +</button>
-                </div>
-            </a>
-            <a class="all__item__link" href="#/">
-                <div class="all__item">
-                    <img src="<?=IMAGES_URL?>/dmbongba.jpg" alt="ảnh sản phẩm">
-                    <i class="eye fas fa-eye"></i>
-                    <div class="all__item__name">Áo đấu Barcalona</div>
-                    <div class="rating__all">
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i fas fa-star"></i>
-                        <i class="rating__all__i far fa-star"></i>
-                    </div>
-                    <div class="all__item__prices">
-                        <div class="all__item__price__1">150.000đ</div>
-                        <div class="all__item__price__2">300.000đ</div>
-                    </div>
-                    <button class="btny btny__primary">Thêm vào giỏ hàng +</button>
-                </div>
-            </a>
+                </a>
+            <?php endforeach ?>
         </div>
         <div class="paging__numbers noselect">
             <div class="paging__numbers__left">
-                <i class="lefty fas fa-chevron-left"></i>
+                <a href="<?= $data['page'] == 1 ? "#/" : DOCUMENT_ROOT . "/index?page=" . ($data['page'] - 1) ?>"><i class="lefty fas fa-chevron-left"></i></a>
             </div>
-            <div class="paging__number">1</div>
-            <div class="paging__number paging__number__active">2</div>
-            <div class="paging__number">3</div>
-            <div class="paging__number">4</div>
-            <div class="paging__number">5</div>
-            <i class="righty fas fa-chevron-right"></i>
+            <?php for($i =1; $i<=$data["totalPage"]; $i++): ?>
+                <a <?= $i == $data['page'] ? 'onclick="event.preventDefault()"' : "" ?> 
+                    href="<?= DOCUMENT_ROOT . "/index?page=$i" ?>" 
+                    class="paging__number <?=$i == $data["page"] ? "paging__number__active" : "" ?>"><?=$i?>
+                </a>
+            <?php endfor ?>
+
+            <a href="<?= $data['page'] == $data['totalPage'] ? "#/" : DOCUMENT_ROOT . "/index?page=" . ($data['page'] + 1) ?>"><i class="righty fas fa-chevron-right"></i></a>
         </div>
     </section>
 </div>
@@ -379,3 +173,7 @@
 <!-- <div class="backtop">
     <i class="fas fa-chevron-up"></i>
 </div> -->
+
+ <!-- Javascript -->
+
+ <!-- <script src="<?= URL_JS ?>/showslide.js"></script> -->

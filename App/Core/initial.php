@@ -30,6 +30,7 @@
     defined('IMAGES_URL') ?:  define('IMAGES_URL', PUBLIC_URL . '/img');
     defined ('IMAGES_ITEMS_URL') ?: define('IMAGES_ITEMS_URL', PUBLIC_URL .'/img/items');
     defined ('ICONS_URL') ?: define('ICONS_URL', PUBLIC_URL .'/icons');
+    defined("URL_JS") ?: define("URL_JS", PUBLIC_URL. '/js');
     defined ('IMAGE_CATEGORY_URL') ?: define('IMAGE_CATEGORY_URL', PUBLIC_URL .'/img/categories');
 
     defined('USER_AVATAR_URL') ?:  define('USER_AVATAR_URL', PUBLIC_URL . '/uploads/avatar/');
