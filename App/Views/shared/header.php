@@ -17,7 +17,7 @@
             <input type="text" placeholder="Tìm kiếm ...">
         </div>
         <div class="header__info noselect">
-            <a href="#/">
+            <a href="<?= DOCUMENT_ROOT ?>/cart">
                 <div class="header__cart">
                     <i class="header__icons fas fa-cart-arrow-down"></i>
                     <p class="header__cart__amount">03</p>
@@ -37,31 +37,5 @@
             </div>
         </div>
     </header>
-    <div class="banner">
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active banner__img">
-                <img src="<?=IMAGES_URL?>/anh1.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item banner__img">
-                <img src="<?=IMAGES_URL?>/anh2.jpg" class="d-block w-100" alt="...">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon banner__btn" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                <span class="carousel-control-next-icon banner__btn" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-            <div class="container">
-                <div class="banner__info">
-                    <h1>Sports</h1>
-                    <h1>change your life</h1>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 <!-- end wrapper -->

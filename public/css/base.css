@@ -231,4 +231,10 @@ svg * {
   color: var(--color-title_black);
 }
 
+.spade__black {
+  width: 100%;
+  height: 75px;
+  background-color: var(--color-background);
+}
+
 

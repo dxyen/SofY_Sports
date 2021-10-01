@@ -1,0 +1,111 @@
+.cart__detail__itemsmini__img {
+    width: 150px;
+    height: 180px;
+    border-radius: 10px;
+}
+.cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+.cart__detail {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    justify-items: center;
+    gap: 20px;
+}
+.cart__detail__items {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.171);
+    border-radius: 10px;
+    padding: 40px 20px;
+    width: 800px;
+}
+.cart__detail__user {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+}
+.cart__detail__itemsmini {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.cart__detail__itemsmini:hover {
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.171);
+    border-radius: 10px;
+}
+.cart__detail__itemsmini__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    padding-left: 20px;
+}
+.cart__detail__itemsmini__info__name {
+    font-size: 2.2rem;
+    color: var(--color-title_black);
+    font-weight: 500;
+    font-family: var(--font-baumans);
+}
+.cart__detail__itemsmini__info__price {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 2.2rem;
+    color: var(--color-title_black);
+    margin: 8px 0px;
+}
+.cart__detail__itemsmini__info__amount {
+    font-style: normal;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+    color: var(--color-title_black);
+}
+.cart__detail__itemsmini__btn {
+    width: 80px;
+    height: 30px;
+    margin: 10px 0px;
+}
+.cart__detail__itemsmini__info__amount input{
+    padding: 5px 10px;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid rgb(228, 228, 228);
+    transition: all 200ms ease-out;
+}
+
+.cart__detail__user {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.171);
+    border-radius: 10px;
+    width: 100%;
+    height: fit-content;
+
+    justify-self: start;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 40px 30px;
+}
+.cart__detail__user__info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.cart__detail__user__info__address {
+    grid-column: 1 / span 2;
+    line-height: 2.5rem;
+}
+.cart__detail__user__title {
+    font-size: 2.2rem;
+    color: var(--color-title_black);
+    font-weight: 600;
+    font-family: var(--font-baumans);
+    padding-bottom: 20px;
+}
+.cart__detail__user__info__btn {
+    width: 100%;
+    grid-column: 1 / span 2;
+}

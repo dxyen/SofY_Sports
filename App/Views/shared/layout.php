@@ -22,6 +22,8 @@
 
     <link rel="stylesheet" href="<?= PUBLIC_URL ?>/css/home.css">
 
+    <link rel="stylesheet" href="<?= PUBLIC_URL ?>/css/cart.css">
+
     <?php if (strpos($view, 'login') !== false || strpos($view, 'register') !== false) : ?>
 
         <?php require_once(VIEW .  $view . ".php") ?>
