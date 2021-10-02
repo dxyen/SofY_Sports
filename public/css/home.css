@@ -3,6 +3,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    font-family: var(--font-asap);
 }
 .product__items {
     display: grid;
@@ -25,8 +26,8 @@
 .product__item:hover {
     border-radius: 15px;
     border-color: #f9fc5f88;
-    box-shadow: 2px 5px 15px 0 rgb(0 0 0 / 20%);
-    color: var(--color-primary);
+    /* box-shadow: 2px 5px 15px 0 rgb(0 0 0 / 20%); */
+    color: var(--color-title_black);
 }
 
 .product__item img {
@@ -78,6 +79,7 @@
     padding: 0 15px;
     margin: 0 auto;
     position: relative;
+    font-family: var(--font-asap);
 }
 .promotion__item {
     display: flex;
@@ -204,7 +206,7 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    font-family: var(--font-poppins);
+    font-family: var(--font-asap);
     text-align: center;
     padding: 10px;
     border-radius: 15px;

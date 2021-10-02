@@ -5,8 +5,8 @@
     --color-content: #848484;
     --color-background: #575650;
     --color-title_black: #222222;
-    --font-baumans: "Baumans", sans-serif;
-    --font-poppins: "Poppins", sans-serif;
+    --font-archivo: "Archivo", sans-serif;
+    --font-asap: "Asap", sans-serif;
 }
 * {
     box-sizing: inherit;
@@ -28,7 +28,7 @@ html {
   font-size: 62.5%;
   line-height: 1.8rem;
   box-sizing: border-box;
-  font-family: var(--font-poppins);
+  font-family: var(--font-asap);
   color: var(--color-title);
 }
 
@@ -39,7 +39,14 @@ svg * {
     width: 100%;
     height: 100%;
 }
-
+@font-face {
+  font-family: Archivo;
+  src: url(../font/Archivo_Narrow/ArchivoNarrow-Regular.ttf);
+}
+@font-face {
+  font-family: Asap;
+  src: url(../font/Asap/Asap-Italic-VariableFont_wght.ttf);
+}
 .wrapper {
   max-width: 1440px;
   margin: 0 auto;
@@ -68,11 +75,12 @@ svg * {
 }
 .title {
   margin-bottom: 40px;
-  font-family: var(--font-baumans);
+  font-family: var(--font-archivo);
   color: var(--color-title_black);
-  font-size: 30px;
+  font-size: 3.5rem;
   font-weight: 700;
   position: relative;
+  margin-top: 15px;
 }
 .title::before {
   content: "";
@@ -80,7 +88,7 @@ svg * {
   height: 2px;
   background-color: var(--color-primary);
   position: absolute;
-  top: 18px;
+  top: 22px;
   margin-left: -100px;
 }
 .title::after {
@@ -89,7 +97,7 @@ svg * {
   background-color: var(--color-primary);
   height: 2px;
   position: absolute;
-  top: 18px;
+  top: 22px;
   margin-left: 20px;
 }
 .btny {
@@ -108,13 +116,14 @@ svg * {
   background-color:var(--color-title_black);
   color: var(--color-primary);
   box-shadow: 0px 0px 7px #524143;
+  font-weight: 500;
   transition: all 0.3s ease-in-out;
 }
 .btny__primary:hover {
   background-color:var(--color-primary);
-  color: var(--color-title);
-  font-weight: 400;
-  text-shadow: 1px 1px rgb(121, 120, 103);
+  color: var(--color-title_black);
+  font-weight: 500;
+  /* text-shadow: 1px 1px rgb(121, 120, 103); */
 }
 .btny__primary:active {
   background-color: #464542;

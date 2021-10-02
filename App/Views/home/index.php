@@ -154,7 +154,7 @@
 
 <!-- all items list-->
 <div class="wrapper">
-    <section class="container all__products">
+    <section class="container all__products" id="products-space">
         <h3 class="title">Sản Phẩm</h3>
         <div class="all__items">
             <?php foreach($data['items'] as $index => $items) :?>
@@ -181,16 +181,16 @@
         </div>
         <div class="paging__numbers noselect">
             <div class="paging__numbers__left">
-                <a href="<?= $data['page'] == 1 ? "#/" : DOCUMENT_ROOT . "/index?page=" . ($data['page'] - 1) ?>"><i class="lefty fas fa-chevron-left"></i></a>
+                <a href="<?= $data['page'] == 1 ? "#/" : DOCUMENT_ROOT . "/index?page=" . ($data['page'] - 1)?>#products-space"><i class="lefty fas fa-chevron-left"></i></a>
             </div>
             <?php for($i =1; $i<=$data["totalPage"]; $i++): ?>
                 <a <?= $i == $data['page'] ? 'onclick="event.preventDefault()"' : "" ?> 
-                    href="<?= DOCUMENT_ROOT . "/index?page=$i" ?>" 
+                    href="<?= DOCUMENT_ROOT . "/index?page=$i" ?>#products-space" 
                     class="paging__number <?=$i == $data["page"] ? "paging__number__active" : "" ?>"><?=$i?>
                 </a>
             <?php endfor ?>
 
-            <a href="<?= $data['page'] == $data['totalPage'] ? "#/" : DOCUMENT_ROOT . "/index?page=" . ($data['page'] + 1) ?>"><i class="righty fas fa-chevron-right"></i></a>
+            <a href="<?= $data['page'] == $data['totalPage'] ? "#/" : DOCUMENT_ROOT . "/index?page=" . ($data['page'] + 1) ?>#products-space"><i class="righty fas fa-chevron-right"></i></a>
         </div>
     </section>
 </div>

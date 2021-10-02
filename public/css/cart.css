@@ -47,7 +47,7 @@
     font-size: 2.2rem;
     color: var(--color-title_black);
     font-weight: 500;
-    font-family: var(--font-baumans);
+    font-family: var(--font-archivo);
 }
 .cart__detail__itemsmini__info__price {
     font-style: normal;
@@ -102,7 +102,7 @@
     font-size: 2.2rem;
     color: var(--color-title_black);
     font-weight: 600;
-    font-family: var(--font-baumans);
+    font-family: var(--font-archivo);
     padding-bottom: 20px;
 }
 .cart__detail__user__info__btn {

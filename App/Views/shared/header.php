@@ -13,7 +13,6 @@
             </ul>
         </div>
         <div class="header__search noselect">
-            <button class="header__search__button"><i class="header__icons fas fa-search"></i></button>
             <input type="text" placeholder="Tìm kiếm ...">
         </div>
         <div class="header__info noselect">
