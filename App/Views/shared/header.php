@@ -4,12 +4,12 @@
         <a href="<?= DOCUMENT_ROOT ?>" class="header__logo"><img src="<?=IMAGES_URL?>/logomax.png" alt=""></a>
         <div class="header__menu">
             <ul class="header__menu__items noselect">
-                <li><a href="#" class="header__menu__item header__menu__item__active">Bóng Đá</a></li>
-                <li><a href="#" class="header__menu__item">Cầu Long</a></li>
-                <li><a href="#" class="header__menu__item">Bóng Chuyền</a></li>
-                <li><a href="#" class="header__menu__item">Tennis</a></li>
-                <li><a href="#" class="header__menu__item">Gym</a></li>
-                <li><a href="#" class="header__menu__item">Bơi Lội</a></li>
+                <li><a href="<?= DOCUMENT_ROOT?>/products/categories?id=1" class="header__menu__item header__menu__item__active">Bóng Đá</a></li>
+                <li><a href="<?= DOCUMENT_ROOT?>/products/categories?id=2" class="header__menu__item">Cầu Long</a></li>
+                <li><a href="<?= DOCUMENT_ROOT?>/products/categories?id=3" class="header__menu__item">Bóng Chuyền</a></li>
+                <li><a href="<?= DOCUMENT_ROOT?>/products/categories?id=4" class="header__menu__item">Tennis</a></li>
+                <li><a href="<?= DOCUMENT_ROOT?>/products/categories?id=5" class="header__menu__item">Gym</a></li>
+                <li><a href="<?= DOCUMENT_ROOT?>/products/categories?id=6" class="header__menu__item">Bơi Lội</a></li>
             </ul>
         </div>
         <div class="header__search noselect">

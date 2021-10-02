@@ -78,11 +78,11 @@
         <h3 class="title">Danh mục sản phẩm</h3>
         <ul class="product__items">
             <?php foreach($data['categories'] as $index => $categories) :?>
-                <a href="#/">
+                <a href="<?= DOCUMENT_ROOT?>/products/categories?id=<?=$categories['id']?>">
                     <li class="product__item">
                         <img src="<?=IMAGES_URL?>/<?=$categories['image']?>" alt=" Ảnh bóng đá">
                         <i class="eye fas fa-eye"></i>
-                        <div class="product__item__name"><?=$categories['name']?></div>
+                        <div class="product__item__name">Dụng cụ <?=$categories['name']?></div>
                         <div class="product__item__description"><?=$categories['description']?></div>
                     </li>
                 </a>

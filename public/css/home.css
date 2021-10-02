@@ -26,7 +26,7 @@
 .product__item:hover {
     border-radius: 15px;
     border-color: #f9fc5f88;
-    /* box-shadow: 2px 5px 15px 0 rgb(0 0 0 / 20%); */
+    box-shadow: 2px 5px 15px 0 rgb(0 0 0 / 20%);
     color: var(--color-title_black);
 }
 
@@ -49,10 +49,6 @@
 .product__item:hover .eye {
     top: 70%;
     opacity: 1;
-}
-.product__item:hover img {
-    transform: scale(1.1);
-    opacity: 0.9;
 }
 .product__item__name {
     font-weight: 400;
