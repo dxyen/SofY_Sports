@@ -185,6 +185,25 @@
     align-items: center;
     flex-direction: column;
 }
+.all__products__lists {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    color: var(--color-title_black);
+}
+.all__products__list__active {
+    color: var(--color-primary);
+}
+.all__products__list {
+    margin-left: 40px;
+    font-family: var(--font-asap);
+    font-weight: 600;
+    font-size: 2.2rem;
+}
+.all__products__lists a:hover {
+    color: var(--color-primary);
+}
 .all__items {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;

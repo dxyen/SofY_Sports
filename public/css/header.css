@@ -68,6 +68,7 @@
 .header__search input[type="text"] {
     outline: none;
     border: none;
+    width: 250px;
     line-height: 1.3rem;
 
     border: 2px solid var(--color-primary);
@@ -88,7 +89,7 @@
 
 }
 .header__cart {
-    margin-right: 30px;
+    margin-right: 18px;
     cursor: pointer;
     position: relative;
     display: flex;
@@ -113,6 +114,14 @@
 .header__user{
     position: relative;
     cursor: pointer;
+}
+.header__user__avt {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2.5px var(--color-primary);
+    /*  chỉnh hình nằm trong khung  */
+    overflow: hidden;
 }
 .header__user:hover .header__user__dropdown {
     display: block;

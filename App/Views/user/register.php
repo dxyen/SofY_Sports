@@ -25,7 +25,7 @@
 </head>
 <body>
     <div class="wrapper login">
-        <form action="" id="form__register">
+        <form action="<?= DOCUMENT_ROOT ?>/user/signup" method="POST" id="form__register">
             <h1 class="form__title">Đăng ký</h1>
             <div class="form__constrain">
                 <div class="form__group">
@@ -69,7 +69,7 @@
             </div>
             <input type="submit" value="Đăng ký" class="form__submit">
             <div class="form__link" >
-                <a href="<?= DOCUMENT_ROOT ?>/account">Bạn đã có tài khoản? Đăng nhập</a>
+                <a href="<?= DOCUMENT_ROOT ?>/user">Bạn đã có tài khoản? Đăng nhập</a>
             </div>
         </form>
     </div>

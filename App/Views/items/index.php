@@ -1,42 +1,42 @@
+<div class="wrapper spade__black"></div>
+
 <div class="wrapper">
     <section class="container items">
         <h3 class="title">Chi tiết sản phẩm</h3>
-            <div class="items__item">
-                <div class="items__img" href="#/">
-                    <img id="zoom" src="img/dmbongba.jpg" alt="">
-                </div>
-                <div class="items__info">
-                    <h4 class="items__info__name">Áo đấu Barcalona</h4>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
+            <?php foreach($data['items'] as $index =>$items) : ?>
+                <div class="items__item">
+                    <div class="items__img" href="#/">
+                        <img id="zoom" src="<?= IMAGES_ITEMS_URL ?>/<?= $items['image']?>" alt="">
                     </div>
-                    <div class="items__price">
-                        <div class="items__price__1">150.000đ</div>
-                        <div class="items__price__2">300.000đ</div>
-                    </div>
-                    <p class="items__info__description">
-                        Award yourself with this rich chocolate cake wonderfully
-                        crammed with Cadbury Fuse and white chocolate chunks and
-                        draped lusciously with molten chocolate. This perfect work of
-                        art hides in every bite of chocolate that is a little nutty
-                        and a lot of tasty!
-                    </p>
+                    <div class="items__info">
+                        <h4 class="items__info__name"><?= $items['name']?></h4>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <div class="items__price">
+                            <div class="items__price__1"><?= number_format($items['price'], 0, '', ',') ?>đ</div>
+                            <div class="items__price__2">300.000đ</div>
+                        </div>
+                        <p class="items__info__description">
+                            <?= $items['description']?>
+                        </p>
 
-                    <button class="btny btny__primary">Thêm vào giỏ hàng +</button>
-                    
+                        <button class="btny btny__primary">Thêm vào giỏ hàng +</button>
+
+                    </div>
                 </div>
-            </div>
+            <?php endforeach ?>
     </section>
     <!-- space -->
     <div class="container"><div class="space"></div></div>
     <!-- end space -->
 
     <div class="container items__title">
-        <h3>Sơ lượt sản phẩm</h3>
+        <h3>Bình luận khách hàng</h3>
         <p>Bước Chân Theo Dấu Mặt Trời, rời xa ngôi nhà êm ấm để trở thành kẻ lữ hành cô độc đến những miền đất 
             lạ với tấm vé máy bay một chiều. Người phụ nữ ấy luôn mang trong mình câu hỏi: Tôi sinh ra bởi điều gì? 
             Tôi đang đi về đâu?... Để rồi vào một buổi chiều trên đỉnh núi Linh Thứu, lúc mặt trời rực rỡ xuống sau dãy 
@@ -54,8 +54,8 @@
         </p>
     </div>
 </div>
-<script src="jquery-1.8.3.min.js"></script>
-<script src="jquery.elevatezoom.js"></script>
+<script src="<?= URL_JS ?>/jquery-1.8.3.min.js"></script>
+<script src="<?= URL_JS ?>/jquery.elevatezoom.js"></script>
 <script>
     $('#zoom').elevateZoom({
         zoomType: 'lens',

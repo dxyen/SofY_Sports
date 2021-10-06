@@ -34,6 +34,35 @@ class itemsmodel extends Database {
                 return $totalPage;
         }
 
+        function getByItems($id){
+            $id = intval($id);
+            $stmt = $this->db->prepare("SELECT * FROM ITEMS WHERE id = ?");
+            $stmt->bind_param("i", $id);
+
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if($result->num_rows >0){
+                return $result->fetch_all(MYSQLI_ASSOC);
+            }else{
+                return false;
+            }
+        }
+
+        function getByKeyword($keyword){
+            $keyword = '%' . $keyword . '%';
+            $stmt = $this->db->prepare("SELECT * FROM ITEMS WHERE name like ?");
+            $stmt->bind_param("s", $keyword);
+
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if($result->num_rows >0){
+                return $result->fetch_all(MYSQLI_ASSOC);
+            }else{
+                return false;
+            }
+        }
 
     }
 ?>

@@ -38,7 +38,7 @@
                 </div>
                 <div class="connect__text">
                     <h3 class="connect__text__h3">Miễn Phí giao hàng</h3>
-                    <p class="connect__text__p">Open without 14px Lorem ipsum dolor sitod tempor incididunt aliqua.</p>
+                    <p class="connect__text__p">Dù bạn ở chân trời hay gốc bể thì vẫn được miễn ship</p>
                 </div>
             </div>
         </div>
@@ -49,7 +49,7 @@
                 </div>
                 <div class="connect__text">
                     <h3 class="connect__text__h3">Liên hệ với chúng tôi</h3>
-                    <p class="connect__text__p">Open without 14px Lorem ipsum dolor sitod tempor incididunt aliqua.</p>
+                    <p class="connect__text__p">Liên hệ với chúng tôi qua đường dây nóng: 033 869 7256</p>
                 </div>
             </div>
         </div>
@@ -60,7 +60,7 @@
                 </div>
                 <div class="connect__text">
                     <h3 class="connect__text__h3">Chính sách đổi trả</h3>
-                    <p class="connect__text__p">Open without 14px Lorem ipsum dolor sitod tempor incididunt aliqua.</p>
+                    <p class="connect__text__p">Đổi trả miễn phí, sài hư sản phẩm đem đổi vẫn cứ là ok</p>
                 </div>
             </div>
         </div>
@@ -158,7 +158,7 @@
         <h3 class="title">Sản Phẩm</h3>
         <div class="all__items">
             <?php foreach($data['items'] as $index => $items) :?>
-                <a class="all__item__link" href="#/">
+                <a class="all__item__link" href="<?= DOCUMENT_ROOT?>/items/detail?id=<?=$items['id']?>">
                     <div class="all__item">
                         <img src="<?= IMAGES_ITEMS_URL ?>/<?= $items['image']?>" alt="ảnh sản phẩm">
                         <i class="eye fas fa-eye"></i>

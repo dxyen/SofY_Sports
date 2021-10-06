@@ -1,11 +1,19 @@
 <div class="wrapper spade__black"></div>
 <!-- all items list-->
 <div class="wrapper">
-    <section class="container all__products" id="products-space">
+    <section class="container all__products">
         <h3 class="title">Sản Phẩm </h3>
+        <div class="all__products__lists">
+            <a href="<?= DOCUMENT_ROOT?>/products/categories?id=1"><div class="all__products__list <?= $GLOBALS['currentType']=='categories' && $_GET['id'] == 1 ? 'all__products__list__active' : ""?>">Bóng Đá</div></a>
+            <a href="<?= DOCUMENT_ROOT?>/products/categories?id=2"><div class="all__products__list <?= $GLOBALS['currentType']=='categories' && $_GET['id'] == 2 ? 'all__products__list__active' : ""?>">Cầu Lông</div></a>
+            <a href="<?= DOCUMENT_ROOT?>/products/categories?id=3"><div class="all__products__list <?= $GLOBALS['currentType']=='categories' && $_GET['id'] == 3 ? 'all__products__list__active' : ""?>">Bóng Chuyền</div></a>
+            <a href="<?= DOCUMENT_ROOT?>/products/categories?id=4"><div class="all__products__list <?= $GLOBALS['currentType']=='categories' && $_GET['id'] == 4 ? 'all__products__list__active' : ""?>">Tennis</div></a>
+            <a href="<?= DOCUMENT_ROOT?>/products/categories?id=5"><div class="all__products__list <?= $GLOBALS['currentType']=='categories' && $_GET['id'] == 5 ? 'all__products__list__active' : ""?>">Gym</div></a>
+            <a href="<?= DOCUMENT_ROOT?>/products/categories?id=6"><div class="all__products__list <?= $GLOBALS['currentType']=='categories' && $_GET['id'] == 6 ? 'all__products__list__active' : ""?>">Bơi Lội</div></a>
+        </div>
         <div class="all__items">
             <?php foreach($data['items'] as $index => $items) :?>
-                <a class="all__item__link" href="#/">
+                <a class="all__item__link" href="<?= DOCUMENT_ROOT?>/items/detail?id=<?=$items['id']?>">
                     <div class="all__item">
                         <img src="<?= IMAGES_ITEMS_URL ?>/<?= $items['image']?>" alt="ảnh sản phẩm">
                         <i class="eye fas fa-eye"></i>

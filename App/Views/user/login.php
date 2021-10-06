@@ -21,26 +21,39 @@
             background: url('<?=IMAGES_URL?>/anh1.jpg');
             background-size: cover;
         }
+        p {
+            color: #F9E404;
+        }
     </style>
 </head>
 <body>
     <div class="wrapper login">
-        <form action="" id="form__login">
+        <form action="<?= DOCUMENT_ROOT ?>/user/authenticate" method="POST" id="form__login">
             <h1 class="form__title">Đăng nhập</h1>
+            <?php if (isset($data['error'])) : ?>
+              <?php foreach ($data['error'] as $index => $error) : ?>
+                <p style="color: red"><?= $error ?></p>
+              <?php endforeach; ?>
+            <?php endif; ?>
+            <?php if (isset($data['message'])) : ?>
+              <?php foreach ($data['message'] as $index => $message) : ?>
+                <p><?= $message ?></p>
+              <?php endforeach; ?>
+            <?php endif; ?>
             <div class="form__group">
                 <i class="icon__login fas fa-user"></i>
-                <input type="text" class="form__input" placeholder="Tên đăng nhập">
+                <input type="text" name="name" class="form__input" placeholder="Tên đăng nhập">
             </div>
             <div class="form__group">
                 <i class="icon__login fas fa-unlock-alt"></i>
-                <input type="password" class="form__input" placeholder="Mật khẩu">
+                <input type="password" name="password" class="form__input" placeholder="Mật khẩu">
                 <div class="form__eye" id="eye">
                     <i class="far fa-eye-slash"></i>
                 </div>
             </div>
             <input type="submit" value="Đăng nhập" class="form__submit">
             <div class="form__link" >
-                <a href="<?= DOCUMENT_ROOT ?>/account/register">Bạn chưa có tài khoản? Đăng ký</a>
+                <a href="<?= DOCUMENT_ROOT ?>/user/register">Bạn chưa có tài khoản? Đăng ký</a>
             </div>
         </form>
     </div>

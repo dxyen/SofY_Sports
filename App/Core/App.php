@@ -30,6 +30,7 @@
           if (isset($arr[2])) {
               if (method_exists($this->controller, $arr[2])) {
                   $this->action = $arr[2];
+                 
               }
               unset($arr[2]);
           }
@@ -45,6 +46,7 @@
               $this->controller = ucfirst($arr[0]);
               unset($arr[0]); 
           }
+          $GLOBALS["currentPage"] = $this->controller;
           $this->controller = $this->controller . "Controller";
           require_once "./App/Controllers/".$this->controller.".php";
 
@@ -54,9 +56,11 @@
           if (isset($arr[1])) {
               if (method_exists($this->controller, $arr[1])) {
                   $this->action = $arr[1];
+                  
               }
               unset($arr[1]);
           }
+          $GLOBALS["currentType"] = $this->action;
           // Xu li params
           $this->params = $arr?array_values($arr):[];
 

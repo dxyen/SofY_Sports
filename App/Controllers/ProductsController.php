@@ -8,13 +8,14 @@
         {
             $this->productsmodel = $this->model('categorymodel');
         }
-        function Index(){
-            if(!isset($_GET['id'])){
-                $idType = 1;
-            }
-            else{
+        function index(){
+            
+        }
+        function categories(){
+            if(isset($_GET['id'])){
                 $idType = $_GET['id'];
             }
+
             $items = $this->productsmodel->getItemsByCategories($idType);
             $data['items'] = $items;
             $this->view("/products/index", $data);
