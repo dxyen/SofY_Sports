@@ -1,0 +1,124 @@
+.user {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+.profile__info {
+    width: 950px;
+    font-family: var(--font-asap);
+    color: var(--color-title_black);
+}
+.profile__info form {
+    display: grid;
+    grid-template-columns: 0.2fr 1fr;
+    gap: 20px;
+    align-items: center;
+    border-radius: 10px;
+    padding: 30px 40px;
+    box-shadow: 0 0 10px rgba(44, 44, 44, 0.295);
+    width: 100%;
+}
+#avatar {
+    height: 45px;
+}
+.profile__info input {
+    border-radius: 5px;
+    height: 36px;
+    border: 2px solid rgba(192, 192, 192, 0);
+    outline: none;
+    background-color: #e4e4e4;
+    padding: 10px;
+    transition: all 200ms ease-out;
+}
+.profile__info input:focus {
+    border: 2px solid var(--color-primary);
+    transition: all 200ms ease-in;
+}
+.profile__info label {
+    font-weight: bold;
+    font-family: var(--font-title);
+}
+.profile__info button {
+    justify-self: center;
+    margin-top: 20px;
+    grid-column: 1 / span 2;
+}
+.user__info__btn {
+    width: 250px;
+}
+
+
+.user__history {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.171);
+    border-radius: 10px;
+    padding: 40px 20px;
+}
+.user__history__itemsmini__img {
+    width: 150px;
+    height: 180px;
+    border-radius: 10px;
+}
+.user__history__order {
+    font-size: 2rem;
+    font-family: var(--color-title_black);
+    text-decoration: underline;
+}
+.user__history__items {
+    padding: 40px 20px;
+    width: 1100px;
+}
+.user__history__itemsmini {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.user__history__itemsmini:hover {
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.171);
+    border-radius: 10px;
+}
+.user__history__itemsmini__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    padding-left: 20px;
+}
+.user__history__itemsmini__info__name {
+    font-size: 2.2rem;
+    color: var(--color-title_black);
+    font-weight: 500;
+    font-family: var(--font-asap);
+}
+.user__history__itemsmini__info__price {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 2.2rem;
+    color: var(--color-primary);
+    margin: 8px 0px;
+}
+.user__history__itemsmini__info__amount {
+    font-style: normal;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+    color: var(--color-title_black);
+}
+.user__history__status {
+    margin-top: 10px;
+    line-height: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+.user__history__status__price {
+    display: flex;
+}
+.user__history__status__price span {
+    color: var(--color-primary);
+    font-size: 1.7rem;
+    font-weight: bold;
+}

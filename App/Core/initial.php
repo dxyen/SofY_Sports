@@ -11,6 +11,7 @@
     defined('PUBLIC') ?: define('PUBLIC', APP.DS.'public');
     defined('PUBLIC_DIR') ?:  define('PUBLIC_DIR', ROOT . DS . 'public');
     defined('PUBLIC_DIR_ITEM_IMAGES') ?:  define('PUBLIC_DIR_ITEM_IMAGES', ROOT . DS . 'public' . DS . 'img' . DS . 'items');
+    defined('USER_IMAGES') ?:  define('USER_IMAGES', ROOT . DS . 'public' . DS . 'uploads' . DS . 'avatar');
 
     require_once(CORE . DS . "App.php");
     require_once(CORE . DS . "Controller.php");

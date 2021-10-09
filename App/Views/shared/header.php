@@ -23,19 +23,34 @@
                     <p class="header__cart__amount">03</p>
                 </div>
             </a>
-            <div class="header__user">
-                <div class="header__user__avt">
-                    <!-- <i class="header__icons fas fa-user"></i> -->
-                    <img src="<?= USER_AVATAR_URL ?>/dmbongda.jpg" alt="Avatar">
+            <?php if(isset($_SESSION['user'])) : ?>
+                <div class="header__user">
+                    <div class="header__user__avt">
+                        <!-- <i class="header__icons fas fa-user"></i> -->
+                        
+                        <img src="<?= USER_AVATAR_URL . (empty($_SESSION['user']['avatar']) ? "default-avatar.png" : $_SESSION['user']['avatar']) ?>" alt="Avatar">
+                    </div>
+                    <div class="header__user__dropdown">
+                        <ul>
+                        <li><a href="<?= DOCUMENT_ROOT ?>/profile/index">Thông tin</a></li>
+                        <li><a href="<?= DOCUMENT_ROOT ?>/user/signout">Đăng Xuất</a></li>
+                        <li><a href="<?= DOCUMENT_ROOT ?>/user/register">Đăng ký</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="header__user__dropdown">
-                    <ul>
-                    <li><a href="#">Thông tin</a></li>
-                    <li><a href="<?= DOCUMENT_ROOT ?>/user">Đăng nhập</a></li>
-                    <li><a href="<?= DOCUMENT_ROOT ?>/user/register">Đăng ký</a></li>
-                    </ul>
+            <?php else : ?>
+                <div class="header__user">
+                    <div class="header__user__i">
+                        <i class="header__icons fas fa-user"></i>
+                    </div>
+                    <div class="header__user__dropdown">
+                        <ul>
+                        <li><a href="<?= DOCUMENT_ROOT ?>/user">Đăng nhập</a></li>
+                        <li><a href="<?= DOCUMENT_ROOT ?>/user/register">Đăng ký</a></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
+            <?php endif; ?>
         </div>
     </header>
 </div>

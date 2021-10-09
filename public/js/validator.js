@@ -29,6 +29,14 @@ function Validator(options){
     }
 }
 
+Validator.isRequiredname = function(selector){
+    return {
+        selector : selector,
+        test: function(value){
+            return value.trim() ? undefined : "Vui lòng điền đầy đủ họ tên của bạn";
+        }
+    };
+}
 Validator.isRequired = function(selector){
     return {
         selector : selector,
@@ -42,7 +50,7 @@ Validator.isEmail = function(selector){
         selector : selector,
         test: function(value){
             var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-            return regex.test(value) ? undefined : "Trường này phải là email"
+            return regex.test(value) ? undefined : "Vui lòng điền đúng email"
         }
     };
 }

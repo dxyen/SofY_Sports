@@ -5,14 +5,15 @@
     class UserModel extends Database{
 
         function register($data){
+            $fullname = $data['fullname'];
             $name = $data['name'];
             $email = $data['email'];
             $phone = $data['phone'];
             $address = $data['address'];
             $password = password_hash($data['password'], PASSWORD_DEFAULT);
             $role = 1;
-            $stmt = $this->db->prepare("INSERT INTO USERS(name, phone, address, password, email, role) values(?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param("sssssi", $name, $phone, $address, $password, $email, $role);
+            $stmt = $this->db->prepare("INSERT INTO USERS( fullname, name, phone, address, password, email, role) values(?, ?, ?, ?, ?, ?, ?)");
+            $stmt->bind_param("ssssssi", $fullname, $name, $phone, $address, $password, $email, $role);
 
             $stmt->execute();
             $result = $stmt->affected_rows;
@@ -53,6 +54,18 @@
             return $result->fetch_assoc();
             } else {
             return false;
+            }
+        }
+
+        function CheckName($name){
+            $stmt = $this->db->prepare("SELECT * FROM USERS WHERE name = ?");
+            $stmt->bind_param("s", $name);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            if ($result->num_rows > 0) {
+            return false;
+            } else {
+            return true;
             }
         }
     }
