@@ -103,7 +103,7 @@
             xhttp.send();
         }
     </script>
-    <script src="<?= URL_JS ?>/validator.js"></script>
+    <script type="text/javascript" src="<?= URL_JS ?>/validator.js"></script>
     <script>
         Validator({
             form: '#form__register',

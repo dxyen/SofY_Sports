@@ -229,13 +229,14 @@
     height: 425px;
     position: relative;
 }
-.all__item > .eye {
+.all__item__link > .eye {
     position: absolute;
     font-size: 3.1rem;
     transition: all 0.3s ease-in-out;
     opacity: 0;
     color: var(--color-primary);
-    margin-top: -115px;
+    margin-top: 115px;
+    margin-left: -126px;
 }
 .all__item:hover .eye {
     /* top: 70%; */
@@ -246,6 +247,9 @@
     border-color: #f9fc5f88;
     box-shadow: 2px 5px 15px 0 rgb(0 0 0 / 20%);
     transition: all 0.3s ease-in-out;
+    color: var(--color-title_black);
+}
+.all__item__link:hover {
     color: var(--color-title_black);
 }
 .all__item:hover img {
