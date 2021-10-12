@@ -4,6 +4,18 @@ use App\Core\Database;
 
 class CartModel extends Database {
 
+        function getItemInCartByUser($iduser){
+            $stmt = $this->db->prepare("CALL getItemInCartByUser(?)");
+            $stmt->bind_param("i", $iduser);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            if($result->num_rows >0){
+                return $result->fetch_all(MYSQLI_ASSOC);
+            }else{
+                return false;
+            }
+        }
+
         function addToCart($data){
 
             $userId = $data['userId'];
@@ -59,6 +71,20 @@ class CartModel extends Database {
             $stmt->execute();
             $result = $stmt->get_result();
             return $result->fetch_row()[0];
+        }
+
+        function deleteInCart($data){
+            $userId = $data['userId'];
+            $itemId = $data['itemId'];
+            $stmt = $this->db->prepare("DELETE FROM CART WHERE id_user = ? AND id_item = ?");
+            $stmt->bind_param("ii", $userId, $itemId);
+    
+            $stmt->execute();
+    
+            if ($stmt->affected_rows > 0) {
+            return true;
+            }
+            return false;
         }
     }
 ?>

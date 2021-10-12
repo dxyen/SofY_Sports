@@ -20,7 +20,7 @@
             <a href="<?= DOCUMENT_ROOT ?>/cart">
                 <div class="header__cart">
                     <i class="header__icons fas fa-cart-arrow-down"></i>
-                    <p id="numInCartId" class="header__cart__amount">0</p>
+                    <p id="numInCartId" class="header__cart__amount"></p>
                 </div>
             </a>
             <?php if(isset($_SESSION['user'])) : ?>

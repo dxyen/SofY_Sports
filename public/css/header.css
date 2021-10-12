@@ -99,14 +99,14 @@
     align-items: center;
     justify-content: center;
     color: var(--color-primary);
-    margin-left: 3px;
     font-family: var(--font-archivo);
     font-size: 12px;
+    margin-left: 1px;
     margin-top: 3px;
     border-radius: 50%;
     width: 20px;
     height: 20px;
-    background-color: rgb(83, 81, 75);
+    background-color: rgb(68, 68, 64);
 }
 .header__cart__amount p {
     margin-top: 10px;

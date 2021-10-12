@@ -25,7 +25,7 @@
                             <?= $items['description']?>
                         </p>
 
-                        <button class="btny btny__primary">Thêm vào giỏ hàng +</button>
+                        <button onClick="addToCart(<?= isset($_SESSION['user']) ? $_SESSION['user']['id'] : 0 ?>, <?= $items['id'] ?>)" class="btny btny__primary">Thêm vào giỏ hàng +</button>
 
                     </div>
                 </div>
