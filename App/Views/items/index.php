@@ -35,24 +35,30 @@
     <div class="container"><div class="space"></div></div>
     <!-- end space -->
 
-    <div class="container items__title">
-        <h3>Bình luận khách hàng</h3>
-        <p>Bước Chân Theo Dấu Mặt Trời, rời xa ngôi nhà êm ấm để trở thành kẻ lữ hành cô độc đến những miền đất 
-            lạ với tấm vé máy bay một chiều. Người phụ nữ ấy luôn mang trong mình câu hỏi: Tôi sinh ra bởi điều gì? 
-            Tôi đang đi về đâu?... Để rồi vào một buổi chiều trên đỉnh núi Linh Thứu, lúc mặt trời rực rỡ xuống sau dãy 
-            núi, người phụ nữ ấy đã bắt đầu tìm được điều mình đang khao khát, ráng chiều đỏ thắm dần lấp đầy khoảng 
-            trống vô hình trong cô. Người phụ nữ ấy hành hương đến Ấn Độ, nơi có một vị Phật đã thành đạo, nơi đã một 
-            thời mang trong mình nền văn minh huy hoàng của loài người nay trở thành nơi nghèo nàn, và nguy hiểm nhất 
-            thế giới. Trong chuyến độc hành của mình, người phụ nữ yếu đuối đã trải qua nhiều cung bậc cảm xúc: vui - 
-            buồn - hạnh phúc - sợ hãi. Những người lạ nơi xứ người đã khiến người lữ khách không còn đơn độc mà mang cô 
-            cảm giác thân thuộc, ấm áp tình người. Những người chúng ta đã gặp trong đời, mỗi sự việc xảy đến đều ý 
-            nghĩa và dạy cho chúng ta một bài học về cuộc sống. Những gì chúng ta trải qua đều là nhân - quả và chỉ 
-            có cách bình tĩnh chiêm nghiệm mới giúp ta an yên giữa cuộc đời này. Bước Chân Theo Dấu Mặt Trời – Hành 
-            Trình Trở Về Ấn Độ sẽ dẫn độc giả bước vào không gian văn hóa đậm chất Ấn Độ với những công trình kiến trúc 
-            kỳ vĩ, tinh xảo, các loại hình nghệ thuật truyền thống đầy tinh tế, nền ẩm thực đa dạng thậm chí cả những 
-            nhưng mọi vấn đề, rắc rối, đau khổ đều giống nhau bởi đều xuất phát từ tâm.”
-        </p>
+    <div class="container items__comment">
+        <div class="items__comment__form">
+            <span>Bình Luận</span>
+            <div class="form-group">
+                <input class="form-control items__comment__form__text" name="" ></input>
+                <button type="button" class="btn__comment btn btn-success">Gửi</button>
+            </div>
+            <div class="items__comment__user">
+                <div class="items__comment__user__name">Đỗ Xuân Yên</div>
+                <div class="items__comment__user__name">Sản phẩm rất tốt nên mua</div>
+            </div>
+            <div class="items__comment__user">
+                <div class="items__comment__user__name">Đỗ Xuân Yên</div>
+                <div class="items__comment__user__name">Sản phẩm rất tốt nên mua</div>
+            </div>
+            <div class="items__comment__user">
+                <div class="items__comment__user__name">Đỗ Xuân Yên</div>
+                <div class="items__comment__user__name">Sản phẩm rất tốt nên mua</div>
+            </div>
+        </div>
     </div>
+    <!-- space -->
+    <div class="container"><div class="space"></div></div>
+    <!-- end space -->
 </div>
 <script src="<?= URL_JS ?>/jquery-1.8.3.min.js"></script>
 <script src="<?= URL_JS ?>/jquery.elevatezoom.js"></script>
