@@ -38,22 +38,25 @@
             </ul>
             <div class="cart__detail__user">
                 <div class="cart__detail__user__title">Thông tin nhận hàng</div>
-                <div class="cart__detail__user__info">
-                    <p><b>Tên người nhận: </b></p>
-                    <p><?= $data['user']['fullname'] ?></p>
-                    <p><b>Số điện thoại: </b></p>
-                    <p><?= $data['user']['phone'] ?></p>
-                    <div class="cart__detail__user__info__address">
-                        <p><b>Địa chỉ giao hàng: </b></p>
-                        <input type="radio" name="gerder" value="<?= $data['user']['address'] ?>" checked>  <?= $data['user']['address'] ?>
-                        <br>
-                        <input type="radio" name="gerder" value="<?= $data['user']['address2'] ?>" checked>  <?= $data['user']['address2'] ?>
+                <?php if ($data['user'] == 0) : ?>
+                    <p>Bạn chưa đăng nhập</p>
+                <?php else : ?>
+                    <div class="cart__detail__user__info">
+                        <p><b>Tên người nhận: </b></p>
+                        <p><?= $data['user']['fullname'] ?></p>
+                        <p><b>Số điện thoại: </b></p>
+                        <p><?= $data['user']['phone'] ?></p>
+                        <div class="cart__detail__user__info__address">
+                            <p><b>Địa chỉ giao hàng: </b></p>
+                            <input type="radio" name="gerder" value="<?= $data['user']['address'] ?>" checked>  <?= $data['user']['address'] ?>
+                            <br>
+                            <input type="radio" name="gerder" value="<?= $data['user']['address2'] ?>" checked>  <?= $data['user']['address2'] ?>
+                        </div>
+                        <p><b>Tổng tiền:</b></p>
+                        <p><b>100.000đ</b></p>
+                        <button class="cart__detail__user__info__btn btny btny__primary">Đặt hàng </button>
                     </div>
-                    <p><b>Tổng tiền:</b></p>
-                    <p><b>100.000đ</b></p>
-                    <button class="cart__detail__user__info__btn btny btny__primary">Đặt hàng </button>
-                </div>
-
+                <?php endif; ?>
             </div>
         </div>
     </form>
@@ -61,3 +64,7 @@
 <!-- space -->
 <div class="container"><div class="space"></div></div>
 <!-- end space -->
+<!-- space -->
+<div class="container"><div class="space"></div></div>
+<!-- end space -->
+

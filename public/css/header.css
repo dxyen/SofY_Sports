@@ -68,7 +68,7 @@
 .header__search input[type="text"] {
     outline: none;
     border: none;
-    width: 250px;
+    width: 340px;
     line-height: 1.3rem;
 
     border: 2px solid var(--color-primary);
@@ -84,7 +84,7 @@
 .header__info {
     display: flex;
     align-items: center;
-    margin-right: 30px;
+    margin-right: 40px;
     margin-left: 5px;
 
 }

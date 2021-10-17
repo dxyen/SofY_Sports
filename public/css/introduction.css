@@ -1,0 +1,22 @@
+.introduction__title {
+    border-bottom: medium none;
+    margin: 0 0 20px;
+    padding: 0;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--color-title_black);
+}
+.introduction__content p{
+    margin-bottom: 8px;
+    font-family: inherit;
+    color: #555;
+    font-size: 1.6rem;
+    font-style: inherit;
+    font-weight: inherit;
+    vertical-align: baseline;
+    text-align: justify;
+}
+.introduction__footer p{
+    text-align: right;
+}

@@ -100,48 +100,44 @@
     <div class="promotion__background">
         <section class="promotion">
             <h3 class="title">Khuyến mãi hot</h3>
-                <div class="promotion__item">
-                    <a class="promotion__item__img" href="#/">
-                        <img src="<?=IMAGES_URL?>/dmbongda.jpg" alt="">
-                        <i class="eye fas fa-eye"></i>
-                    </a>
-                    <div class="promotion__info">
-                        <h4 class="promotion__info__name">Áo đấu Barcalona</h4>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                        <div class="promotion__price">
-                            <div class="promotion__price__1">150.000đ</div>
-                            <div class="promotion__price__2">300.000đ</div>
-                        </div>
-                        <p class="promotion__info__description">
-                            Award yourself with this rich chocolate cake wonderfully
-                            crammed with Cadbury Fuse and white chocolate chunks and
-                            draped lusciously with molten chocolate. This perfect work of
-                            art hides in every bite of chocolate that is a little nutty
-                            and a lot of tasty!
-                        </p>
+                <?php foreach($data['promotion'] as $index => $itemspromotion) :?>
+                    <div class="promotion__item">
+                        <a class="promotion__item__img" href="<?= DOCUMENT_ROOT?>/items/detail?id=<?=$itemspromotion['id']?>">
+                            <img src="<?= IMAGES_ITEMS_URL ?>/<?= $itemspromotion['image']?>" alt="">
+                            <i class="eye fas fa-eye"></i>
+                        </a>
+                        <div class="promotion__info">
+                            <h4 class="promotion__info__name"><?= $itemspromotion['name']?></h4>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="promotion__price">
+                                <div class="promotion__price__1"><?= number_format($itemspromotion['price'], 0, '', ',') ?>đ</div>
+                                <div class="promotion__price__2">300.000đ</div>
+                            </div>
+                            <p class="promotion__info__description">
+                                <?= $itemspromotion['description']?>
+                            </p>
 
-                        <button class="btny btny__primary">Thêm vào giỏ hàng +</button>
-                        
+                            <button onClick="addToCart(<?= isset($_SESSION['user']) ? $_SESSION['user']['id'] : 0 ?>, <?= $itemspromotion['id'] ?>)" class="btny btny__primary">Thêm vào giỏ hàng +</button>
+                            
+                        </div>
                     </div>
-                </div>
-                <div class="promotion__btn__roll-left">
+                <?php endforeach ?>
+                <div class="promotion__btn__roll-left" onclick="pushSlide(-1)">
                     <i class="lefty fas fa-chevron-left"></i>
                 </div>
-                <div class="promotion__btn__roll-right">
+                <div class="promotion__btn__roll-right" onclick="pushSlide(1)">
                     <i class="righty fas fa-chevron-right"></i>
                 </div>
                 <ul class="paging">
-                    <li class="paging__item paging__item__active"></li>
-                    <li class="paging__item"></li>
-                    <li class="paging__item"></li>
-                    <li class="paging__item"></li>
-                    <li class="paging__item"></li>
+                    <?php foreach($data['promotion'] as $index => $itemspromotion) :?>
+                        <li class="paging__item" onclick="currentSlide(<?= $index+1 ?>)"></li>
+                    <?php endforeach ?>
                 </ul>
         </section>
     </div>

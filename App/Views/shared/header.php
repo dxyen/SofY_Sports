@@ -4,11 +4,9 @@
         <a href="<?= DOCUMENT_ROOT ?>" class="header__logo"><img src="<?=IMAGES_URL?>/logomax.png" alt=""></a>
         <div class="header__menu">
             <ul class="header__menu__items noselect">
-
                 <li><a href="<?= DOCUMENT_ROOT?>" class="header__menu__item <?= $GLOBALS["currentPage"]=='Home' ? 'header__menu__item__active' : ""?>">Trang Chủ</a></li>
                 <li><a href="<?= DOCUMENT_ROOT?>/products/categories?id=1" class="header__menu__item <?= $GLOBALS['currentPage']=='Products' || $GLOBALS['currentPage']=='Items' ? 'header__menu__item__active' : ""?>">Sản Phẩm</a></li>
                 <li><a href="<?= DOCUMENT_ROOT?>/introduction/index" class="header__menu__item <?= $GLOBALS["currentPage"]=='Introduction' ? 'header__menu__item__active' : ""?>">Giới Thiệu</a></li>
-                <li><a href="<?= DOCUMENT_ROOT?>" class="header__menu__item ">Liên Hệ</a></li>
             </ul>
         </div>
         <div class="header__search noselect">

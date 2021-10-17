@@ -28,6 +28,8 @@
 
     <link rel="stylesheet" href="<?= PUBLIC_URL ?>/css/information.css">
 
+    <link rel="stylesheet" href="<?= PUBLIC_URL ?>/css/introduction.css">
+
     <?php if (strpos($view, 'login') !== false || strpos($view, 'register') !== false) : ?>
 
         <?php require_once(VIEW .  $view . ".php") ?>
@@ -74,6 +76,7 @@
             // });
         });
     </script>
+    <script type="text/javascript" src="<?= URL_JS ?>/showslide.js"></script>
     <script type="text/javascript" src="<?= URL_JS ?>/cart.js"></script>
 </body>
   <?php endif; ?>

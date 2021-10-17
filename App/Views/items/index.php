@@ -39,8 +39,10 @@
         <div class="items__comment__form">
             <span>Bình Luận</span>
             <div class="form-group">
-                <input class="form-control items__comment__form__text" name="" ></input>
-                <button type="button" class="btn__comment btn btn-success">Gửi</button>
+                <form action="<?= DOCUMENT_ROOT . "/items/comment?id=" . $items['id']?>" method="POST">
+                    <input class="form-control items__comment__form__text" name="comment" ></input>
+                    <input type="submit" class="btn__comment btn btn-success" value= "Gửi">
+                </form>
             </div>
             <div class="items__comment__user">
                 <div class="items__comment__user__name">Đỗ Xuân Yên</div>

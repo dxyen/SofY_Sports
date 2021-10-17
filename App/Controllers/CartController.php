@@ -17,7 +17,12 @@ class CartController extends Controller {
                 $data['item'] = $this->itemsmodel->getItemInCartByUser($id);
                 // var_dump($data['item']);
             }
-            $this->view('/cart/index',$data);
+            if(isset($data)){
+                $this->view('/cart/index',$data);
+            }else {
+                $data = 0;
+                $this->view('/cart/index', $data);
+            }
         }
         
         function addToCart(){

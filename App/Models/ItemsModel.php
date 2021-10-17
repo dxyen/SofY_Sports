@@ -23,7 +23,6 @@ class itemsmodel extends Database {
                     return false;
                 }
             }
-            
         }
         function totalPage($limit){
             $sql = "SELECT *FROM ITEMS";
@@ -33,7 +32,18 @@ class itemsmodel extends Database {
                 $totalPage = ceil($totalItems / $limit);
                 return $totalPage;
         }
+        function getItemsPromotion(){
+            $stmt = $this->db->prepare("SELECT * FROM ITEMS");
 
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if($result->num_rows >0){
+                return $result->fetch_all(MYSQLI_ASSOC);
+            }else{
+                return false;
+            }
+        }
         function getByItems($id){
             $id = intval($id);
             $stmt = $this->db->prepare("SELECT * FROM ITEMS WHERE id = ?");
@@ -64,5 +74,19 @@ class itemsmodel extends Database {
             }
         }
 
+        function comment($id, $iditem, $data){
+            // var_dump($id);
+            // var_dump($iditem);
+            $iditem = $iditem['id'];
+            // var_dump($data);
+            $stmt = $this->db->prepare("INSERT INTO COMMENT(id_user, id_item, comment) VALUES (?, ?, ?)");
+            $stmt->bind_param("iis", $id, $iditem, $data);
+
+            $stmt->execute();
+            if ($stmt->error) {
+                $error = $stmt->error;
+            }
+            return true;
+        }
     }
 ?>

@@ -11,9 +11,7 @@
             if(isset($_GET['id'])){
                 $idItems = $_GET['id'];
             }
-
-            $items = $this->itemsmodel->getByItems($idItems);
-            $data['items'] = $items;
+            $data['items'] = $this->itemsmodel->getByItems($idItems);
             // echo '<pre>';
             // print_r($data);
             // echo '</pre>';
@@ -30,5 +28,17 @@
             // echo '</pre>';
             $this->view('/items/search', $data);
         }
+        // function comment(){
+        //     $id = $_SESSION['user']['id'];
+        //     // var_dump($idItems);
+        //     if (isset($_POST)) {
+        //         $data =$_POST['comment'];
+        //         // var_dump($_GET);
+        //         $result = $this->itemsmodel->comment($id, $_GET, $data);
+        //         if ($result) {
+        //             header("Location: " . DOCUMENT_ROOT . "/items/detail?".$_GET['id']."");
+        //         }
+        //     }
+        // }
     }
 ?>
