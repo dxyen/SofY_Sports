@@ -27,9 +27,9 @@
             <ul class="footer__list">
                 <h5>Kết nối</h5>
                 <div class="footer__list__social">
-                    <a href="#/"><i class="fab fa-facebook-square"></i></a>
-                    <a href="#/"><i class="fab fa-instagram"></i></a>
-                    <a href="#/"><i class="fab fa-github-square"></i></a>
+                    <a href="https://www.facebook.com/doyen333/"><i class="fab fa-facebook-square"></i></a>
+                    <a href="https://www.instagram.com/doyen3333/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/DoYen2k"><i class="fab fa-github-square"></i></a>
                 </div>
             </ul>
         </div>

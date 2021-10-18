@@ -109,3 +109,8 @@
     width: 100%;
     grid-column: 1 / span 2;
 }
+
+.price__total {
+    color: var(--color-title_black);
+    font-weight: 600;
+}

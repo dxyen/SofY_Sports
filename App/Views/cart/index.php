@@ -12,11 +12,11 @@
                 <?php else : ?>
                     <?php foreach($data['item'] as $index => $item) :?>
                         <li class="cart__detail__itemsmini">
-                            <a href="#/">
+                            <a href="<?= DOCUMENT_ROOT?>/items/detail?id=<?=$item['id']?>">
                                 <img class="cart__detail__itemsmini__img" src="<?= IMAGES_ITEMS_URL ?>/<?= $item['image']?>" alt="ảnh sản phẩm">
                             </a>
                             <div class="cart__detail__itemsmini__info">
-                                <a href="#/">
+                                <a href="<?= DOCUMENT_ROOT?>/items/detail?id=<?=$item['id']?>">
                                     <h4 class="cart__detail__itemsmini__info__name"><?= $item['name']?></h4>
                                 </a>
                                 <div class="rating">
@@ -26,9 +26,10 @@
                                     <i class="fas fa-star"></i>
                                     <i class="far fa-star"></i>
                                 </div>
+                                <input type="number" hidden id="priceOfItem<?= $index ?>" value="<?= $item['price'] ?>">
                                 <div class="cart__detail__itemsmini__info__price"><?= number_format($item['price'], 0, '', ',') ?>đ</div>
                                 <label class="cart__detail__itemsmini__info__amount" for="">Số lượng: 
-                                    <input  id="" type="number" value="<?= $item['amount']?>" min="1" max="99" name="">
+                                    <input onchange="onNumOfProductChange()" id="numOfItem<?= $index ?>" type="number" value="<?= $item['amount']?>" min="1" max="99" name="">
                                 </label>
                                 <a href="<?=DOCUMENT_ROOT?>/cart/delete?userId=<?= $_SESSION['user']['id']?>&itemId=<?= $item['id']?>"><button type="button" class=" cart__detail__itemsmini__btn btn btn-danger">Xóa</button></a>
                             </div>
@@ -53,7 +54,7 @@
                             <input type="radio" name="gerder" value="<?= $data['user']['address2'] ?>" checked>  <?= $data['user']['address2'] ?>
                         </div>
                         <p><b>Tổng tiền:</b></p>
-                        <p><b>100.000đ</b></p>
+                        <p class="price__total" id="total">0đ</p>
                         <button class="cart__detail__user__info__btn btny btny__primary">Đặt hàng </button>
                     </div>
                 <?php endif; ?>
@@ -67,4 +68,19 @@
 <!-- space -->
 <div class="container"><div class="space"></div></div>
 <!-- end space -->
-
+<script>
+  function onNumOfProductChange() {
+    var total = document.getElementById("total");
+    var totalNumber = 0;
+    if (total != undefined) {
+      for (var i = 0; i < <?= count($data['item']) ?>; i++) {
+        var numOfItem = document.getElementById("numOfItem" + i).value;
+        var priceOfItem = document.getElementById("priceOfItem" + i).value;
+        totalNumber += parseInt(numOfItem) * parseInt(priceOfItem);
+      }
+      total.innerText = new Intl.NumberFormat().format(totalNumber) + "đ";
+    }
+    return;
+  }
+  onNumOfProductChange();
+</script>

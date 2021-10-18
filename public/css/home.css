@@ -396,7 +396,9 @@
         width: 150px;
         height: 180px;
     }
-    .all__item > .eye {
-        font-size: 2.2rem;
+    .all__item__link > .eye {
+        font-size: 2.5rem;
+        margin-top: 75px;
+        margin-left: -91px;
     }
 }
