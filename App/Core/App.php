@@ -11,7 +11,7 @@
         $arr = $this->UrlProcess();
         $GLOBALS['currentRoute'] = $arr[0];
 
-        if(strtolower($arr[0] == "admin")){
+        if(strtolower($arr[0]) == "admin"){
 
           $GLOBALS['currentRoute'] = $arr[1];
 

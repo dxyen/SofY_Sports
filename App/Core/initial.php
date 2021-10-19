@@ -36,4 +36,8 @@
 
     defined('USER_AVATAR_URL') ?:  define('USER_AVATAR_URL', PUBLIC_URL . '/uploads/avatar/');
 
+    // sidebar constants
+    $adminSidebar = require(CONFIGS . DS . "admin_sidebar.php");
+
+    defined('ADMIN_SIDEBAR') ?:  define('ADMIN_SIDEBAR', $adminSidebar);
 ?>
