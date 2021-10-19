@@ -14,7 +14,10 @@
         if(strtolower($arr[0]) == "admin"){
 
           $GLOBALS['currentRoute'] = $arr[1];
-
+          if(!isset($_SESSION['admin']) && \strtolower($arr[1]) != "login"){
+            $arr[1] = "login";
+            $arr[2] = "index";
+          }
           unset($arr[0]);
           // Xử lí controller
           if(file_exists(CONTROLLER . DS . "admin" . DS . ucfirst($arr[1]) . "Controller.php")){

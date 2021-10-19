@@ -20,7 +20,12 @@
     <link rel="stylesheet" href="<?= PUBLIC_URL. "/admin"?>/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="<?= PUBLIC_URL. "/admin"?>/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="<?= PUBLIC_URL. "/admin"?>/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    
+    <?php if (strpos($view, 'login') !== false ) : ?>
 
+        <?php require_once(VIEW .  $view . ".php") ?>
+
+    <?php else : ?>
 
 </head>
 <body>
@@ -35,6 +40,6 @@
     <?php require_once(VIEW . "/admin/shared/footer.php") ?>
     
 </body>
-
+    <?php endif; ?>
 
 </html>

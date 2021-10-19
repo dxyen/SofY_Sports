@@ -1,12 +1,6 @@
 <?php
 
     return [
-    // 'home' => [
-    //     'title' => 'Sản phẩm',
-    //     'name' => 'home',
-    //     'icon' => 'fas fa-list-ul',
-    //     'link' => DOCUMENT_ROOT . '/admin/home',
-    // ],
     'items' => [
         'title' => 'Quản lý sản phẩm',
         'name' => 'items',
@@ -24,6 +18,18 @@
         'name' => 'orders',
         'icon' => 'fas fa-file-invoice-dollar',
         'link' => DOCUMENT_ROOT . '/admin/orders',
+    ],
+    'staff' => [
+        'title' => 'Nhân viên',
+        'name' => 'staff',
+        'icon' => 'fas fa-user-edit',
+        'link' => DOCUMENT_ROOT . '/admin/staff',
+    ],
+    'customer' => [
+        'title' => 'Khách hàng',
+        'name' => 'customer',
+        'icon' => 'fas fa-users',
+        'link' => DOCUMENT_ROOT . '/admin/customer',
     ],
     ];
 ?>

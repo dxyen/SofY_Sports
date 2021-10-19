@@ -11,6 +11,9 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
       </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="<?= DOCUMENT_ROOT ?>/admin/login/signout" class="nav-link">Đăng Xuất</a>
+      </li>
     </ul>
   </nav>
   <!-- /.navbar -->
