@@ -3,12 +3,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Sảm Phẩm</h1>
+            <h1>Loại Sảm Phẩm</h1>
           </div>    
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="<?= DOCUMENT_ROOT. "/admin/home"?>">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Sản phẩm</li>
+              <li class="breadcrumb-item active">Loại sản phẩm</li>
             </ol>
           </div>
         </div>
@@ -24,8 +24,8 @@
               <!-- /.card-header -->
                 <div class="card-header">
                   <div class="d-flex justify-content-between align-items-center">
-                    <h5>Danh sách sản phẩm</h5>
-                    <a class="btn btn-primary" href="<?=DOCUMENT_ROOT?>/admin/items/create">Thêm sản phẩm</a>
+                    <h5>Danh sách loại sản phẩm</h5>
+                    <a class="btn btn-primary" href="<?=DOCUMENT_ROOT?>/admin/categories/create">Thêm loại</a>
                   </div>
                 </div>
 
@@ -34,26 +34,22 @@
                   <thead>
                   <tr>
                     <th>#</th>
-                    <th>Tên sản phẩm</th>
-                    <th>Giá sản phẩm</th>
-                    <th>Chi tiết sản phẩm</th>
-                    <th>Loại sản phẩm</th>
-                    <th>Hình ảnh sản phẩm</th>
+                    <th>Tên loại</th>
+                    <th>Chi tiết</th>
+                    <th>Hình ảnh </th>
                     <th>Actions</th>
                   </tr>
                   </thead>
                   <tbody>
-                    <?php foreach ($data['items'] as $index => $items) : ?>
+                    <?php foreach ($data['categories'] as $index => $categories) : ?>
                         <tr>
                             <td><?=$index +1 ?></td>
-                            <td><?=$items['name']?></td>
-                            <td><?=$items['price']?></td>
-                            <td><?=$items['description']?></td>
-                            <td><?=$items['id_sport_type']?></td>
-                            <td><img style="max-width: 100px;" class="rounded img-thumbnail" src="<?= IMAGES_ITEMS_URL ?>/<?= $items['image']?>" alt="image items"/></td>
+                            <td><?=$categories['name']?></td>
+                            <td><?=$categories['description']?></td>
+                            <td><img style="max-width: 100px;" class="rounded img-thumbnail" src="<?=IMAGES_URL?>/<?= $categories['image']?>" alt="image items"/></td>
                             <td>
-                            <div class=" btn-group" role="group" aria-label="Basic example">
-                                <a href="<?=DOCUMENT_ROOT?>/admin/items/edit/<?=$items['id']?>"><button type="button" class="btn btn-info"><i class="fas fa-tools"></i> Sửa</button></a>
+                            <div class="d-block justify-content-center btn-group" role="group" aria-label="Basic example">
+                                <a href="<?=DOCUMENT_ROOT?>/admin/items/edit/<?=$categories['id']?>"><button type="button" class="ml-3 btn btn-info"><i class="fas fa-tools"></i> Sửa</button></a>
                                 <button type="button" class="ml-1 btn btn-danger identifyingClass" data-toggle="modal" data-target="#modal-delete" data-id="my_id_value"><i class="far fa-trash-alt"></i> Xóa</button>
                             </div>
                             </td>

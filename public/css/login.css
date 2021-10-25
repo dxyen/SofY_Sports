@@ -30,6 +30,7 @@
     color: var(--color-title);
     margin-bottom: 8px;
     margin-left: 8px;
+    width: 310px;
 }
 .form__input::placeholder {
     color: #f5f5f5;

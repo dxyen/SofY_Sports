@@ -43,11 +43,11 @@
             <?php endif; ?>
             <div class="form__group">
                 <i class="icon__login fas fa-user"></i>
-                <input type="text" name="name" class="form__input" placeholder="Tên đăng nhập" required>
+                <input type="text" name="name" class="form__input" placeholder="Tên đăng nhập(Test: admin_sofy)" required>
             </div>
             <div class="form__group">
                 <i class="icon__login fas fa-unlock-alt"></i>
-                <input type="password" name="password" class="form__input" placeholder="Mật khẩu" required>
+                <input type="password" name="password" class="form__input" placeholder="Mật khẩu(Test: 123456)" required>
                 <div class="form__eye" id="eye">
                     <i class="far fa-eye-slash"></i>
                 </div>

@@ -88,5 +88,16 @@ class itemsmodel extends Database {
             }
             return true;
         }
+
+        //admin
+        function allItem(){
+            $sql = 'SELECT * FROM ITEMS';
+            $result = $this->db->query($sql);
+            if($result->num_rows >0){
+                return $result->fetch_all(MYSQLI_ASSOC);
+            }else{
+                return false;
+            }
+        }
     }
 ?>

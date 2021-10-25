@@ -1,6 +1,6 @@
 <div class="wrapper spade__black"></div>
 <div class="container user ">
-    <h3 class="title">Thông tin tài khoảng</h3>
+    <h3 class="title">Thông tin tài khoản</h3>
     <div class="profile__info">
             <form action="<?= DOCUMENT_ROOT . "/profile/update/" . $data['user']['id'] ?>" method="POST" class="profile__info__form" enctype="multipart/form-data">
                 <label for="name">Họ tên: </label>
