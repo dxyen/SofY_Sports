@@ -24,7 +24,7 @@
       </div>
       <!-- /.card-header -->
       <!-- form start -->
-      <form action="<?= DOCUMENT_ROOT ?>/admin/cakes/store" method="POST" enctype="multipart/form-data">
+      <form action="<?= DOCUMENT_ROOT ?>/admin/items/store" method="POST" enctype="multipart/form-data">
         <div class="card-body">
           <div class="row">
           <div class="form-group col">

@@ -19,12 +19,6 @@
         'icon' => 'fas fa-file-invoice-dollar',
         'link' => DOCUMENT_ROOT . '/admin/orders',
     ],
-    'staff' => [
-        'title' => 'Nhân viên',
-        'name' => 'staff',
-        'icon' => 'fas fa-user-edit',
-        'link' => DOCUMENT_ROOT . '/admin/staff',
-    ],
     'customer' => [
         'title' => 'Khách hàng',
         'name' => 'customer',

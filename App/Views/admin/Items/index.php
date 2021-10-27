@@ -39,7 +39,7 @@
                     <th>Chi tiết sản phẩm</th>
                     <th>Loại sản phẩm</th>
                     <th>Hình ảnh sản phẩm</th>
-                    <th>Actions</th>
+                    <th>Tùy chỉnh</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -52,10 +52,28 @@
                             <td><?=$items['id_sport_type']?></td>
                             <td><img style="max-width: 100px;" class="rounded img-thumbnail" src="<?= IMAGES_ITEMS_URL ?>/<?= $items['image']?>" alt="image items"/></td>
                             <td>
-                            <div class=" btn-group" role="group" aria-label="Basic example">
-                                <a href="<?=DOCUMENT_ROOT?>/admin/items/edit/<?=$items['id']?>"><button type="button" class="btn btn-info"><i class="fas fa-tools"></i> Sửa</button></a>
-                                <button type="button" class="ml-1 btn btn-danger identifyingClass" data-toggle="modal" data-target="#modal-delete" data-id="my_id_value"><i class="far fa-trash-alt"></i> Xóa</button>
-                            </div>
+                              <div class=" btn-group" role="group" aria-label="Basic example">
+                                  <a href="<?=DOCUMENT_ROOT?>/admin/items/edit/<?=$items['id']?>"><button type="button" class="btn btn-info"><i class="fas fa-tools"></i> Sửa</button></a>
+                                  <button type="button" class="ml-1 btn btn-danger identifyingClass" data-toggle="modal" data-target="#modal-delete<?=$index?>" data-id="my_id_value"><i class="far fa-trash-alt"></i> Xóa</button>
+                              </div>
+                              <!-- modal -->
+                              <div class="modal fade" id="modal-delete<?=$index?>" aria-labelledby="my_modalLabel">
+                                  <div class="modal-dialog">
+                                      <div class="modal-content">
+                                          <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLongTitle<?= $index ?>">Xác nhận xóa</h5>
+                                          </div>
+                                          <div class="modal-body">
+                                              <p>Xóa <?= $items['name']?></p>
+                                          </div>
+                                          <div class="modal-footer">
+                                              <button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
+                                              <a href="<?=DOCUMENT_ROOT?>/admin/items/delete/<?=$items['id']?>"><button type="button" class="btn btn-success">Xóa</button></a>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <!-- end modal -->
                             </td>
                         </tr>
                     <?php endforeach ?>
@@ -72,33 +90,3 @@
       </div>
       <!-- /.container-fluid -->
     </section>
-
- <!-- modal -->
- <div class="modal fade" id="modal-delete" aria-labelledby="my_modalLabel">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4>Delete Cake</h4>
-                <button type="button" class="close" data-dismiss="modal">
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>Delete <?= $cake['name']?></p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                <a href="<?=DOCUMENT_ROOT?>/admin/cakes/delete/<?=$cake['id']?>"><button type="button" class="btn btn-success">OK bạn ê</button></a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- end modal -->
-
-<script type="text/javascript">
-    $(function () {
-        $(".identifyingClass").click(function () {
-            var my_id_value = $(this).data('id');
-            $(".modal-body #hiddenValue").val(my_id_value);
-        })
-    });
-</script>

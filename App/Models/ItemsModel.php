@@ -59,6 +59,20 @@ class itemsmodel extends Database {
             }
         }
 
+        function getById($id){
+            $stmt = $this->db->prepare("SELECT * FROM ITEMS WHERE id = ?");
+            $stmt->bind_param("i", $id);
+
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if($result->num_rows >0){
+                return $result->fetch_assoc();
+            }else{
+                return false;
+            }
+        }
+
         function getByKeyword($keyword){
             $keyword = '%' . $keyword . '%';
             $stmt = $this->db->prepare("SELECT * FROM ITEMS WHERE name like ?");
@@ -97,6 +111,55 @@ class itemsmodel extends Database {
                 return $result->fetch_all(MYSQLI_ASSOC);
             }else{
                 return false;
+            }
+        }
+        function store($data){
+            $name = $data['name'];
+            $categoryId = $data['categoryId'];
+            $price = $data['price'];
+            $description = $data['description'];
+            $imageName = $data['image'];
+
+            $stmt = $this->db->prepare("INSERT INTO ITEMS(name, id_sport_type, price, description, image) VALUES (?, ?, ?, ?, ?)");
+            $stmt->bind_param("siiss", $name, $categoryId, $price, $description, $imageName);
+
+            $stmt->execute();
+            $result = $stmt->affected_rows;
+
+            if ($result < 1) {
+            return false;
+            } else {
+            return true;
+            }
+        }
+        function delete($id){
+            $stmt = $this->db->prepare("DELETE FROM ITEMS WHERE id = $id");
+            $stmt->bind_param("i", $id);
+            $isSuccess = $stmt->execute();
+            if(!$isSuccess){
+                return $stmt->error;
+            } else if($stmt->affected_rows <= 0){
+                return "không thể xóa";
+            }
+        }
+        function update($data){
+            $name = $data['name'];
+            $categoryId = $data['categoryId'];
+            $price = $data['price'];
+            $description = $data['description'];
+            $imageName = $data['image'];
+            $id = $data['id'];
+
+            $stmt = $this->db->prepare("UPDATE ITEMS set name = ?, id_sport_type = ?, price = ?, description = ?, image = ? WHERE id = ?");
+            $stmt->bind_param("siissi", $name, $categoryId, $price, $description, $imageName, $id);
+        
+            $stmt->execute();
+            $result = $stmt->affected_rows;
+
+            if ($result < 1) {
+            return false;
+            } else {
+            return true;
             }
         }
     }
