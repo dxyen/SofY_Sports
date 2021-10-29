@@ -22,5 +22,17 @@
                 return false;
             }
         }
+        function getAllNumber(){
+            $sql = "SELECT COUNT(*) FROM SPORT_TYPE";
+
+            $result = $this->db->query($sql);
+
+            if ($result->num_rows > 0) {
+            return $result->fetch_row()[0];
+            } else {
+            return false;
+            }
+            return true;
+        }
     }
 ?>

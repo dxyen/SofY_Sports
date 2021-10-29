@@ -39,23 +39,26 @@
         <div class="items__comment__form">
             <span>Bình Luận</span>
             <div class="form-group">
-                <form action="<?= DOCUMENT_ROOT . "/items/comment?id=" . $items['id']?>" method="POST">
+                <form action="<?= DOCUMENT_ROOT . "/items/comment"?>" method="POST">
                     <input class="form-control items__comment__form__text" name="comment" ></input>
+                    <input type="hidden" name="idItem" value="<?=$items['id']?>">
                     <input type="submit" class="btn__comment btn btn-success" value= "Gửi">
                 </form>
             </div>
-            <div class="items__comment__user">
-                <div class="items__comment__user__name">Đỗ Xuân Yên</div>
-                <div class="items__comment__user__name">Sản phẩm rất tốt nên mua</div>
-            </div>
-            <div class="items__comment__user">
-                <div class="items__comment__user__name">Đỗ Xuân Yên</div>
-                <div class="items__comment__user__name">Sản phẩm rất tốt nên mua</div>
-            </div>
-            <div class="items__comment__user">
-                <div class="items__comment__user__name">Đỗ Xuân Yên</div>
-                <div class="items__comment__user__name">Sản phẩm rất tốt nên mua</div>
-            </div>
+            <?php if(!isset($_SESSION['user'])) : ?>
+                <p>Vui lòng đăng nhập để có thể bình luận</p>
+            <?php endif; ?>
+
+            <?php if($data['comment']=="") : ?>
+                <p>Chưa có bình luận</p>
+            <?php else : ?>
+                <?php foreach($data['comment'] as $index =>$comment) : ?>
+                    <div class="items__comment__user">
+                        <div class="items__comment__user__name"><?= $comment['fullname']?></div>
+                        <div class="items__comment__user__name"><?= $comment['comment']?></div>
+                    </div>
+                <?php endforeach ?>
+            <?php endif; ?>
         </div>
     </div>
     <!-- space -->

@@ -55,25 +55,26 @@
                               <div class=" btn-group" role="group" aria-label="Basic example">
                                   <a href="<?=DOCUMENT_ROOT?>/admin/items/edit/<?=$items['id']?>"><button type="button" class="btn btn-info"><i class="fas fa-tools"></i> Sửa</button></a>
                                   <button type="button" class="ml-1 btn btn-danger identifyingClass" data-toggle="modal" data-target="#modal-delete<?=$index?>" data-id="my_id_value"><i class="far fa-trash-alt"></i> Xóa</button>
-                              </div>
-                              <!-- modal -->
-                              <div class="modal fade" id="modal-delete<?=$index?>" aria-labelledby="my_modalLabel">
-                                  <div class="modal-dialog">
-                                      <div class="modal-content">
-                                          <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLongTitle<?= $index ?>">Xác nhận xóa</h5>
-                                          </div>
-                                          <div class="modal-body">
-                                              <p>Xóa <?= $items['name']?></p>
-                                          </div>
-                                          <div class="modal-footer">
-                                              <button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
-                                              <a href="<?=DOCUMENT_ROOT?>/admin/items/delete/<?=$items['id']?>"><button type="button" class="btn btn-success">Xóa</button></a>
+                                  <!-- modal -->
+                                  <div class="modal fade" id="modal-delete<?=$index?>" aria-labelledby="my_modalLabel">
+                                      <div class="modal-dialog">
+                                          <div class="modal-content">
+                                              <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLongTitle<?= $index ?>">Xác nhận xóa</h5>
+                                              </div>
+                                              <div class="modal-body">
+                                                  <p>Xóa <?= $items['name']?></p>
+                                              </div>
+                                              <div class="modal-footer">
+                                                  <button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
+                                                  <a href="<?=DOCUMENT_ROOT?>/admin/items/delete/<?=$items['id']?>"><button type="button" class="btn btn-success">Xóa</button></a>
+                                              </div>
                                           </div>
                                       </div>
                                   </div>
-                              </div>
-                              <!-- end modal -->
+                                  <!-- end modal -->
+                                </div>
+                              
                             </td>
                         </tr>
                     <?php endforeach ?>

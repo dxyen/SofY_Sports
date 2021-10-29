@@ -88,19 +88,32 @@ class itemsmodel extends Database {
             }
         }
 
-        function comment($id, $iditem, $data){
-            // var_dump($id);
-            // var_dump($iditem);
-            $iditem = $iditem['id'];
+        function comment($id, $data){
             // var_dump($data);
+            $idItem = $data['idItem'];
+            $comment = $data['comment'];
             $stmt = $this->db->prepare("INSERT INTO COMMENT(id_user, id_item, comment) VALUES (?, ?, ?)");
-            $stmt->bind_param("iis", $id, $iditem, $data);
+            $stmt->bind_param("iis", $id, $idItem, $comment);
 
             $stmt->execute();
             if ($stmt->error) {
                 $error = $stmt->error;
             }
             return true;
+        }
+        function getComment($idItems){
+            $idItems = intval($idItems);
+            $stmt = $this->db->prepare("SELECT COMMENT.comment, USERS.fullname FROM COMMENT JOIN USERS ON COMMENT.id_user = USERS.id WHERE id_item = ?");
+            $stmt->bind_param("i", $idItems);
+
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if($result->num_rows >0){
+                return $result->fetch_all(MYSQLI_ASSOC);
+            }else{
+                return false;
+            }
         }
 
         //admin
@@ -161,6 +174,18 @@ class itemsmodel extends Database {
             } else {
             return true;
             }
+        }
+        function getAllNumber(){
+            $sql = "SELECT COUNT(*) FROM ITEMS";
+
+            $result = $this->db->query($sql);
+
+            if ($result->num_rows > 0) {
+            return $result->fetch_row()[0];
+            } else {
+            return false;
+            }
+            return true;
         }
     }
 ?>

@@ -31,8 +31,26 @@
                                 <label class="cart__detail__itemsmini__info__amount" for="">Số lượng: 
                                     <input onchange="onNumOfProductChange()" id="numOfItem<?= $index ?>" type="number" value="<?= $item['amount']?>" min="1" max="99" name="">
                                 </label>
-                                <a href="<?=DOCUMENT_ROOT?>/cart/delete?userId=<?= $_SESSION['user']['id']?>&itemId=<?= $item['id']?>"><button type="button" class=" cart__detail__itemsmini__btn btn btn-danger">Xóa</button></a>
+                                <button type="button" class=" cart__detail__itemsmini__btn btn btn-danger identifyingClass" data-toggle="modal" data-target="#modal-delete<?=$index?>">Xóa</button>
                             </div>
+                            <!-- modal -->
+                            <div class="modal fade" id="modal-delete<?=$index?>" aria-labelledby="my_modalLabel">
+                                  <div class="modal-dialog">
+                                      <div class="modal-content">
+                                          <div class="modal-header">
+                                            <h2 class="modal-title" id="exampleModalLongTitle<?= $index ?>">Xác nhận xóa</h2>
+                                          </div>
+                                          <div class="modal-body">
+                                              <p>Xóa <?= $item['name']?></p>
+                                          </div>
+                                          <div class="modal-footer">
+                                              <button type="button" class="btn  btn-success" data-dismiss="modal">Hủy</button>
+                                              <a href="<?=DOCUMENT_ROOT?>/cart/delete?userId=<?= $_SESSION['user']['id']?>&itemId=<?= $item['id']?>"><button type="button" class="btn btn-danger">Xóa</button></a>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <!-- end modal -->
                         </li>
                     <?php endforeach ?>
                 <?php endif; ?>
