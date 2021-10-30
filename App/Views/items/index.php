@@ -46,7 +46,7 @@
                 </form>
             </div>
             <?php if(!isset($_SESSION['user'])) : ?>
-                <p>Vui lòng đăng nhập để có thể bình luận</p>
+                <p>Vui lòng đăng nhập để bình luận!</p>
             <?php endif; ?>
 
             <?php if($data['comment']=="") : ?>

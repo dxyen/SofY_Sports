@@ -53,6 +53,25 @@ class CartModel extends Database {
             'error' => $error];
         }
 
+        function changeAmount($data){
+            $userId = $data['idUser'];
+            $itemId = $data['idItem'];
+            $amount =  $data['amount'];
+            $isSuccess = true;
+
+            $stmt = $this->db->prepare("UPDATE CART SET amount = ? WHERE id_user = ? AND id_item = ?");
+            $stmt->bind_param("iii", $amount, $userId, $itemId);
+            $stmt->execute();
+            if ($stmt->error) {
+                $isSuccess = false;
+            }
+
+            $numInCart = $this->amountInCart($userId, $itemId);
+            return [
+                'isSuccess' => $isSuccess,
+                'numInCart' => $numInCart];
+        }
+
         function checkItemInCart($userId, $itemId){
             $stmt = $this->db->prepare("SELECT * FROM CART WHERE id_user = ? AND id_item = ?");
             $stmt->bind_param("ii", $userId, $itemId);
@@ -72,6 +91,13 @@ class CartModel extends Database {
             $result = $stmt->get_result();
             return $result->fetch_row()[0];
         }
+        function amountInCartItem($userId, $itemId){
+            $stmt = $this->db->prepare("SELECT COUNT(*) FROM CART WHERE id_user = ? and id_item = ?");
+            $stmt->bind_param("ii", $userId, $itemId);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_row()[0];
+        }
 
         function deleteInCart($data){
             $userId = $data['userId'];
@@ -86,5 +112,43 @@ class CartModel extends Database {
             }
             return false;
         }
+
+        function order($data){
+        if (isset($data)) {
+            date_default_timezone_set('Asia/Ho_Chi_Minh');
+            $orderdate = date("d-m-Y G:i:s");
+            $userID = $data['name'];
+            $address = $data['address'];
+
+            $stmt = $this->db->prepare("CALL itemsBookByUser(?, ?, ?)");
+            $stmt->bind_param("iss", $userID, $address, $orderdate);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if ($result->num_rows > 0) {
+                return $result->fetch_assoc();
+            } else {
+                return false;
+            }
+        }
+        return false;
+    }
+
+    function orderDetail($idOrder, $idItem, $amount){
+        $idOrder = $idOrder['id_max'];
+        // var_dump($idOrder, $idItem, $amount);
+        $stmt = $this->db->prepare("insert into order_details(id_order, id_item, amount) value(?, ?, ?)");
+       
+        $stmt->bind_param("iii", $idOrder, $idItem, $amount);
+        $stmt->execute();
+        // var_dump($stmt);
+        $result = $stmt->affected_rows;
+
+        if ($result < 1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
     }
 ?>
