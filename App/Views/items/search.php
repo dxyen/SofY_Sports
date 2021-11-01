@@ -6,8 +6,8 @@
         <?php if (!empty($data['items'])) : ?>
             <div class="all__items">
                 <?php foreach($data['items'] as $index => $items) :?>
-                    <a class="all__item__link" href="<?= DOCUMENT_ROOT?>/items/detail?id=<?=$items['id']?>">
-                        <div class="all__item">
+                    <div class="all__item">
+                        <a class="all__item__link" href="<?= DOCUMENT_ROOT?>/items/detail?id=<?=$items['id']?>">
                             <img src="<?= IMAGES_ITEMS_URL ?>/<?= $items['image']?>" alt="ảnh sản phẩm">
                             <i class="eye fas fa-eye"></i>
                             <div class="all__item__name"><?= $items['name']?></div>
@@ -22,9 +22,9 @@
                                 <div class="all__item__price__1"><?= number_format($items['price'], 0, '', ',') ?>đ</div>
                                 <div class="all__item__price__2">300.000đ</div>
                             </div>
-                            <button class="btny btny__primary">Thêm vào giỏ hàng +</button>
-                        </div>
-                    </a>
+                        </a>
+                        <button onClick="addToCart(<?= isset($_SESSION['user']) ? $_SESSION['user']['id'] : 0 ?>, <?= $items['id'] ?>)" class="btny btny__primary">Thêm vào giỏ hàng +</button>
+                    </div>
                 <?php endforeach ?>
             </div>
         <?php else : ?>

@@ -31,26 +31,27 @@
                                 <label class="cart__detail__itemsmini__info__amount" for="">Số lượng: 
                                     <input onchange="onNumOfProductChange(), update(<?= $_SESSION['user']['id'] ?>, <?= $item['id'] ?>, numOfItem<?= $index ?>)" id="numOfItem<?= $index ?>" type="number" value="<?= $item['amount']?>" min="1" max="99" name="">
                                 </label>
-                                <button type="button" class=" cart__detail__itemsmini__btn btn btn-danger identifyingClass" data-toggle="modal" data-target="#modal-delete<?=$index?>">Xóa</button>
+                                <button type="button" class=" cart__detail__itemsmini__btn btn btn-danger identifyingClass" data-bs-toggle="modal" data-bs-target="#exampleModal<?=$index?>">Xóa</button>
                             </div>
-                            <!-- modal -->
-                            <div class="modal fade" id="modal-delete<?=$index?>" aria-labelledby="my_modalLabel">
-                                  <div class="modal-dialog">
-                                      <div class="modal-content">
-                                          <div class="modal-header">
-                                            <h2 class="modal-title" id="exampleModalLongTitle<?= $index ?>">Xác nhận xóa</h2>
-                                          </div>
-                                          <div class="modal-body">
-                                              <p>Xóa <?= $item['name']?></p>
-                                          </div>
-                                          <div class="modal-footer">
-                                              <button type="button" class="btn  btn-success" data-dismiss="modal">Hủy</button>
-                                              <a href="<?=DOCUMENT_ROOT?>/cart/delete?userId=<?= $_SESSION['user']['id']?>&itemId=<?= $item['id']?>"><button type="button" class="btn btn-danger">Xóa</button></a>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <!-- end modal -->
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal<?=$index?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h2 class="modal-title" id="exampleModalLabel<?= $index ?>">Xác nhận xóa</h2>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Xóa <?= $item['name']?></p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <a href="<?=DOCUMENT_ROOT?>/cart/delete?userId=<?= $_SESSION['user']['id']?>&itemId=<?= $item['id']?>"><button type="button" class="btn btn-danger">Xóa</button></a>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end modal -->
                         </li>
                     <?php endforeach ?>
                 <?php endif; ?>

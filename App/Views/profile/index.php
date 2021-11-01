@@ -23,83 +23,42 @@
     <div class="container"><div class="space"></div></div>
     <!-- end space -->
     <h3 class="title">Lịch sử mua hàng</h3>
-    <div class="user__history">
-        <div class="user__history__order">
-            <h6>Đơn hàng #<span>03</span></h6>
-        </div>
-        <ul class="user__history__items">
-            <li class="user__history__itemsmini">
-                <a href="#/">
-                    <img class="user__history__itemsmini__img" src="img/dmbongba.jpg" alt="ảnh sản phẩm">
-                </a>
-                <div class="user__history__itemsmini__info">
-                    <a href="#/">
-                        <h4 class="user__history__itemsmini__info__name">Áo đấu Barcalona</h4>
-                    </a>
-                    <div class="user__history__itemsmini__info__price">40.000đ</div>
-                    <label class="user__history__itemsmini__info__amount" for="">Số lượng: 1</label>
+    <?php if(empty($data['order'])) : ?>
+        <p>Chưa có đặt mà đòi coi</p>
+    <?php else : ?>
+        <?php foreach($data['order'] as $index => $order) :?>
+            <div class="user__history">
+                <div class="user__history__order">
+                    <h6>Đơn hàng #<span><?= $order['id']?></span></h6>
                 </div>
-            </li>
-            <li class="user__history__itemsmini">
-                <a href="#/">
-                    <img class="user__history__itemsmini__img" src="img/dmbongba.jpg" alt="ảnh sản phẩm">
-                </a>
-                <div class="user__history__itemsmini__info">
-                    <a href="#/">
-                        <h4 class="user__history__itemsmini__info__name">Áo đấu Barcalona</h4>
-                    </a>
-                    <div class="user__history__itemsmini__info__price">40.000đ</div>
-                    <label class="user__history__itemsmini__info__amount" for="">Số lượng: 1</label>
+                <?php foreach($data[$order['id']]['orderDetails'] as $index => $orderDetail) :?>
+                    <ul class="user__history__items">
+                        <li class="user__history__itemsmini">
+                            <a href="#/">
+                                <img class="user__history__itemsmini__img" src="<?= IMAGES_ITEMS_URL ?>/<?= $orderDetail['image']?>" alt="ảnh sản phẩm">
+                            </a>
+                            <div class="user__history__itemsmini__info">
+                                <a href="#/">
+                                    <h4 class="user__history__itemsmini__info__name"><?= $orderDetail['item']?></h4>
+                                </a>
+                                <div class="user__history__itemsmini__info__price"><?= number_format($orderDetail['price'], 0, '', ',') ?>đ</div>
+                                <label class="user__history__itemsmini__info__amount" for="">Số lượng: <?= $orderDetail['amount']?></label>
+                            </div>
+                        </li>
+                    </ul>
+                <?php endforeach ?>
+                <div class="user__history__status">
+                    <b>Trạng thái: <?= $order['name']?></b>
+                    <div class="user__history__status__price">
+                        <b>Tổng tiền: </b><span><?= number_format($data[$order['id']]['total'], 0, '', ',') ?>đ</span>
+                    </div>
                 </div>
-            </li>
-        </ul>
-        <div class="user__history__status">
-            <b>Trạng thái: Đang xử lí</b>
-            <div class="user__history__status__price">
-                <b>Tổng tiền: </b><span>100.000đ</span>
             </div>
-        </div>
-    </div>
+        <?php endforeach ?>
+    <?php endif; ?>
     <!-- space -->
     <div class="container"><div class="space"></div></div>
     <!-- end space -->
-    <div class="user__history">
-        <div class="user__history__order">
-            <h6>Đơn hàng #<span>03</span></h6>
-        </div>
-        <ul class="user__history__items">
-            <li class="user__history__itemsmini">
-                <a href="#/">
-                    <img class="user__history__itemsmini__img" src="img/dmbongba.jpg" alt="ảnh sản phẩm">
-                </a>
-                <div class="user__history__itemsmini__info">
-                    <a href="#/">
-                        <h4 class="user__history__itemsmini__info__name">Áo đấu Barcalona</h4>
-                    </a>
-                    <div class="user__history__itemsmini__info__price">40.000đ</div>
-                    <label class="user__history__itemsmini__info__amount" for="">Số lượng: 1</label>
-                </div>
-            </li>
-            <li class="user__history__itemsmini">
-                <a href="#/">
-                    <img class="user__history__itemsmini__img" src="img/dmbongba.jpg" alt="ảnh sản phẩm">
-                </a>
-                <div class="user__history__itemsmini__info">
-                    <a href="#/">
-                        <h4 class="user__history__itemsmini__info__name">Áo đấu Barcalona</h4>
-                    </a>
-                    <div class="user__history__itemsmini__info__price">40.000đ</div>
-                    <label class="user__history__itemsmini__info__amount" for="">Số lượng: 1</label>
-                </div>
-            </li>
-        </ul>
-        <div class="user__history__status">
-            <b>Trạng thái: Đang xử lí</b>
-            <div class="user__history__status__price">
-                <b>Tổng tiền: </b><span>100.000đ</span>
-            </div>
-        </div>
-    </div>
 </div>
 <!-- space -->
 <div class="container"><div class="space"></div></div>

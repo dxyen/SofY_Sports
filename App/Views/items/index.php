@@ -5,7 +5,7 @@
         <h3 class="title">Chi tiết sản phẩm</h3>
             <?php foreach($data['items'] as $index =>$items) : ?>
                 <div class="items__item">
-                    <div class="items__img" href="#/">
+                    <div class="items__img">
                         <img id="zoom" src="<?= IMAGES_ITEMS_URL ?>/<?= $items['image']?>" alt="">
                     </div>
                     <div class="items__info">
