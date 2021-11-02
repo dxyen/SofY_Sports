@@ -344,3 +344,109 @@ white-space: nowrap;
   to {bottom: 60px; opacity: 0;}
 }
 /*End message add to cart */
+
+/* CSS on load page  */
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(240, 232, 241);
+  z-index: 9999;
+}
+
+.loader.hidden {
+  animation: fadeOut 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%,
+  100% {
+      -webkit-transform: scale(0.0)
+  }
+  50% {
+      -webkit-transform: scale(1.0)
+  }
+}
+
+@keyframes sk-bounce {
+  0%,
+  100% {
+      transform: scale(0.0);
+      -webkit-transform: scale(0.0);
+  }
+  50% {
+      transform: scale(1.0);
+      -webkit-transform: scale(1.0);
+  }
+}
+
+@keyframes fadeOut {
+  100% {
+      opacity: 0;
+      visibility: hidden;
+  }
+}
+
+
+/* You can remove these code below*/
+
+:root {
+  --primary: #08aeea;
+  --secondary: #13D2B8;
+  --purple: #bd93f9;
+  --pink: #ff6bcb;
+  --blue: #8be9fd;
+  --gray: #333;
+  --font: "Poppins", sans-serif;
+  --gradient: linear-gradient(40deg, #ff6ec4, #7873f5);
+  --shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input,
+button,
+textarea {
+  border: 0;
+  outline: none;
+}
+
+
+/* Main code */
+
+.circle-loading {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 15rem;
+  position: relative;
+  margin: 0 auto;
+}
+
+.circle-loading:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  border: 0.5rem solid white;
+  border-right-color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+  animation: circleLoading 1s forwards infinite linear;
+}
+
+@keyframes circleLoading {
+  to {
+      transform: rotate(360deg);
+  }
+}

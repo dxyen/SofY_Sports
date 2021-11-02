@@ -108,6 +108,9 @@
 .cart__detail__user__info__btn {
     width: 100%;
     grid-column: 1 / span 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .price__total {

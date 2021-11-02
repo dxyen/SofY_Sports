@@ -14,13 +14,19 @@
         'link' => DOCUMENT_ROOT . '/admin/categories',
     ],
     'orders' => [
-        'title' => 'Đơn hàng',
-        'name' => 'orders',
+        'title' => 'Quản lý đơn hàng',
+        'name' => 'order',
         'icon' => 'fas fa-file-invoice-dollar',
-        'link' => DOCUMENT_ROOT . '/admin/orders',
+        'link' => DOCUMENT_ROOT . '/admin/order',
+    ],
+    'admin' => [
+        'title' => 'Quản lý Admin',
+        'name' => 'admin',
+        'icon' => 'fas fa-users-cog',
+        'link' => DOCUMENT_ROOT . '/admin/admin',
     ],
     'customer' => [
-        'title' => 'Khách hàng',
+        'title' => 'Quản lý khách hàng',
         'name' => 'customer',
         'icon' => 'fas fa-users',
         'link' => DOCUMENT_ROOT . '/admin/customer',

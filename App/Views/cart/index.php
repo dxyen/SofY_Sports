@@ -4,6 +4,7 @@
 <!-- end space -->
 <div class="container cart">
     <h3 class="title">Giỏ hàng của bạn</h3>
+    <?php require_once(VIEW . DS . "/shared/notification.php") ?>
     <form action="<?= DOCUMENT_ROOT ?>/cart/checkBuy" method="POST">
         <div class="cart__detail">
             <ul class="cart__detail__items">
@@ -69,14 +70,50 @@
                         <p><?= $data['user']['phone'] ?></p>
                         <div class="cart__detail__user__info__address">
                             <p><b>Địa chỉ giao hàng: </b></p>
-                            <input type="radio" name="address" value="<?= $data['user']['address'] ?>" checked>  <?= $data['user']['address'] ?>
-                            <br>
-                            <input type="radio" name="address" value="<?= $data['user']['address2'] ?>" checked>  <?= $data['user']['address2'] ?>
+                            <div>Địa chỉ 1: <?= $data['user']['address'] ?></div>
+                            <div>Địa chỉ 2: <?= $data['user']['address2'] ?></div>
                         </div>
                         <p><b>Tổng tiền:</b></p>
                         <p class="price__total" id="total">0đ</p>
-                        <button class="cart__detail__user__info__btn btny btny__primary">Đặt hàng </button>
+                        <div class="cart__detail__user__info__btn btny btny__primary"data-bs-toggle="modal" data-bs-target="#exampleModal">Đặt hàng </div>
                     </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2 class="modal-title" id="exampleModalLabel">Xác nhận đặt hàng</h2>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <?php if ($data['item'] == 0) : ?>
+                                    <p>Bạn chưa chọn sản phẩm nào!</p>
+                                    <div class="modal-footer fs-6">
+                                        <button type="button" class="btn btny btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                <?php else : ?>
+                                    <div class="modal-body">
+                                        <p>Nếu thông tin chưa chính xác quý khách vui lòng vào trang thông tin khách hàng để thay đổi!</p>
+                                    </div>
+                                    <div class="modal-body cart__detail__user__info">
+                                        <p><b>Tên người nhận: </b><?= $data['user']['fullname'] ?></p>
+                                        <p></p>
+                                        <p><b>Số điện thoại: </b><?= $data['user']['phone'] ?></p>
+                                        <div class="cart__detail__user__info__address">
+                                            <p><b>Địa chỉ giao hàng: </b></p>
+                                            <input type="radio" name="address" value="<?= $data['user']['address'] ?>" checked>  <?= $data['user']['address'] ?>
+                                            <br>
+                                            <input type="radio" name="address" value="<?= $data['user']['address2'] ?>" checked>  <?= $data['user']['address2'] ?>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer fs-6">
+                                        <button type="button" class="btn btny btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button class="btn btny btny__primary">Đặt hàng </button>
+                                    </div>
+                                <?php endif; ?>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end modal -->
                 <?php endif; ?>
             </div>
         </div>

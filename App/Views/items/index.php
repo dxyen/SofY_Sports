@@ -3,45 +3,75 @@
 <div class="wrapper">
     <section class="container items">
         <h3 class="title">Chi tiết sản phẩm</h3>
-            <?php foreach($data['items'] as $index =>$items) : ?>
-                <div class="items__item">
-                    <div class="items__img">
-                        <img id="zoom" src="<?= IMAGES_ITEMS_URL ?>/<?= $items['image']?>" alt="">
-                    </div>
-                    <div class="items__info">
-                        <h4 class="items__info__name"><?= $items['name']?></h4>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                        <div class="items__price">
-                            <div class="items__price__1"><?= number_format($items['price'], 0, '', ',') ?>đ</div>
-                            <div class="items__price__2">300.000đ</div>
-                        </div>
-                        <p class="items__info__description">
-                            <?= $items['description']?>
-                        </p>
-
-                        <button onClick="addToCart(<?= isset($_SESSION['user']) ? $_SESSION['user']['id'] : 0 ?>, <?= $items['id'] ?>)" class="btny btny__primary">Thêm vào giỏ hàng +</button>
-
-                    </div>
+            <div class="items__item">
+                <div class="items__img">
+                    <img id="zoom" src="<?= IMAGES_ITEMS_URL ?>/<?= $data['items']['image']?>" alt="">
                 </div>
-            <?php endforeach ?>
+                <div class="items__info">
+                    <h4 class="items__info__name"><?= $data['items']['name']?></h4>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="items__price">
+                        <div class="items__price__1"><?= number_format($data['items']['price'], 0, '', ',') ?>đ</div>
+                        <div class="items__price__2">300.000đ</div>
+                    </div>
+                    <p class="items__info__description">
+                        <?= $data['items']['description']?>
+                    </p>
+
+                    <button onClick="addToCart(<?= isset($_SESSION['user']) ? $_SESSION['user']['id'] : 0 ?>, <?= $data['items']['id'] ?>)" class="btny btny__primary">Thêm vào giỏ hàng +</button>
+
+                </div>
+            </div>
     </section>
     <!-- space -->
     <div class="container"><div class="space"></div></div>
     <!-- end space -->
-
+    <!-- all items list-->
+    <div class="container">
+    <h4 class="title__h4">Sản phẩm liên quan</h4>
+    </div>
+    
+    <div class="wrapper">
+        <section class="container all__products">
+            <!-- <h4 class="all__items__samekind">Sản phẩm liên quan</h4> -->
+            <div class="all__items">
+                <?php foreach($data['samekind'] as $index => $samekind) :?>
+                    <div class="all__item">
+                        <a class="all__item__link" href="<?= DOCUMENT_ROOT?>/items/detail?id=<?=$samekind['id']?>">
+                            <img src="<?= IMAGES_ITEMS_URL ?>/<?= $samekind['image']?>" alt="ảnh sản phẩm">
+                            <i class="eye fas fa-eye"></i>
+                            <div class="all__item__name"><?= $samekind['name']?></div>
+                            <div class="rating__all">
+                                <i class="rating__all__i fas fa-star"></i>
+                                <i class="rating__all__i fas fa-star"></i>
+                                <i class="rating__all__i fas fa-star"></i>
+                                <i class="rating__all__i fas fa-star"></i>
+                                <i class="rating__all__i far fa-star"></i>
+                            </div>
+                            <div class="all__item__prices">
+                                <div class="all__item__price__1"><?= number_format($samekind['price'], 0, '', ',') ?>đ</div>
+                                <div class="all__item__price__2">300.000đ</div>
+                            </div>
+                        </a>
+                    </div>
+                <?php endforeach ?>
+            </div>
+        </section>
+    </div>
+    <!-- end all items list-->
     <div class="container items__comment">
         <div class="items__comment__form">
             <span>Bình Luận</span>
             <div class="form-group">
                 <form action="<?= DOCUMENT_ROOT . "/items/comment"?>" method="POST">
                     <input class="form-control items__comment__form__text" name="comment" ></input>
-                    <input type="hidden" name="idItem" value="<?=$items['id']?>">
+                    <input type="hidden" name="idItemComment" value="<?= $data['items']['id']?>">
                     <input type="submit" class="btn__comment btn btn-success" value= "Gửi">
                 </form>
             </div>

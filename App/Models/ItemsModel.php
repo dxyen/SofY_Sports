@@ -53,7 +53,7 @@ class itemsmodel extends Database {
             $result = $stmt->get_result();
 
             if($result->num_rows >0){
-                return $result->fetch_all(MYSQLI_ASSOC);
+                return $result->fetch_assoc();
             }else{
                 return false;
             }
@@ -90,7 +90,7 @@ class itemsmodel extends Database {
 
         function comment($id, $data){
             // var_dump($data);
-            $idItem = $data['idItem'];
+            $idItem = $data['idItemComment'];
             $comment = $data['comment'];
             $stmt = $this->db->prepare("INSERT INTO COMMENT(id_user, id_item, comment) VALUES (?, ?, ?)");
             $stmt->bind_param("iis", $id, $idItem, $comment);

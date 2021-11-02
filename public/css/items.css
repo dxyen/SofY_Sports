@@ -97,3 +97,12 @@
     margin: 5px;
     border-radius: 5px;
 }
+.title__h4 {
+    margin-left: 50px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    font-family: var(--font-archivo);
+    color: var(--color-title_black);
+    font-size: 3rem;
+    font-weight: 700;
+}

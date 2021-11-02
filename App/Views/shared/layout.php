@@ -10,7 +10,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
      rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
      crossorigin="anonymous">
-    
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 
@@ -39,6 +38,12 @@
     <?php else : ?>
 </head>
 <body>
+    <?php if ($GLOBALS['currentPage'] == 'Home'|| $GLOBALS['currentPage']=='Products' || $GLOBALS['currentPage']=='Items' || $GLOBALS["currentPage"]=='Introduction' ): ?>
+        <!-- Onload page -->
+        <div class="loader">
+            <div class="circle-loading"></div>
+        </div>
+    <?php endif; ?>
     <!-- mesage add to cart -->
     <p hidden id="documentRootId"><?= DOCUMENT_ROOT ?></p>
     <div id="toast">
@@ -87,8 +92,14 @@
         crossorigin="anonymous">
     </script>
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
-
+    <script>
+        window.addEventListener("load", function() {
+            const loader = document.querySelector(".loader");
+            loader.className += " hidden";
+        });
+    </script>
 </body>
+
   <?php endif; ?>
 
 </html>

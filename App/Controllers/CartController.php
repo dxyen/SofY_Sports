@@ -61,6 +61,13 @@ class CartController extends Controller {
             if (isset($_POST)) {
                 // var_dump($_POST);
                 $result = $this->cartmodel->order($_POST);
+                if ($result > 0) {
+                    $_SESSION['alert']['success'] = true;
+                    $_SESSION['alert']['messages'] = "Đặt hàng thành công!";
+                } else {
+                    $_SESSION['alert']['success'] = false;
+                    $_SESSION['alert']['messages'] = "Đặt hàng thất bại!";
+                }
                 $data['userId'] = $_SESSION['user']['id'];
                 if (isset($_SESSION['user'])) {
                     $result2 = $this->cartmodel->getItemInCartByUser($_SESSION['user']['id']);
