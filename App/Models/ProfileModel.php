@@ -32,7 +32,7 @@
             if (!$result) {
             return $stmt->error;
             } else if ($stmt->affected_rows <= 0) {
-            return "Không có sự thay đổi";
+            return false;
             }
             return true;
         }

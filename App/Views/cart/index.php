@@ -75,7 +75,7 @@
                         </div>
                         <p><b>Tổng tiền:</b></p>
                         <p class="price__total" id="total">0đ</p>
-                        <div class="cart__detail__user__info__btn btny btny__primary"data-bs-toggle="modal" data-bs-target="#exampleModal">Đặt hàng </div>
+                        <div class="cart__detail__user__info__btn btny btny__primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Đặt hàng </div>
                     </div>
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -99,7 +99,7 @@
                                         <p></p>
                                         <p><b>Số điện thoại: </b><?= $data['user']['phone'] ?></p>
                                         <div class="cart__detail__user__info__address">
-                                            <p><b>Địa chỉ giao hàng: </b></p>
+                                            <p><b>Chọn địa chỉ giao hàng: </b></p>
                                             <input type="radio" name="address" value="<?= $data['user']['address'] ?>" checked>  <?= $data['user']['address'] ?>
                                             <br>
                                             <input type="radio" name="address" value="<?= $data['user']['address2'] ?>" checked>  <?= $data['user']['address2'] ?>

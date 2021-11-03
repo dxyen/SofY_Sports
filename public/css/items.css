@@ -31,6 +31,7 @@
     line-height: 2.4rem;
     color: var(--color-content);
     margin-bottom: 20px;
+    text-align: justify;
 }
 .items__img img {
     width: 320px;

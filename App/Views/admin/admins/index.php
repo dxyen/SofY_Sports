@@ -25,22 +25,35 @@
                 <div class="card-header">
                   <div class="d-flex justify-content-between align-items-center">
                     <h5>Danh sách Admin</h5>
-                    <a class="btn btn-primary" href="<?=DOCUMENT_ROOT?>/admin/admin/create">Thêm admin</a>
                   </div>
                 </div>
 
-              <div class="card-body">
+                <div class="card-body">
                 <table id="Mytable" class="table table-bordered table-hover">
                   <thead>
                   <tr>
                     <th>#</th>
-                    <th>Tên loại</th>
-                    <th>Chi tiết</th>
-                    <th>Hình ảnh </th>
+                    <th>Tên user</th>
+                    <th>Họ và tên</th>
+                    <th>Số điện thoại</th>
                     <th>Tùy chỉnh</th>
                   </tr>
                   </thead>
-                 
+                  <tbody>
+                    <?php foreach ($data['admins'] as $index => $admins) : ?>
+                        <tr>
+                            <td><?=$index +1 ?></td>
+                            <td><?=$admins['name']?></td>
+                            <td><?=$admins['fullname']?></td>
+                            <td><?=$admins['phone']?></td>
+                            <td>
+                              <div class="justify-content-center btn-group" role="group" aria-label="Basic example">
+                                  <a href="<?=DOCUMENT_ROOT?>/admin/admin/edit/<?=$admins['id']?>"><button type="button" class="ml-3 btn btn-info"><i class="fas fa-tools"></i> Sửa</button></a>
+                              </div>
+                            </td>
+                        </tr>
+                    <?php endforeach ?>
+                  </tbody>
                 </table>
               </div>
               <!-- /.card-body -->

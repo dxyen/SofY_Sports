@@ -66,6 +66,7 @@
 /* promotion */
 .promotion__background {
     background-color: rgb(229, 230, 202);
+    z-index: 1;
 }
 .promotion {
     display: flex;
@@ -76,6 +77,7 @@
     margin: 0 auto;
     position: relative;
     font-family: var(--font-asap);
+    /* z-index: 11; */
 }
 .promotion__item {
     display: flex;
@@ -85,6 +87,7 @@
     padding-left: 120px;
     padding-right: 120px;
     animation: fade 1s;
+    z-index: 10;
 }
 @keyframes fade{
     from{
@@ -109,6 +112,7 @@
     line-height: 2.4rem;
     color: var(--color-content);
     margin-bottom: 20px;
+    text-align: justify;
 }
 .promotion__item__img img {
     width: 320px;
@@ -164,11 +168,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
+    border-radius: 30%;
     cursor: pointer;
     font-size: 2rem;
     color: var(--color-title_black);
     border: 2px solid var(--color-primary);
+    z-index: 10;
 }
 
 .promotion__btn__roll-right .righty {
@@ -180,11 +185,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
+    border-radius: 30%;
     cursor: pointer;
     font-size: 2rem;
     color: var(--color-title_black);
     border: 2px solid var(--color-primary);
+    z-index: 10;
+}
+.promotion__item__sale {
+    position: absolute;
+    margin-top: -220px;
+    margin-left: 360px;
+}
+.promotion__item__sale img {
+    width: 200px;
+    height: 200px;
 }
 
 /* all items */

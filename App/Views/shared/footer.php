@@ -14,22 +14,22 @@
             </div>
             <ul class="footer__list">
                 <h5>Về chúng tôi</h5>
-                <li><a href="#/">Giới Thiệu</a></li>
-                <li><a href="#/">Vận chuyển & thanh toán</a></li>
-                <li><a href="#/">Chính sách bảo hành</a></li>
+                <li><a href="#/" target="_blank">Giới Thiệu</a></li>
+                <li><a href="#/" target="_blank">Vận chuyển & thanh toán</a></li>
+                <li><a href="#/" target="_blank">Chính sách bảo hành</a></li>
             </ul>
             <ul class="footer__list">
                 <h5>Kiến thức bổ ích</h5>
-                <li><a href="#/">Hít đất đúng cách</a></li>
-                <li><a href="#/">Tập Gym giảm cân</a></li>
-                <li><a href="#/">Chạy bộ giảm cân</a></li>
+                <li><a href="https://ifitness.vn/blogs/kien-thuc-the-hinh/hit-dat-dung-cach" target="_blank">Hít đất đúng cách</a></li>
+                <li><a href="https://www.vinmec.com/vi/tin-tuc/thong-tin-suc-khoe/dinh-duong/huong-dan-tap-gym-cho-nguoi-moi-bat-dau/" target="_blank">Tập Gym giảm cân</a></li>
+                <li><a href="https://www.vinmec.com/vi/tin-tuc/thong-tin-suc-khoe/song-khoe/di-bo-va-chay-bo-cai-nao-tot-hon/" target="_blank">Chạy bộ giảm cân</a></li>
             </ul>
             <ul class="footer__list">
                 <h5>Kết nối</h5>
                 <div class="footer__list__social">
-                    <a href="https://www.facebook.com/doyen333/"><i class="fab fa-facebook-square"></i></a>
-                    <a href="https://www.instagram.com/doyen3333/"><i class="fab fa-instagram"></i></a>
-                    <a href="https://github.com/DoYen2k"><i class="fab fa-github-square"></i></a>
+                    <a href="https://www.facebook.com/doyen333/" target="_blank"><i class="fab fa-facebook-square"> Facebook</i></a>
+                    <a href="https://www.instagram.com/doyen3333/" target="_blank"><i class="fab fa-instagram"> Instagram</i></a>
+                    <a href="https://github.com/DoYen2k" target="_blank"><i class="fab fa-github-square"> Github</i></a>
                 </div>
             </ul>
         </div>

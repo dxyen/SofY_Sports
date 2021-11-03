@@ -31,6 +31,22 @@
                 <div class="user__history__order">
                     <h6>Đơn hàng #<span><?= $order['id']?></span></h6>
                 </div>
+                <div class="user__history__status">
+                    <b>Trạng thái: <?= $order['name']?></b>
+                    <br>
+                    <div class="order__date"><b>Ngày đặt: </b><p> <?= $order['order_date']?></p></div>
+                    <div class="order__date">
+                        <b>Ngày giao: </b>
+                        <?php if(($order['delivery_date'])=="") : ?>
+                            <p>Qúy khách vui lòng chờ shop cập nhật ngày giao</p>
+                        <?php else : ?>
+                            <p> <?= $order['delivery_date']?></p>
+                        <?php endif; ?>
+                    </div>
+                    <div class="user__history__status__price">
+                        <b>Tổng tiền: </b> <span> <?= number_format($data[$order['id']]['total'], 0, '', ',') ?>đ</span>
+                    </div>
+                </div>
                 <?php foreach($data[$order['id']]['orderDetails'] as $index => $orderDetail) :?>
                     <ul class="user__history__items">
                         <li class="user__history__itemsmini">
@@ -47,12 +63,6 @@
                         </li>
                     </ul>
                 <?php endforeach ?>
-                <div class="user__history__status">
-                    <b>Trạng thái: <?= $order['name']?></b>
-                    <div class="user__history__status__price">
-                        <b>Tổng tiền: </b><span><?= number_format($data[$order['id']]['total'], 0, '', ',') ?>đ</span>
-                    </div>
-                </div>
             </div>
         <?php endforeach ?>
     <?php endif; ?>

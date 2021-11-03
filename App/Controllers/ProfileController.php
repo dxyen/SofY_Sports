@@ -29,7 +29,7 @@
                         }
                     }
                     // echo '<pre>';
-                    // print_r ($data);
+                    // print_r ($data['order']);
                     // echo '</pre>';
                     // var_dump( );
                 } else {
@@ -46,14 +46,21 @@
             $data = $_POST;
             $data['id'] = $id;
             // var_dump($data);
+            $user = $this->profilemodel->getById($id);
             $result = $this->profilemodel->update($data, $_FILES);
-            // if ($result === true) {
-            //     $_SESSION['userAlert']['success'] = true;
-            //     $_SESSION['userAlert']['message'] = "Cập nhật thành công";
-            //   } else {
-            //     $_SESSION['userAlert']['success'] = false;
-            //     $_SESSION['userAlert']['message'] = $result;
-            //   }
+            if ($result == true) {
+                unlink(USER_IMAGES . DS . $user['avatar']);
+                $_SESSION['userAlert']['success'] = true;
+                $_SESSION['userAlert']['message'] = "Cập nhật thành công";
+              }
+              if ($result == false){
+                $_SESSION['userAlert']['success'] = true;
+                $_SESSION['userAlert']['message'] = "Không có sự thay đổi";
+              }
+              else {
+                $_SESSION['userAlert']['success'] = false;
+                $_SESSION['userAlert']['message'] = $result;
+              }
             header("Location: " . DOCUMENT_ROOT . "/profile");
         }
     }

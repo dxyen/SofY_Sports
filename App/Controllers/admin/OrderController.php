@@ -10,7 +10,8 @@
             $this->ordermodel = $this->model("OrderModel");
         }
         function Index(){
-            $this->view('/admin/orders/index');
+            $data['order'] = $this->ordermodel->allOrder();
+            $this->view('/admin/orders/index', $data);
         }
     }
 

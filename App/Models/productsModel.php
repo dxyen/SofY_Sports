@@ -37,7 +37,7 @@
         function getSameKind($idType, $idItem){
             // $idType = $data['id_sport_type'];
             // var_dump($idType, $idItem);
-            $stmt = $this->db->prepare("SELECT * FROM ITEMS WHERE id_sport_type = ? and id !=?");
+            $stmt = $this->db->prepare("SELECT * FROM ITEMS WHERE id_sport_type = ? and id !=? ");
             $stmt->bind_param("ii", $idType, $idItem);
             $stmt->execute();
             $result = $stmt->get_result();

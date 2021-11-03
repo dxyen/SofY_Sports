@@ -54,6 +54,7 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.171);
     border-radius: 10px;
     padding: 40px 20px;
+    margin-bottom: 20px;
 }
 .user__history__itemsmini__img {
     width: 150px;
@@ -98,6 +99,7 @@
     line-height: 2.2rem;
     color: var(--color-primary);
     margin: 8px 0px;
+    text-shadow: 1px 1px rgb(121 120 103);
 }
 .user__history__itemsmini__info__amount {
     font-style: normal;
@@ -108,17 +110,25 @@
 .user__history__status {
     margin-top: 10px;
     line-height: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    
     font-size: 1.7rem;
     font-weight: 500;
+}
+.order__date {
+    display: flex;
+    /* flex-direction: column; */
+}
+.order__date p {
+    margin-left: 2px;
+    font-weight: 400;
 }
 .user__history__status__price {
     display: flex;
 }
 .user__history__status__price span {
     color: var(--color-primary);
-    font-size: 1.7rem;
+    font-size: 2rem;
     font-weight: bold;
+    margin-left: 2px;
+    text-shadow: 1px 1px rgb(121 120 103);
 }

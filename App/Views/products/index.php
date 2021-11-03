@@ -27,7 +27,7 @@
                         </div>
                         <div class="all__item__prices">
                             <div class="all__item__price__1"><?= number_format($items['price'], 0, '', ',') ?>đ</div>
-                            <div class="all__item__price__2">300.000đ</div>
+                            <div class="all__item__price__2"><?= number_format(($items['price'])*1.1, 0, '', ',') ?>đ</div>
                         </div>
                     </a>
                     <button onClick="addToCart(<?= isset($_SESSION['user']) ? $_SESSION['user']['id'] : 0 ?>, <?= $items['id'] ?>)" class="btny btny__primary">Thêm vào giỏ hàng +</button>

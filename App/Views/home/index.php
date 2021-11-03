@@ -18,8 +18,8 @@
         </button>
         <div class="container">
             <div class="banner__info">
-                <h1>Sports</h1>
-                <h1>change your life</h1>
+                <h1>Sofy Sports</h1>
+                <h1>change your life.</h1>
             </div>
         </div>
     </div>
@@ -71,6 +71,60 @@
 <!-- space -->
 <div class="container"><div class="space"></div></div>
 <!-- end space -->
+<!-- promotion list -->
+<div class="wrapper">
+    <div class="promotion__background">
+        <section class="promotion">
+            <h3 class="title">Khuyến mãi hot</h3>
+                <?php foreach($data['promotion'] as $index => $itemspromotion) :?>
+                    <div class="promotion__item">
+                        <a class="promotion__item__img" href="<?= DOCUMENT_ROOT?>/items/detail?id=<?=$itemspromotion['id']?>">
+                            <img src="<?= IMAGES_ITEMS_URL ?>/<?= $itemspromotion['image']?>" alt="">
+                            <i class="eye fas fa-eye"></i>
+                        </a>
+                        <div class="promotion__item__sale">
+                            <img src="<?=IMAGES_URL?>/sale.png" class="" alt="...">
+                        </div>
+                        <div class="promotion__info">
+                            <h4 class="promotion__info__name"><?= $itemspromotion['name']?></h4>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="promotion__price">
+                                <div class="promotion__price__1"><?= number_format($itemspromotion['price'], 0, '', ',') ?>đ</div>
+                                <div class="promotion__price__2"><?= number_format(($itemspromotion['price'])*2, 0, '', ',') ?>đ</div>
+                            </div>
+                            <p class="promotion__info__description">
+                                <?= $itemspromotion['description']?>
+                            </p>
+
+                            <button onClick="addToCart(<?= isset($_SESSION['user']) ? $_SESSION['user']['id'] : 0 ?>, <?= $itemspromotion['id'] ?>)" class="btny btny__primary">Thêm vào giỏ hàng +</button>
+                        </div>
+                    </div>
+                <?php endforeach ?>
+                <div class="promotion__btn__roll-left" onclick="pushSlide(-1)">
+                    <i class="lefty fas fa-chevron-left"></i>
+                </div>
+                <div class="promotion__btn__roll-right" onclick="pushSlide(1)">
+                    <i class="righty fas fa-chevron-right"></i>
+                </div>
+                <ul class="paging">
+                    <?php foreach($data['promotion'] as $index => $itemspromotion) :?>
+                        <li class="paging__item" onclick="currentSlide(<?= $index+1 ?>)"></li>
+                    <?php endforeach ?>
+                </ul>
+        </section>
+    </div>
+</div>
+<!-- end promotion list -->
+
+<!-- space -->
+<div class="container"><div class="space"></div></div>
+<!-- end space -->
 
 <!-- product list -->
 <div class="wrapper">
@@ -91,58 +145,6 @@
     </section>
 </div>
 <!-- end product list -->
-
-<!-- space -->
-<div class="container"><div class="space"></div></div>
-<!-- end space -->
-<!-- promotion list -->
-<div class="wrapper">
-    <div class="promotion__background">
-        <section class="promotion">
-            <h3 class="title">Khuyến mãi hot</h3>
-                <?php foreach($data['promotion'] as $index => $itemspromotion) :?>
-                    <div class="promotion__item">
-                        <a class="promotion__item__img" href="<?= DOCUMENT_ROOT?>/items/detail?id=<?=$itemspromotion['id']?>">
-                            <img src="<?= IMAGES_ITEMS_URL ?>/<?= $itemspromotion['image']?>" alt="">
-                            <i class="eye fas fa-eye"></i>
-                        </a>
-                        <div class="promotion__info">
-                            <h4 class="promotion__info__name"><?= $itemspromotion['name']?></h4>
-                            <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <div class="promotion__price">
-                                <div class="promotion__price__1"><?= number_format($itemspromotion['price'], 0, '', ',') ?>đ</div>
-                                <div class="promotion__price__2">300.000đ</div>
-                            </div>
-                            <p class="promotion__info__description">
-                                <?= $itemspromotion['description']?>
-                            </p>
-
-                            <button onClick="addToCart(<?= isset($_SESSION['user']) ? $_SESSION['user']['id'] : 0 ?>, <?= $itemspromotion['id'] ?>)" class="btny btny__primary">Thêm vào giỏ hàng +</button>
-                            
-                        </div>
-                    </div>
-                <?php endforeach ?>
-                <div class="promotion__btn__roll-left" onclick="pushSlide(-1)">
-                    <i class="lefty fas fa-chevron-left"></i>
-                </div>
-                <div class="promotion__btn__roll-right" onclick="pushSlide(1)">
-                    <i class="righty fas fa-chevron-right"></i>
-                </div>
-                <ul class="paging">
-                    <?php foreach($data['promotion'] as $index => $itemspromotion) :?>
-                        <li class="paging__item" onclick="currentSlide(<?= $index+1 ?>)"></li>
-                    <?php endforeach ?>
-                </ul>
-        </section>
-    </div>
-</div>
-<!-- end promotion list -->
 
 <!-- space -->
 <div class="container"><div class="space"></div></div>
@@ -168,7 +170,7 @@
                         </div>
                         <div class="all__item__prices">
                             <div class="all__item__price__1"><?= number_format($items['price'], 0, '', ',') ?>đ</div>
-                            <div class="all__item__price__2">300.000đ</div>
+                            <div class="all__item__price__2"><?= number_format(($items['price'])*1.1, 0, '', ',') ?>đ</div>
                         </div>
                     </a>
                     <button onClick="addToCart(<?= isset($_SESSION['user']) ? $_SESSION['user']['id'] : 0 ?>, <?= $items['id'] ?>)" class="btny btny__primary">Thêm vào giỏ hàng +</button>
