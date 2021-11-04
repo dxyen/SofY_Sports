@@ -50,9 +50,15 @@
                 <p>Chưa có bình luận</p>
             <?php else : ?>
                 <?php foreach($data['comment'] as $index =>$comment) : ?>
+                    
                     <div class="items__comment__user">
-                        <div class="items__comment__user__name"><?= $comment['fullname']?></div>
-                        <div class="items__comment__user__name"><?= $comment['comment']?></div>
+                        <div class="items__comment__user__img">
+                            <img src="<?= USER_AVATAR_URL . (empty($comment['avatar']) ? "default-avatar.png" : $comment['avatar']) ?>" alt="Avatar">
+                        </div>
+                        <div class="items__comment__user__info">
+                            <div class="items__comment__user__name"><b><?= $comment['fullname']?></b></div>
+                            <div class="items__comment__user__name"><?= $comment['comment']?></div>
+                        </div>
                     </div>
                 <?php endforeach ?>
             <?php endif; ?>

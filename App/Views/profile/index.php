@@ -1,7 +1,8 @@
 <div class="wrapper spade__black"></div>
 <div class="container user ">
     <h3 class="title">Thông tin tài khoản</h3>
-    <div class="profile__info">
+    <div class="profile">
+        <div class="profile__info">
             <form action="<?= DOCUMENT_ROOT . "/profile/update/" . $data['user']['id'] ?>" method="POST" class="profile__info__form" enctype="multipart/form-data">
                 <label for="name">Họ tên: </label>
                 <input type="text" name="fullname" id="fullname" value="<?= $data['user']['fullname'] ?>">
@@ -18,6 +19,11 @@
                 <button type="submit" class="user__info__btn btny btny__primary">Cập nhật thông tin</button>
                 
             </form>
+        </div>
+        <div class="profile__avatar">
+            <img class="profile__avatar__img" src="<?= USER_AVATAR_URL . (empty($_SESSION['user']['avatar']) ? "default-avatar.png" : $_SESSION['user']['avatar']) ?>" alt="Avatar">
+            <p class="profile__avatar__info">Ảnh đại diện</p>
+        </div>
     </div>
     <!-- space -->
     <div class="container"><div class="space"></div></div>

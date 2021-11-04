@@ -103,7 +103,7 @@ class itemsmodel extends Database {
         }
         function getComment($idItems){
             $idItems = intval($idItems);
-            $stmt = $this->db->prepare("SELECT COMMENT.comment, USERS.fullname FROM COMMENT JOIN USERS ON COMMENT.id_user = USERS.id WHERE id_item = ?");
+            $stmt = $this->db->prepare("SELECT COMMENT.comment, USERS.fullname, USERS.avatar FROM COMMENT JOIN USERS ON COMMENT.id_user = USERS.id WHERE id_item = ?");
             $stmt->bind_param("i", $idItems);
 
             $stmt->execute();

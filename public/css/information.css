@@ -3,6 +3,36 @@
     flex-direction: column;
     align-items: center; 
 }
+.profile {
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+}
+.profile__avatar {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 40px;
+}
+.profile__avatar__img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2.5px var(--color-primary);
+    /*  chỉnh hình nằm trong khung  */
+    overflow: hidden;
+    
+}
+.profile__avatar__info {
+    font-weight: bold;
+    font-family: var(--font-title);
+    margin-top: 20px;
+}
+.profile__avatar img{
+    width: 150px;
+    height: 150px;
+}
 .profile__info {
     width: 950px;
     font-family: var(--font-asap);
