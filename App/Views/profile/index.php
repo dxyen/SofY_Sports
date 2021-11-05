@@ -7,7 +7,7 @@
                 <label for="name">Họ tên: </label>
                 <input type="text" name="fullname" id="fullname" value="<?= $data['user']['fullname'] ?>">
                 <label for="avatar">Ảnh đại diện: </label>
-                <input type="file" name="avatar" id="avatar">
+                <input type="file" name="image" id="avatar">
                 <label for="email">Email: </label>
                 <input type="text" name="email" id="email" value="<?= $data['user']['email'] ?>">
                 <label for="phone">Số điện thoại: </label>

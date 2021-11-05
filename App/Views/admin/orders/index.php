@@ -44,15 +44,19 @@
                   <tbody>
                     <?php foreach ($data['order'] as $index => $order) : ?>
                         <tr>
-                            <td><?=$order['id']?></td>
+                            <td>#<?=$order['id']?></td>
                             <td><?=$order['fullname']?></td>
                             <td><?=$order['orderdate']?></td>
+                            <?php if(empty($order['deliverydate'])) : ?>
+                            <td>Chưa được cập nhật</td>
+                            <?php else : ?>
                             <td><?=$order['deliverydate']?></td>
+                            <?php endif; ?>
                             <td><?=$order['status']?></td>
-                            <td>Tien</td>
+                            <td><?=number_format($data['totals'][$index], 0, '', ',') ?>đ</td>
                             <td>
                               <div class=" btn-group" role="group" aria-label="Basic example">
-                                  <a href="<?=DOCUMENT_ROOT?>/admin/order/edit/<?=$order['id']?>"><button type="button" class="btn btn-info"><i class="fas fa-tools"></i> Sửa</button></a>
+                                  <a href="<?=DOCUMENT_ROOT?>/admin/order/edit/<?=$order['id']?>"><button type="button" class="btn btn-info"><i class="fas fa-tools"></i> Xem</button></a>
                                   <button type="button" class="ml-1 btn btn-danger identifyingClass" data-toggle="modal" data-target="#modal-delete<?=$index?>" data-id="my_id_value"><i class="far fa-trash-alt"></i> Xóa</button>
                                   <!-- modal -->
                                   <div class="modal fade" id="modal-delete<?=$index?>" aria-labelledby="my_modalLabel">

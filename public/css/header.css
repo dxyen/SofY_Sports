@@ -123,6 +123,10 @@
     /*  chỉnh hình nằm trong khung  */
     overflow: hidden;
 }
+.header__user img{
+    width: 40px;
+    height: 40px;
+}
 .header__user__i {
     margin-top: 5px;
 }

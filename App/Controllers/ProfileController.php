@@ -43,21 +43,40 @@
             $this->view('/profile/index', $data);
         }
         function update($id){
+
             $data = $_POST;
-            $data['id'] = $id;
-            // var_dump($data);
             $user = $this->profilemodel->getById($id);
-            $result = $this->profilemodel->update($data, $_FILES);
+            var_dump($_POST);
+            $data['fullname'] = $_POST['fullname'];
+            $data['email'] = $_POST['email'];
+            $data['phone'] = $_POST['phone'];
+            $data['address'] = $_POST['address'];
+            $data['address2'] = $_POST['address2'];
+            $data["id"] = $id;
+            
+            if (isset($_FILES["image"]['name'])) {
+
+                if($_FILES["image"]['name'] !=""){
+                    $randomNum = time();
+                    $imageName = str_replace(' ', '-', strtolower($_FILES["image"]['name']));
+                    $imageExt = substr($imageName, strrpos($imageName, '.'));
+                    $imageExt = str_replace('.', '', $imageExt);
+                    $newImageName = $randomNum . '.' . $imageExt;
+
+                    move_uploaded_file($_FILES["image"]["tmp_name"], USER_IMAGES . DS . $newImageName);
+                    $data["image"] = $newImageName;
+                    unlink(USER_IMAGES . DS . $user['avatar']);
+                }else {
+                    $data['image'] = $user['avatar'];
+                }
+            }
+            // var_dump($data);
+            // die();
+            $result = $this->profilemodel->update($data);
             if ($result == true) {
-                unlink(USER_IMAGES . DS . $user['avatar']);
                 $_SESSION['userAlert']['success'] = true;
                 $_SESSION['userAlert']['message'] = "Cập nhật thành công";
-              }
-              if ($result == false){
-                $_SESSION['userAlert']['success'] = true;
-                $_SESSION['userAlert']['message'] = "Không có sự thay đổi";
-              }
-              else {
+              }else {
                 $_SESSION['userAlert']['success'] = false;
                 $_SESSION['userAlert']['message'] = $result;
               }
