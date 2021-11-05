@@ -134,12 +134,12 @@ class CartModel extends Database {
         return false;
     }
 
-    function orderDetail($idOrder, $idItem, $amount){
+    function orderDetail($idOrder, $idItem, $amount, $price){
         $idOrder = $idOrder['id_max'];
         // var_dump($idOrder, $idItem, $amount);
-        $stmt = $this->db->prepare("insert into order_details(id_order, id_item, amount) value(?, ?, ?)");
+        $stmt = $this->db->prepare("INSERT  INTO order_details(id_order, id_item, amount, price_item) value(?, ?, ?, ?)");
        
-        $stmt->bind_param("iii", $idOrder, $idItem, $amount);
+        $stmt->bind_param("iiii", $idOrder, $idItem, $amount, $price);
         $stmt->execute();
         // var_dump($stmt);
         $result = $stmt->affected_rows;

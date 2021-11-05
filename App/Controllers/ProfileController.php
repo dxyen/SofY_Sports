@@ -20,7 +20,7 @@
                 if($orders != false) {
                     foreach($orders as $index => $order) {
                         // var_dump($order['id']);
-                        $data[$order['id']]['orderDetails'] = $this->profilemodel->getItemByIdOrder($order['id']);
+                        $data[$order['id']]['orderDetails'] = $this->profilemodel->getItemUserByIdOrder($order['id']);
                         $total = $data[$order['id']]['orderDetails'];
                         $sum = 0;
                         foreach($total as $index => $tt) {
@@ -35,7 +35,7 @@
                 } else {
                     $data['message'] = "Bạn không có lịch sử mua hàng nào!";
                 }
-                $data['orderDetail'] = $this->profilemodel->getItemByIdOrder($orders);
+                $data['orderDetail'] = $this->profilemodel->getItemUserByIdOrder($orders);
                 // var_dump($data['order']);
                 $_SESSION['user']['avatar'] = $data['user']['avatar'];
                 // var_dump($_SESSION['user']['avatar']);

@@ -76,6 +76,21 @@
                 }
             }
         }
+        function delete($id){
+            if(!$id){
+                header("Location: " . DOCUMENT_ROOT . "/admin");
+            } else {
+                $result = $this->ordermodel->delete($id);
+                // var_dump($result);
+                if ($result) {
+                    header("Location: " . DOCUMENT_ROOT . "/admin/order");
+                } else {
+                    if (isset($_SERVER["HTTP_REFERER"])) {
+                        header("Location: " . $_SERVER["HTTP_REFERER"]);
+                    }
+                }
+            }
+        }
     }
 
 ?>

@@ -74,7 +74,7 @@ class CartController extends Controller {
                 }
                 foreach($result2 as $index => $item){
                     $data['itemId'] = $item['id'];
-                    $check=$this->cartmodel->orderDetail($result, $item['id'], $item['amount']);
+                    $check=$this->cartmodel->orderDetail($result, $item['id'], $item['amount'], $item['price']);
                     $delete = $this->cartmodel->deleteInCart($data);
                 }
                 header("Location: " . DOCUMENT_ROOT . "/cart");

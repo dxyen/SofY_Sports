@@ -43,8 +43,8 @@
                 return false;
             }
         }
-        function getItemByIdOrder($data){
-            $stmt = $this->db->prepare("CALL getItemByIdOrder(?)");
+        function getItemUserByIdOrder($data){
+            $stmt = $this->db->prepare("CALL getItemUserByIdOrder(?)");
             $stmt->bind_param("i", $data);
             $stmt->execute();
 

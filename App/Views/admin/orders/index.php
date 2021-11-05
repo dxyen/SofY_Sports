@@ -4,7 +4,7 @@
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1>Quản lý đơn hàng</h1>
-          </div>    
+          </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="<?= DOCUMENT_ROOT. "/admin/home"?>">Trang chủ</a></li>
@@ -66,7 +66,7 @@
                                                 <h5 class="modal-title" id="exampleModalLongTitle<?= $index ?>">Xác nhận xóa</h5>
                                               </div>
                                               <div class="modal-body">
-                                                  <p>Xóa <?= $order['name']?></p>
+                                                  <p>Xóa đơn hàng #<?=$order['id']?> của khách hàng <?= $order['fullname']?></p>
                                               </div>
                                               <div class="modal-footer">
                                                   <button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
