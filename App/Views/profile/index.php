@@ -1,6 +1,9 @@
 <div class="wrapper spade__black"></div>
 <div class="container user ">
     <h3 class="title">Thông tin tài khoản</h3>
+    <div class="alert">
+        <?php require_once(VIEW . DS . "/shared/notification.php") ?>
+    </div>
     <div class="profile">
         <div class="profile__info">
             <form action="<?= DOCUMENT_ROOT . "/profile/update/" . $data['user']['id'] ?>" method="POST" class="profile__info__form" enctype="multipart/form-data">
@@ -16,7 +19,7 @@
                 <input type="text" name="address" id="address" value="<?= $data['user']['address'] ?>">
                 <label for="address">Địa chỉ 2: </label>
                 <input type="text" name="address2" id="address2" value="<?= $data['user']['address2'] ?>">
-                <button type="submit" class="user__info__btn btny btny__primary">Cập nhật thông tin</button>
+                <button type="submit" id="myWish" class="user__info__btn btny btny__primary">Cập nhật thông tin</button>
                 
             </form>
         </div>
@@ -79,3 +82,4 @@
 <!-- space -->
 <div class="container"><div class="space"></div></div>
 <!-- end space -->
+

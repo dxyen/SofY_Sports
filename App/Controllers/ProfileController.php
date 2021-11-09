@@ -74,11 +74,11 @@
             // die();
             $result = $this->profilemodel->update($data);
             if ($result == true) {
-                $_SESSION['userAlert']['success'] = true;
-                $_SESSION['userAlert']['message'] = "Cập nhật thành công";
+                $_SESSION['alert']['success'] = true;
+                $_SESSION['alert']['messages'] = "Xin chúc mừng bạn đã nhật thành công!";
               }else {
-                $_SESSION['userAlert']['success'] = false;
-                $_SESSION['userAlert']['message'] = $result;
+                $_SESSION['alert']['success'] = false;
+                $_SESSION['alert']['messages'] = $result;
               }
             header("Location: " . DOCUMENT_ROOT . "/profile");
         }

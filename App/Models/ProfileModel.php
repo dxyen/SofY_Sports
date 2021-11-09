@@ -24,8 +24,6 @@
 
             if (!$result) {
                 return $stmt->error;
-            } else if ($stmt->affected_rows <= 0) {
-                return "Khong co thay doi";
             }
             return true;
         }

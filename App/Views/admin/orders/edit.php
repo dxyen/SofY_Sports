@@ -74,8 +74,8 @@
                </select>
              </div>
              <div class=" form-group">
-               <label for="NgayGH">Chọn ngày giao hàng</label>
-               <input required type="date" id="deliverydate" name="deliverydate" class="form-control" value="<?= date_format(date_create(str_replace("/", "-",  $data['order']['deliverydate'])), "Y-m-d") ?>" onchange="orderValidate()"></input>
+               <label for="deliverydate">Chọn ngày giao hàng</label>
+               <input required type="date" id="deliverydate" name="deliverydate" class="form-control" value="<?= date_format(date_create(str_replace("/", "-",  $data['order']['deliverydate'])), "Y-m-d") ?>"></input>
              </div>
              <div class="form-group">
                <label for="id">Số loại hàng hóa</label>

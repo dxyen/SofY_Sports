@@ -31,5 +31,11 @@
         'icon' => 'fas fa-users',
         'link' => DOCUMENT_ROOT . '/admin/customer',
     ],
+    'comment' => [
+        'title' => 'Quản lý bình luận',
+        'name' => 'comment',
+        'icon' => 'fas fa-comments',
+        'link' => DOCUMENT_ROOT . '/admin/comment',
+    ],
     ];
 ?>
