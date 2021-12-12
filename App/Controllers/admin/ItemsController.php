@@ -36,8 +36,9 @@
         }
         function update($id){
             if (!isset($_POST)) {
-                header("Location: " . DOCUMENT_ROOT . "/admin/items");
+                header("Location: " . DOCUMENT_ROOT . "/admin");
             } else {
+                $item = $this->itemsmodel->getById($id);
                 $data = $_POST;
 
                 $data['name'] = $_POST['name'];
@@ -46,24 +47,36 @@
                 $data['description'] = $_POST['description'];
                 $data["id"] = $id;
                 
-                if ($_FILES["image"]['name'] != "") {
-                    $randomNum = time();
-                    $imageName = str_replace(' ', '-', strtolower($_FILES["image"]['name']));
-                    $imageExt = substr($imageName, strrpos($imageName, '.'));
-                    $imageExt = str_replace('.', '', $imageExt);
-                    $newImageName = $randomNum . '.' . $imageExt;
+                if (isset($_FILES["image"]['name'])) {
+                    if($_FILES["image"]['name'] !=""){
+                        $randomNum = time();
+                        $imageName = str_replace(' ', '-', strtolower($_FILES["image"]['name']));
+                        $imageExt = substr($imageName, strrpos($imageName, '.'));
+                        $imageExt = str_replace('.', '', $imageExt);
+                        $newImageName = $randomNum . '.' . $imageExt;
 
-                    move_uploaded_file($_FILES["image"]["tmp_name"], PUBLIC_DIR_ITEM_IMAGES . DS . $newImageName);
-                    $data["image"] = $newImageName;
+                        move_uploaded_file($_FILES["image"]["tmp_name"], PUBLIC_DIR_ITEM_IMAGES . DS . $newImageName);
+                        $data["image"] = $newImageName;
+                        unlink(PUBLIC_DIR_ITEM_IMAGES . DS . $item['image']);
+                    }else {
+                        $data['image'] = $item['image'];
+                    }
                 }
 
                 $result = $this->itemsmodel->update($data);
+                if ($result == true) {
+                    $_SESSION['alert']['success'] = true;
+                    $_SESSION['alert']['messages'] = "Đã cập nhật thành công!";
+                  }else {
+                    $_SESSION['alert']['success'] = false;
+                    $_SESSION['alert']['messages'] = $result;
+                  }
                 if ($result) {
                 header("Location: " . DOCUMENT_ROOT . "/admin/items");
                 } else {
-                if (isset($_SERVER["HTTP_REFERER"])) {
-                    header("Location: " . $_SERVER["HTTP_REFERER"]);
-                }
+                    if (isset($_SERVER["HTTP_REFERER"])) {
+                        header("Location: " . $_SERVER["HTTP_REFERER"]);
+                    }
                 }
             }
         }

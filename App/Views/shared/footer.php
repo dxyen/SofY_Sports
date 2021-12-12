@@ -29,7 +29,7 @@
                 <div class="footer__list__social">
                     <a href="https://www.facebook.com/doyen333/" target="_blank"><i class="fab fa-facebook-square"> Facebook</i></a>
                     <a href="https://www.instagram.com/doyen3333/" target="_blank"><i class="fab fa-instagram"> Instagram</i></a>
-                    <a href="https://github.com/DoYen2k" target="_blank"><i class="fab fa-github-square"> Github</i></a>
+                    <a href="https://github.com/DoYen2k" target="_blank"><i class="fab fa-twitter"> Twitter</i></a>
                 </div>
             </ul>
         </div>

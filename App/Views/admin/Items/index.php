@@ -4,6 +4,9 @@
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1>Sảm Phẩm</h1>
+            <div class="alert">
+              <?php require_once(VIEW . DS . "/shared/notification.php") ?>
+            </div>
           </div>    
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">

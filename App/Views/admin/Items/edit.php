@@ -50,7 +50,6 @@
               <div class="input-group">
                 <div class="custom-file">
                   <input type="file" class="custom-file-input" name="image" id="image">
-                  <input type="hidden" value="<?=$data['item']['image']?>" name="image-old" id="image">
                   <label class="custom-file-label" for="image">Chọn file</label>
                 </div>
               </div>

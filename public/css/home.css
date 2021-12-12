@@ -416,4 +416,7 @@
         margin-top: 75px;
         margin-left: -91px;
     }
+    .promotion__item__sale {
+        display: none;
+    }
 }

@@ -29,6 +29,7 @@
             if (!isset($_POST)) {
                 header("Location: " . DOCUMENT_ROOT . "/admin");
             } else {
+                $category = $this->categorymodel->getById($id);
                 $data = $_POST;
 
                 $data['name'] = $_POST['name'];
@@ -44,9 +45,19 @@
 
                     move_uploaded_file($_FILES["image"]["tmp_name"], PUBLIC_DIR_CATEGORIES_IMAGES . DS . $newImageName);
                     $data["image"] = $newImageName;
+                    unlink(PUBLIC_DIR_CATEGORIES_IMAGES . DS . $category['image']);
+                } else {
+                    $data['image'] = $category['image'];
                 }
 
                 $result = $this->categorymodel->update($data);
+                if ($result == true) {
+                    $_SESSION['alert']['success'] = true;
+                    $_SESSION['alert']['messages'] = "Đã cập nhật thành công!";
+                  }else {
+                    $_SESSION['alert']['success'] = false;
+                    $_SESSION['alert']['messages'] = $result;
+                  }
                 if ($result) {
                 header("Location: " . DOCUMENT_ROOT . "/admin/categories");
                 } else {

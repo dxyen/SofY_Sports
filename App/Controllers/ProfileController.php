@@ -46,7 +46,7 @@
 
             $data = $_POST;
             $user = $this->profilemodel->getById($id);
-            var_dump($_POST);
+            // var_dump($_POST);
             $data['fullname'] = $_POST['fullname'];
             $data['email'] = $_POST['email'];
             $data['phone'] = $_POST['phone'];
@@ -75,7 +75,7 @@
             $result = $this->profilemodel->update($data);
             if ($result == true) {
                 $_SESSION['alert']['success'] = true;
-                $_SESSION['alert']['messages'] = "Xin chúc mừng bạn đã nhật thành công!";
+                $_SESSION['alert']['messages'] = "Đã cập nhật thành công!";
               }else {
                 $_SESSION['alert']['success'] = false;
                 $_SESSION['alert']['messages'] = $result;

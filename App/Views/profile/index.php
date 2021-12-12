@@ -33,7 +33,7 @@
     <!-- end space -->
     <h3 class="title">Lịch sử mua hàng</h3>
     <?php if(empty($data['order'])) : ?>
-        <p>Chưa có đặt mà đòi coi</p>
+        <p>Chưa có đặt lần nào mà đòi coi!</p>
     <?php else : ?>
         <?php foreach($data['order'] as $index => $order) :?>
             <div class="user__history">
