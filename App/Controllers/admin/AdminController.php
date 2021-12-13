@@ -30,6 +30,13 @@
                 $data["id"] = $id;
 
                 $result = $this->adminmodel->update($data);
+                if ($result == true) {
+                    $_SESSION['alert']['success'] = true;
+                    $_SESSION['alert']['messages'] = "Đã cập nhật thành công!";
+                  }else {
+                    $_SESSION['alert']['success'] = false;
+                    $_SESSION['alert']['messages'] = $result;
+                  }
                 if ($result) {
                 header("Location: " . DOCUMENT_ROOT . "/admin/admin");
                 } else {

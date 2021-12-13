@@ -109,6 +109,13 @@
             }
 
             $result = $this->itemsmodel->store($data);
+            if ($result == true) {
+                $_SESSION['alert']['success'] = true;
+                $_SESSION['alert']['messages'] = "Đã thêm thành công!";
+              }else {
+                $_SESSION['alert']['success'] = false;
+                $_SESSION['alert']['messages'] = $result;
+              }
             if ($result) {
             header("Location: " . DOCUMENT_ROOT . "/admin/items");
             } else {
