@@ -1,4 +1,4 @@
-<div class="wrapper spade__black"></div>
+<div class="spade__black"></div>
 <!-- all items list-->
 <div class="wrapper">
     <section class="container all__products">

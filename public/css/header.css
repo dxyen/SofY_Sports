@@ -4,9 +4,9 @@
     display: flex;
     height: 70px;
     width: 100%;
+    margin-left: -40px;
     justify-content: space-between;
     align-items: center;
-
     background-color: transparent;
     transition: all 0.5s;
     font-family: var(--font-asap);
@@ -41,7 +41,7 @@
 }
 .header__menu__item__active::before {
     position: absolute;
-    bottom: -29px;
+    bottom: -30px;
     left: 0;
     right: 0;
     height: 3px;
@@ -271,10 +271,9 @@
 
 /* css responsive */
 @media only screen and (max-width: 768px) {
-    /* .header {
-        background-color: var(--color-background);
-        position: relative;
-    } */
+    .header {
+        margin-left: 0px;
+    }
     .sticky {
         position: absolute;
     }

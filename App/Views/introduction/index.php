@@ -1,4 +1,4 @@
-<div class="wrapper spade__black"></div>
+<div class="spade__black"></div>
 <!-- space -->
 <div class="container"><div class="space"></div></div>
 <!-- end space -->

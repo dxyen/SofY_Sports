@@ -27,8 +27,8 @@
     defined('DB_PASSWORD') ?: define('DB_PASSWORD', $data['db_password']);
 
 
-    defined('DOCUMENT_ROOT') ?:  define('DOCUMENT_ROOT', "http://" . $_SERVER['SERVER_NAME'] . ":81/SofY_Sports");
-    defined ('PUBLIC_URL') ?: define('PUBLIC_URL',"http://" . $_SERVER['SERVER_NAME'] . ":81/SofY_Sports" . '/public');
+    defined('DOCUMENT_ROOT') ?:  define('DOCUMENT_ROOT', "http://" . $_SERVER['SERVER_NAME'] . "/SofY_Sports");
+    defined ('PUBLIC_URL') ?: define('PUBLIC_URL',"http://" . $_SERVER['SERVER_NAME'] . "/SofY_Sports" . '/public');
     defined('IMAGES_URL') ?:  define('IMAGES_URL', PUBLIC_URL . '/img');
     defined ('IMAGES_ITEMS_URL') ?: define('IMAGES_ITEMS_URL', PUBLIC_URL .'/img/items');
     defined ('ICONS_URL') ?: define('ICONS_URL', PUBLIC_URL .'/icons');

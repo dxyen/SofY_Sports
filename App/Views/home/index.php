@@ -72,7 +72,7 @@
 <div class="container"><div class="space"></div></div>
 <!-- end space -->
 <!-- promotion list -->
-<div class="wrapper">
+<div >
     <div class="promotion__background">
         <section class="promotion">
             <h3 class="title">Khuyến mãi hot</h3>

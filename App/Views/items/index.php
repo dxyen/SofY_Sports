@@ -1,4 +1,4 @@
-<div class="wrapper spade__black"></div>
+<div class="spade__black"></div>
 
 <div class="wrapper">
     <section class="container items">
@@ -63,6 +63,141 @@
                 <?php endforeach ?>
             <?php endif; ?>
         </div>
+    </div>
+    <!-- space -->
+    <div class="container"><div class="space"></div></div>
+    <!-- end space -->
+    <!-- bình luận sản phẩm -->
+    <div class= "container info__product_items row">
+        <div class="info__product_item--button col ">
+            <div class="info__button">
+                <p>Bình luận sản phẩm</p>
+            </div>
+        </div>
+        <div class="info__product_item--content">
+            <div class="info__product_item--content__mini">
+                <div class="comment--item">
+                    <img class="comment--item-image" src="<?= USER_AVATAR_URL . (empty($comment['avatar']) ? "default-avatar.png" : $comment['avatar']) ?>">
+                    <div class="comment--items-info">
+                        <div class="comment--items-info_flex">
+                            <div class="comment--item-name">
+                                <p>do xuan yen</p>
+                            </div>
+                            <div class="comment--item-date">
+                                <p>08/10/2022</p>
+                            </div>
+                            <div class="star-lists-items">
+                                <i class=" fa fa-star text-warning"></i>
+                                <i class=" fa fa-star text-warning"></i>
+                                <i class=" fa fa-star text-warning"></i>
+                                <i class=" fa fa-star text-warning"></i>
+                                <i class=" fa fa-star text-warning"></i>
+                            </div>
+                        </div>
+
+                        <div class="comment--item-content">
+                            <P>HÀNG TOT LAM</P>
+                        </div>
+                    </div>
+                </div>
+                <div class="comment--item">
+                    <img class="comment--item-image" src="<?= USER_AVATAR_URL . (empty($comment['avatar']) ? "default-avatar.png" : $comment['avatar']) ?>">
+                    <div class="comment--items-info">
+                        <div class="comment--items-info_flex">
+                            <div class="comment--item-name">
+                                <p>do xuan yen</p>
+                            </div>
+                            <div class="comment--item-date">
+                                <p>08/10/2022</p>
+                            </div>
+                            <div class="star-lists-items">
+                                <i class=" fa fa-star text-warning"></i>
+                                <i class=" fa fa-star text-warning"></i>
+                                <i class=" fa fa-star text-warning"></i>
+                                <i class=" fa fa-star text-warning"></i>
+                                <i class=" fa fa-star text-warning"></i>
+                            </div>
+                        </div>
+
+                        <div class="comment--item-content">
+                            <P>HÀNG TOT LAM</P>
+                        </div>
+                    </div>
+                </div>
+                <div class="comment--item">
+                    <img class="comment--item-image" src="<?= USER_AVATAR_URL . (empty($comment['avatar']) ? "default-avatar.png" : $comment['avatar']) ?>">
+                    <div class="comment--items-info">
+                        <div class="comment--items-info_flex">
+                            <div class="comment--item-name">
+                                <p>do xuan yen</p>
+                            </div>
+                            <div class="comment--item-date">
+                                <p>08/10/2022</p>
+                            </div>
+                            <div class="star-lists-items">
+                                <i class=" fa fa-star text-warning"></i>
+                                <i class=" fa fa-star text-warning"></i>
+                                <i class=" fa fa-star text-warning"></i>
+                                <i class=" fa fa-star text-warning"></i>
+                                <i class=" fa fa-star text-warning"></i>
+                            </div>
+                        </div>
+                        <div class="comment--item-content">
+                            <P>HÀNG TOT LAM</P>
+                        </div>
+                    </div>
+                </div>
+                <form action="" method="POST">
+                    <input type="hidden" name="idProduct" value="">
+                        <div class="form__comments">
+                            <div class="form__comments-comment">
+                                <img class="form__comment-image" src="<?= USER_AVATAR_URL . (empty($comment['avatar']) ? "default-avatar.png" : $comment['avatar']) ?>" alt="">
+                                <textarea name="comments" id="" cols="15" rows="2" placeholder="Viết bình luận..."></textarea>
+                            </div>
+                            <div class="form__comments-ranking">
+                                <p>Bạn cảm thấy sản phẩm này như thế nào?</p>
+                                <div class="star-lists">
+                                        <div class="star-lists-items">
+                                            <label><i class="far fa-star star-list__item text-warning"></i></label>
+                                            <input hidden type="radio" name="rank" value="" />
+                                        </div>
+                                        <div class="star-lists-items">
+                                            <label><i class=" far fa-star star-list__item text-warning"></i></label>
+                                            <input hidden type="radio" name="rank" value="" />
+                                        </div>
+                                        <div class="star-lists-items">
+                                            <label><i class=" far fa-star star-list__item text-warning"></i></label>
+                                            <input hidden type="radio" name="rank" value="" />
+                                        </div>
+                                        <div class="star-lists-items">
+                                            <label><i class=" far fa-star star-list__item text-warning"></i></label>
+                                            <input hidden type="radio" name="rank" value="" />
+                                        </div>
+                                        <div class="star-lists-items">
+                                            <label><i class=" far fa-star star-list__item text-warning"></i></label>
+                                            <input hidden type="radio" name="rank" value="" />
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btny__primary">Gửi đánh giá</button>
+                </form>
+            </div>
+            <!-- đánh giá sản phẩm -->
+            <div class="product_evaluation">
+                <div class="result-rate--left">
+                
+                    <i class=" fa fa-star text-warning"></i>
+                    <i class=" fa fa-star text-warning"></i>
+                    <i class=" fa fa-star text-warning"></i>
+                    <i class=" fa fa-star text-warning"></i>
+                    <i class=" fa fa-star text-warning"></i>
+                    <p>Đánh giá trung bình</p>
+                    <p class="result-rate--sum">(đánh giá)</p>
+                    <p class="result-rate--star"></p>
+                </div>
+            </div>
+        </div>  
     </div>
     <!-- all items list-->
     <div class="container">
