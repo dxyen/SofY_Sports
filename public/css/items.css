@@ -194,6 +194,7 @@
     font-weight: 500;
 }
 .form__comments-comment{
+    /* dsfkjdshfkjhdfksjdfh */
     display: grid;
     grid-template-columns: 0.2fr 7fr;
     gap: 0px 15px;
