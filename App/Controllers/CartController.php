@@ -15,13 +15,15 @@ class CartController extends Controller {
                 $id = $_SESSION['user']['id'];
                 $data['user'] = $this->profilemodel->getById($id);
                 $data['item'] = $this->cartmodel->getItemInCartByUser($id);
-                // var_dump($data['item']);
+                
             }
             if(isset($data)){
                 $this->view('/cart/index',$data);
             }else {
-                $data = 0;
+                $data['item'] = 0;
+                $data['user'] = 0;
                 $this->view('/cart/index', $data);
+                // var_dump($data['item']);
             }
         }
         

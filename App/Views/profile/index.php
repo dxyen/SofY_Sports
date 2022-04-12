@@ -1,4 +1,4 @@
-<div class="wrapper spade__black"></div>
+<div class="spade__black"></div>
 <div class="container user ">
     <h3 class="title">Thông tin tài khoản</h3>
     <div class="alert">

@@ -16,8 +16,22 @@
             $data['comment'] = $this->itemsmodel->getComment($idItems);
             $data['samekind'] = $this->productsmodel->getSameKind($data['items']['id_sport_type'], $data['items']['id']);
             // echo '<pre>';
-            // print_r($data['items']['id_sport_type']);
+            // print_r($data['comment']['star_rating']);
             // echo '</pre>';
+            // var_dump($data['comment']);
+            if($data['comment'] != false){
+                    $temp = 0;
+                    $sum = 0;
+                foreach($data['comment'] as $index =>$comment) {
+                    // $comment[0]['star_rating'];
+                    $sum = $sum + $comment['star_rating'];
+                    $temp ++;
+                }
+                $avg = $sum/ $temp;
+                $data['avg'] = $avg;
+                // var_dump($avg);
+            }
+            
             $this->view("/items/index", $data);
         }
         function search(){

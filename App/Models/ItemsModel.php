@@ -90,10 +90,12 @@ class itemsmodel extends Database {
 
         function comment($id, $data){
             // var_dump($data);
+            $date_comment = date('Y-m-d H:i:s');
             $idItem = $data['idItemComment'];
             $comment = $data['comment'];
-            $stmt = $this->db->prepare("INSERT INTO COMMENT(id_user, id_item, comment) VALUES (?, ?, ?)");
-            $stmt->bind_param("iis", $id, $idItem, $comment);
+            $star = $data['rank'];
+            $stmt = $this->db->prepare("INSERT INTO COMMENT(id_user, id_item, comment, star_rating, date_comment) VALUES (?, ?, ?, ?, ?)");
+            $stmt->bind_param("iisss", $id, $idItem, $comment, $star, $date_comment);
 
             $stmt->execute();
             if ($stmt->error) {
@@ -103,7 +105,7 @@ class itemsmodel extends Database {
         }
         function getComment($idItems){
             $idItems = intval($idItems);
-            $stmt = $this->db->prepare("SELECT COMMENT.comment, USERS.fullname, USERS.avatar FROM COMMENT JOIN USERS ON COMMENT.id_user = USERS.id WHERE id_item = ?");
+            $stmt = $this->db->prepare("SELECT COMMENT.comment, COMMENT.star_rating, COMMENT.date_comment, USERS.fullname, USERS.avatar FROM COMMENT JOIN USERS ON COMMENT.id_user = USERS.id WHERE id_item = ?");
             $stmt->bind_param("i", $idItems);
 
             $stmt->execute();
