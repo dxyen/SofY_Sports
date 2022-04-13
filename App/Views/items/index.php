@@ -10,11 +10,16 @@
                 <div class="items__info">
                     <h4 class="items__info__name"><?= $data['items']['name']?></h4>
                     <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
+                        <?php if (isset($data['avg'])) :?>
+                            <?php for($i = 1; $i<=floor($data['avg']); $i++): ?>
+                                <i class=" fa fa-star text-warning"></i>
+                            <?php endfor; ?>
+                            <?php for($i = floor($data['avg']); $i< $data['avg']; $i++): ?>
+                                <i class="fas fa-star-half-alt text-warning"></i>
+                            <?php endfor; ?>
+                        <?php else : ?>
+                            <p style = "font-size: 20px">Chưa có đánh giá</p>
+                        <?php endif; ?>
                     </div>
                     <div class="items__price">
                         <div class="items__price__1"><?= number_format($data['items']['price'], 0, '', ',') ?>đ</div>
@@ -105,19 +110,18 @@
             </div>
             <!-- đánh giá sản phẩm -->
             <div class="product_evaluation">
-            <?php if (isset($data['avg'])) :?>
-                <div class="result-rate--left">
-                    
-                    <?php for($i = 1; $i<=floor($data['avg']); $i++): ?>
-                        <i class=" fa fa-star text-warning"></i>
-                    <?php endfor; ?>
-                    <?php for($i = floor($data['avg']); $i< $data['avg']; $i++): ?>
-                        <i class="fas fa-star-half-alt text-warning"></i>
-                    <?php endfor; ?>
-                    <p>Đánh giá trung bình</p>
-                    <p class="result-rate--sum">(<?= round($data['avg'], 1)?>)</p>
-                    <p class="result-rate--star"></p>
-                </div>
+                <?php if (isset($data['avg'])) :?>
+                    <div class="result-rate--left">
+                        <?php for($i = 1; $i<=floor($data['avg']); $i++): ?>
+                            <i class=" fa fa-star text-warning"></i>
+                        <?php endfor; ?>
+                        <?php for($i = floor($data['avg']); $i< $data['avg']; $i++): ?>
+                            <i class="fas fa-star-half-alt text-warning"></i>
+                        <?php endfor; ?>
+                        <p>Đánh giá trung bình</p>
+                        <p class="result-rate--sum">(<?= round($data['avg'], 1)?>)</p>
+                        <p class="result-rate--star"></p>
+                    </div>
                 <?php endif; ?>
             </div>
         </div>  

@@ -9,13 +9,34 @@ class CartController extends Controller {
         {
             $this->cartmodel = $this->model('CartModel');
             $this->profilemodel = $this->model('ProfileModel');
+            $this->itemsmodel = $this->model('itemsmodel');
         }
         function Index(){
             if(isset($_SESSION['user'])){
                 $id = $_SESSION['user']['id'];
                 $data['user'] = $this->profilemodel->getById($id);
                 $data['item'] = $this->cartmodel->getItemInCartByUser($id);
+
+                // echo '<pre>';
+                // print_r($data['item']);
+                // echo '</pre>';
                 
+                // lay ra star cua san pham 
+                if ($data['item'] != false) {
+                    foreach($data['item'] as $index =>$item){
+                        $data['comment'][$index] = $this->itemsmodel->getComment($item['id']);
+                        if($data['comment'][$index] != ""){
+                            $temp = 0;
+                            $sum = 0;
+                            foreach($data['comment'][$index] as $index =>$comment) {
+                                $sum = $sum + $comment['star_rating'];
+                                $temp ++;
+                            }
+                            $avg = $sum/ $temp;
+                            $data['avg'][$item['id']] = $avg;
+                        }
+                    }
+                }
             }
             if(isset($data)){
                 $this->view('/cart/index',$data);

@@ -88,11 +88,16 @@
                         <div class="promotion__info">
                             <h4 class="promotion__info__name"><?= $itemspromotion['name']?></h4>
                             <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
+                                <?php if (isset($data['avg'][$itemspromotion['id']])) :?>
+                                <?php for($i = 1; $i<=floor($data['avg'][$itemspromotion['id']]); $i++): ?>
+                                    <i class=" fa fa-star text-warning"></i>
+                                <?php endfor; ?>
+                                <?php for($i = floor($data['avg'][$itemspromotion['id']]); $i< $data['avg'][$itemspromotion['id']]; $i++): ?>
+                                    <i class="fas fa-star-half-alt text-warning"></i>
+                                <?php endfor; ?>
+                                <?php else : ?>
+                                    <p style = "font-size: 20px">Chưa có đánh giá</p>
+                                <?php endif; ?>
                             </div>
                             <div class="promotion__price">
                                 <div class="promotion__price__1"><?= number_format($itemspromotion['price'], 0, '', ',') ?>đ</div>
@@ -162,11 +167,16 @@
                         <i class="eye fas fa-eye"></i>
                         <div class="all__item__name"><?= $items['name']?></div>
                         <div class="rating__all">
-                            <i class="rating__all__i fas fa-star"></i>
-                            <i class="rating__all__i fas fa-star"></i>
-                            <i class="rating__all__i fas fa-star"></i>
-                            <i class="rating__all__i fas fa-star"></i>
-                            <i class="rating__all__i far fa-star"></i>
+                            <?php if (isset($data['avg'][$items['id']])) :?>
+                            <?php for($i = 1; $i<=floor($data['avg'][$items['id']]); $i++): ?>
+                                <i class=" fa fa-star text-warning"></i>
+                            <?php endfor; ?>
+                            <?php for($i = floor($data['avg'][$items['id']]); $i< $data['avg'][$items['id']]; $i++): ?>
+                                <i class="fas fa-star-half-alt text-warning"></i>
+                            <?php endfor; ?>
+                            <?php else : ?>
+                                <p style = "font-size: 16px">Chưa có đánh giá</p>
+                            <?php endif; ?>
                         </div>
                         <div class="all__item__prices">
                             <div class="all__item__price__1"><?= number_format($items['price'], 0, '', ',') ?>đ</div>

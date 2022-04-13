@@ -21,11 +21,16 @@
                                     <h4 class="cart__detail__itemsmini__info__name"><?= $item['name']?></h4>
                                 </a>
                                 <div class="rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
+                                    <?php if (isset($data['avg'][$item['id']])) :?>
+                                    <?php for($i = 1; $i<=floor($data['avg'][$item['id']]); $i++): ?>
+                                        <i class=" fa fa-star text-warning"></i>
+                                    <?php endfor; ?>
+                                    <?php for($i = floor($data['avg'][$item['id']]); $i< $data['avg'][$item['id']]; $i++): ?>
+                                        <i class="fas fa-star-half-alt text-warning"></i>
+                                    <?php endfor; ?>
+                                    <?php else : ?>
+                                        <p style = "font-size: 20px">Chưa có đánh giá</p>
+                                    <?php endif; ?>
                                 </div>
                                 <input type="number" hidden id="priceOfItem<?= $index ?>" value="<?= $item['price'] ?>">
                                 <div class="cart__detail__itemsmini__info__price"><?= number_format($item['price'], 0, '', ',') ?>đ</div>
