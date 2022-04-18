@@ -24,7 +24,11 @@
                         $total = $data[$order['id']]['orderDetails'];
                         $sum = 0;
                         foreach($total as $index => $tt) {
-                            $sum = $sum + $tt['price'] *$tt['amount'];
+                            if(isset($tt['disco'])){
+                                $sum = $sum + $tt['disco'] *$tt['amount'];
+                            }else {
+                                $sum = $sum + $tt['price'] *$tt['amount'];
+                            }
                             $data[$order['id']]['total'] = $sum;
                         }
                     }

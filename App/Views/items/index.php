@@ -22,7 +22,7 @@
                         <?php endif; ?>
                     </div>
                     <div class="items__price">
-                        <div class="items__price__1"><?= number_format($data['items']['price'], 0, '', ',') ?>đ</div>
+                        <div class="items__price__1"><?= isset($data['items']['discount'])? number_format($data['items']['discount'], 0, '', ',') : number_format($data['items']['price'], 0, '', ',') ?>đ</div>
                         <div class="items__price__2"><?= number_format(($data['items']['price'])*1.1, 0, '', ',') ?>đ</div>
                     </div>
                     <p class="items__info__description">

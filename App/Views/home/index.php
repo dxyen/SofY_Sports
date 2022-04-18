@@ -100,8 +100,8 @@
                                 <?php endif; ?>
                             </div>
                             <div class="promotion__price">
-                                <div class="promotion__price__1"><?= number_format($itemspromotion['price'], 0, '', ',') ?>đ</div>
-                                <div class="promotion__price__2"><?= number_format(($itemspromotion['price'])*2, 0, '', ',') ?>đ</div>
+                                <div class="promotion__price__1"><?= number_format($itemspromotion['discount'], 0, '', ',') ?>đ</div>
+                                <div class="promotion__price__2"><?= number_format(($itemspromotion['price'])*1.1, 0, '', ',') ?>đ</div>
                             </div>
                             <p class="promotion__info__description">
                                 <?= $itemspromotion['description']?>
@@ -179,7 +179,7 @@
                             <?php endif; ?>
                         </div>
                         <div class="all__item__prices">
-                            <div class="all__item__price__1"><?= number_format($items['price'], 0, '', ',') ?>đ</div>
+                            <div class="all__item__price__1"><?= isset($items['discount'])? number_format($items['discount'], 0, '', ',') : number_format($items['price'], 0, '', ',') ?>đ</div>
                             <div class="all__item__price__2"><?= number_format(($items['price'])*1.1, 0, '', ',') ?>đ</div>
                         </div>
                     </a>

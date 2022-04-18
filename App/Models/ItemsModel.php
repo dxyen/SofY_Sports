@@ -14,7 +14,7 @@ class itemsmodel extends Database {
                 }
             } else{
                 $index = ($page-1) *$limit;
-                $sql = "SELECT *FROM ITEMS ORDER BY ID ASC LIMIT $limit OFFSET $index";
+                $sql = "SELECT ITEMS.id, ITEMS.image, ITEMS.`name`, ITEMS.price, DISCOUNTS.discount FROM ITEMS LEFT JOIN DISCOUNTS ON DISCOUNTS.id_item = ITEMS.id ORDER BY ITEMS.ID ASC LIMIT $limit OFFSET $index";
 
                 $result = $this->db->query($sql);
                 if($result->num_rows >0){
@@ -33,7 +33,7 @@ class itemsmodel extends Database {
                 return $totalPage;
         }
         function getItemsPromotion(){
-            $stmt = $this->db->prepare("SELECT * FROM ITEMS");
+            $stmt = $this->db->prepare("SELECT * FROM DISCOUNTS JOIN ITEMS WHERE DISCOUNTS.id_item = ITEMS.id");
 
             $stmt->execute();
             $result = $stmt->get_result();
@@ -46,7 +46,7 @@ class itemsmodel extends Database {
         }
         function getByItems($id){
             $id = intval($id);
-            $stmt = $this->db->prepare("SELECT * FROM ITEMS WHERE id = ?");
+            $stmt = $this->db->prepare("SELECT ITEMS.id, ITEMS.description, ITEMS.image, ITEMS.`name`, ITEMS.price, DISCOUNTS.discount, ITEMS.id_sport_type FROM ITEMS LEFT JOIN DISCOUNTS ON ITEMS.id = DISCOUNTS.id_item WHERE ITEMS.id = ?");
             $stmt->bind_param("i", $id);
 
             $stmt->execute();

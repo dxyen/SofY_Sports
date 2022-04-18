@@ -7,6 +7,12 @@
         'icon' => 'fas fa-volleyball-ball',
         'link' => DOCUMENT_ROOT . '/admin/items',
     ],
+    'discounts' => [
+        'title' => 'Quản lý khuyến mãi',
+        'name' => 'discounts',
+        'icon' => 'fas fa-percent',
+        'link' => DOCUMENT_ROOT . '/admin/discounts',
+    ],
     'categories' => [
         'title' => 'Quản lý loại',
         'name' => 'categories',
@@ -36,6 +42,12 @@
         'name' => 'comment',
         'icon' => 'fas fa-comments',
         'link' => DOCUMENT_ROOT . '/admin/comment',
+    ],
+    'banners' => [
+        'title' => 'Quản lý Banner',
+        'name' => 'banners',
+        'icon' => 'fas fa-image',
+        'link' => DOCUMENT_ROOT . '/admin/banners',
     ],
     ];
 ?>

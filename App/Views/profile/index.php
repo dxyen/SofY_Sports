@@ -66,7 +66,7 @@
                                 <a href="#/">
                                     <h4 class="user__history__itemsmini__info__name"><?= $orderDetail['item']?></h4>
                                 </a>
-                                <div class="user__history__itemsmini__info__price"><?= number_format($orderDetail['price'], 0, '', ',') ?>đ</div>
+                                <div class="user__history__itemsmini__info__price"><?= isset($orderDetail['disco'])? number_format($orderDetail['disco'], 0, '', ',') : number_format($orderDetail['price'], 0, '', ',') ?>đ</div>
                                 <label class="user__history__itemsmini__info__amount" for="">Số lượng: <?= $orderDetail['amount']?></label>
                             </div>
                         </li>

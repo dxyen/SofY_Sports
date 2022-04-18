@@ -34,13 +34,8 @@
 
             $itemspromotion =$this->itemsmodel->getItemsPromotion();
             // // Lấy items để show promotion
-            $data['promotion'][] = $itemspromotion[10];
-            $data['promotion'][] = $itemspromotion[7];
-            $data['promotion'][] = $itemspromotion[22];
-            $data['promotion'][] = $itemspromotion[26];
-            $data['promotion'][] = $itemspromotion[34];
-
-
+            $data['promotion'] = $itemspromotion;
+            
             $data['categories'] = $this->categorymodel->all();
             // lay ra star cua san pham 
             foreach($data['items'] as $index =>$item){
