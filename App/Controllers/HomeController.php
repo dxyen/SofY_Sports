@@ -9,6 +9,7 @@
         {
             $this->itemsmodel = $this->model('itemsmodel');
             $this->categorymodel = $this->model('categorymodel');
+            $this->bannermodel = $this->model('bannermodel');
         }
         function Index(){
             $page = 1;
@@ -51,8 +52,10 @@
                     $data['avg'][$item['id']] = $avg;
                 }
             }
+            $banner = $this->bannermodel->all();
+            $data['banner'] = $banner;
             // echo '<pre>';
-            // print_r($data['items']);
+            // print_r($data['banner']);
             // echo '</pre>';
             $this->view("/home/index", $data);
         }

@@ -153,7 +153,6 @@
 .info__button:active{
     background-color: var(--color-active);
     cursor: pointer;
-
 }
 
 .info__button p{

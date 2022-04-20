@@ -2,11 +2,16 @@
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active banner__img">
-            <img src="<?=IMAGES_URL?>/anh1.jpg" class="d-block w-100" alt="...">
+                <img src="<?=IMAGES_URL?>/pexels-pixabay-163403.jpg" class="d-block w-100" alt="...">
             </div>
-            <div class="carousel-item banner__img">
-            <img src="<?=IMAGES_URL?>/anh2.jpg" class="d-block w-100" alt="...">
-            </div>
+            <!-- <div class="carousel-item banner__img">
+                <img src="<?=IMAGES_URL?>/anh2.jpg" class="d-block w-100" alt="...">
+            </div> -->
+            <?php foreach($data['banner'] as $index => $banner) :?>
+                <div class="carousel-item banner__img">
+                    <img src="<?=IMAGES_URL?>/<?=$banner['image']?>" class="d-block w-100" alt="...">
+                </div>
+            <?php endforeach ?>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
             <span class="carousel-control-prev-icon banner__btn" aria-hidden="true"></span>
