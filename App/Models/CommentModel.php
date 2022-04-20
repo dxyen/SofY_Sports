@@ -5,7 +5,7 @@
     class CommentModel extends Database{
         //Phần admin
         function getAllComment(){
-            $stmt = $this->db->prepare("SELECT C.id as id, C.`comment` as comment, U.fullname as fullname, C.id_user as idUser, T.`name` as name, C.id_item as idItem from comment C join users U on C.id_user = U.id join items T on C.id_item = T.id");
+            $stmt = $this->db->prepare("SELECT C.id as id, C.`comment` as comment, U.fullname as fullname, C.id_user as idUser, T.`name` as name, C.id_item as idItem, C.star_rating from comment C join users U on C.id_user = U.id join items T on C.id_item = T.id");
             $stmt->execute();
             $result = $stmt->get_result();
 

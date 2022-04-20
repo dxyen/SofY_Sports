@@ -148,7 +148,7 @@ class itemsmodel extends Database {
             }
         }
         function delete($id){
-            $stmt = $this->db->prepare("DELETE FROM ITEMS WHERE id = $id");
+            $stmt = $this->db->prepare("DELETE FROM ITEMS WHERE id = ?");
             $stmt->bind_param("i", $id);
             $isSuccess = $stmt->execute();
             if(!$isSuccess){
@@ -188,6 +188,42 @@ class itemsmodel extends Database {
             return false;
             }
             return true;
+        }
+        function allItemDiscount(){
+            $sql = 'SELECT discounts.id_item, discounts.discount, items.`name`, items.price, items.image FROM discounts JOIN items where discounts.id_item =  items.id';
+            $result = $this->db->query($sql);
+            if($result->num_rows >0){
+                return $result->fetch_all(MYSQLI_ASSOC);
+            }else{
+                return false;
+            }
+        }
+        function deleteDiscount($id){
+            // $id_item = $id;
+            // var_dump($id_item);
+            $stmt = $this->db->prepare("DELETE FROM DISCOUNTS WHERE id_item = ?");
+            $stmt->bind_param("i", $id);
+            $isSuccess = $stmt->execute();
+            if(!$isSuccess){
+                return $stmt->error;
+            } else if($stmt->affected_rows <= 0){
+                return "không thể xóa";
+            }
+        }
+        function storeDiscount($data){
+            $price_discount = $data['price_discount'];
+            $id_item = $data['itemId'];
+            $stmt = $this->db->prepare("INSERT INTO DISCOUNTS(discount, id_item) VALUES (?, ?)");
+            $stmt->bind_param("ii", $price_discount, $id_item);
+
+            $stmt->execute();
+            $result = $stmt->affected_rows;
+
+            if ($result < 1) {
+            return false;
+            } else {
+            return true;
+            }
         }
     }
 ?>

@@ -95,6 +95,11 @@
                                 <?php for($i = floor($data['avg'][$itemspromotion['id']]); $i< $data['avg'][$itemspromotion['id']]; $i++): ?>
                                     <i class="fas fa-star-half-alt text-warning"></i>
                                 <?php endfor; ?>
+                                    <?php if ($data['avg'][$itemspromotion['id']] != 5) :?>
+                                        <?php for($i = ceil($data['avg'][$itemspromotion['id']]); $i< 5; $i++): ?>
+                                            <i class="far fa-star text-warning"></i>
+                                        <?php endfor; ?>
+                                    <?php endif; ?>
                                 <?php else : ?>
                                     <p style = "font-size: 20px">Chưa có đánh giá</p>
                                 <?php endif; ?>
@@ -174,6 +179,11 @@
                             <?php for($i = floor($data['avg'][$items['id']]); $i< $data['avg'][$items['id']]; $i++): ?>
                                 <i class="fas fa-star-half-alt text-warning"></i>
                             <?php endfor; ?>
+                                <?php if ($data['avg'][$items['id']] !=5) :?>
+                                    <?php for($i = ceil($data['avg'][$items['id']]); $i< 5; $i++): ?>
+                                        <i class="far fa-star text-warning"></i>
+                                    <?php endfor; ?>
+                                <?php endif; ?>
                             <?php else : ?>
                                 <p style = "font-size: 16px">Chưa có đánh giá</p>
                             <?php endif; ?>

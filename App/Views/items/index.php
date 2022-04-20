@@ -17,6 +17,11 @@
                             <?php for($i = floor($data['avg']); $i< $data['avg']; $i++): ?>
                                 <i class="fas fa-star-half-alt text-warning"></i>
                             <?php endfor; ?>
+                            <?php if ($data['avg'] !=5) :?>
+                                <?php for($i = ceil($data['avg']); $i< 5; $i++): ?>
+                                    <i class="far fa-star text-warning"></i>
+                                <?php endfor; ?>
+                            <?php endif; ?>
                         <?php else : ?>
                             <p style = "font-size: 20px">Chưa có đánh giá</p>
                         <?php endif; ?>
@@ -118,6 +123,11 @@
                         <?php for($i = floor($data['avg']); $i< $data['avg']; $i++): ?>
                             <i class="fas fa-star-half-alt text-warning"></i>
                         <?php endfor; ?>
+                        <?php if ($data['avg'] !=5) :?>
+                            <?php for($i = ceil($data['avg']); $i< 5; $i++): ?>
+                                <i class="far fa-star text-warning"></i>
+                            <?php endfor; ?>
+                        <?php endif; ?>
                         <p>Đánh giá trung bình</p>
                         <p class="result-rate--sum">(<?= round($data['avg'], 1)?>)</p>
                         <p class="result-rate--star"></p>
