@@ -4,9 +4,6 @@
             <div class="carousel-item active banner__img">
                 <img src="<?=IMAGES_URL?>/pexels-pixabay-163403.jpg" class="d-block w-100" alt="...">
             </div>
-            <!-- <div class="carousel-item banner__img">
-                <img src="<?=IMAGES_URL?>/anh2.jpg" class="d-block w-100" alt="...">
-            </div> -->
             <?php foreach($data['banner'] as $index => $banner) :?>
                 <div class="carousel-item banner__img">
                     <img src="<?=IMAGES_URL?>/<?=$banner['image']?>" class="d-block w-100" alt="...">

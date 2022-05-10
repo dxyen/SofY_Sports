@@ -75,7 +75,7 @@ class itemsmodel extends Database {
 
         function getByKeyword($keyword){
             $keyword = '%' . $keyword . '%';
-            $stmt = $this->db->prepare("SELECT * FROM ITEMS WHERE name like ?");
+            $stmt = $this->db->prepare("SELECT ITEMS.id, ITEMS.image, ITEMS.`name`, ITEMS.price, DISCOUNTS.discount FROM ITEMS LEFT JOIN DISCOUNTS ON DISCOUNTS.id_item = ITEMS.id WHERE name like ?");
             $stmt->bind_param("s", $keyword);
 
             $stmt->execute();
@@ -190,7 +190,7 @@ class itemsmodel extends Database {
             return true;
         }
         function allItemDiscount(){
-            $sql = 'SELECT discounts.id_item, discounts.discount, items.`name`, items.price, items.image FROM discounts JOIN items where discounts.id_item =  items.id';
+            $sql = 'SELECT discounts.id_item, discounts.id, discounts.discount, items.`name`, items.price, items.image, discounts.date_start, discounts.date_end FROM discounts JOIN items where discounts.id_item =  items.id';
             $result = $this->db->query($sql);
             if($result->num_rows >0){
                 return $result->fetch_all(MYSQLI_ASSOC);
@@ -201,7 +201,7 @@ class itemsmodel extends Database {
         function deleteDiscount($id){
             // $id_item = $id;
             // var_dump($id_item);
-            $stmt = $this->db->prepare("DELETE FROM DISCOUNTS WHERE id_item = ?");
+            $stmt = $this->db->prepare("DELETE FROM DISCOUNTS WHERE id = ?");
             $stmt->bind_param("i", $id);
             $isSuccess = $stmt->execute();
             if(!$isSuccess){
@@ -211,10 +211,19 @@ class itemsmodel extends Database {
             }
         }
         function storeDiscount($data){
-            $price_discount = $data['price_discount'];
+            // var_dump($data['items']['price']);
+            if (isset($data['discountIdPercent'])) {
+                $discountIdPercent  = $data['discountIdPercent'];
+                $price_discount = $data['items']['price'] - ($data['items']['price'])*$discountIdPercent;
+            } else{
+                $price_discount = $data['price_discount'];
+            }
             $id_item = $data['itemId'];
-            $stmt = $this->db->prepare("INSERT INTO DISCOUNTS(discount, id_item) VALUES (?, ?)");
-            $stmt->bind_param("ii", $price_discount, $id_item);
+            $date_start = $data['date_start'];
+            $date_end = $data['date_end'];
+            // var_dump($discountIdPercent);
+            $stmt = $this->db->prepare("INSERT INTO DISCOUNTS(discount, id_item, date_start, date_end) VALUES (?, ?, ?, ?)");
+            $stmt->bind_param("iiss", $price_discount, $id_item, $date_start, $date_end);
 
             $stmt->execute();
             $result = $stmt->affected_rows;

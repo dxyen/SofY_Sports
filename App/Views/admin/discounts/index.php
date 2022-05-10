@@ -40,6 +40,8 @@
                     <th>Tên sản phẩm</th>
                     <th>Giá sản phẩm</th>
                     <th>Giá giảm</th>
+                    <th>Ngày bắt đầu</th>
+                    <th>Ngày kết thúc</th>
                     <th>Tùy chỉnh</th>
                   </tr>
                   </thead>
@@ -50,6 +52,8 @@
                             <td><?=$items['name']?></td>
                             <td><?=$items['price']?></td>
                             <td><?=$items['discount']?></td>
+                            <td><?=$items['date_start']?></td>
+                            <td><?=$items['date_end']?></td>
                             <td>  
                                 <div class=" btn-group" role="group" aria-label="Basic example">
                                   <button type="button" class="ml-1 btn btn-danger identifyingClass" data-toggle="modal" data-target="#modal-delete<?=$index?>" data-id="my_id_value"><i class="far fa-trash-alt"></i> Xóa</button>
@@ -65,7 +69,7 @@
                                               </div>
                                               <div class="modal-footer">
                                                   <button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
-                                                  <a href="<?=DOCUMENT_ROOT?>/admin/discounts/delete/<?=$items['id_item']?>"><button type="button" class="btn btn-success">Xóa</button></a>
+                                                  <a href="<?=DOCUMENT_ROOT?>/admin/discounts/delete/<?=$items['id']?>"><button type="button" class="btn btn-success">Xóa</button></a>
                                               </div>
                                           </div>
                                       </div>

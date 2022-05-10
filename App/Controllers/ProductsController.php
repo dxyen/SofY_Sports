@@ -3,7 +3,7 @@
 
     class ProductsController extends Controller {
         private $productsmodel;
-
+        private $itemsmodel;
         function __construct()
         {
             $this->productsmodel = $this->model('categorymodel');
@@ -23,6 +23,7 @@
             // print_r($data['items']);
             // echo '</pre>';
 
+            
             // lay ra star cua san pham 
             foreach($data['items'] as $index =>$item){
                 $data['comment'][$index] = $this->itemsmodel->getComment($item['id']);

@@ -24,7 +24,7 @@
             }
 
             $data = $_POST;
-            $data["image"] = "";
+            $data['image'] = "";
             if (isset($_FILES["image"])) {
                 if ($_FILES["image"]['name'] != "") {
                     $randomNum = time();

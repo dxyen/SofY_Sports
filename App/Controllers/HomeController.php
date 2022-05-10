@@ -34,7 +34,7 @@
             $data['totalPage'] = $totalPage;
 
             $itemspromotion =$this->itemsmodel->getItemsPromotion();
-            // // Lấy items để show promotion
+            // Lấy items để show promotion
             $data['promotion'] = $itemspromotion;
             
             $data['categories'] = $this->categorymodel->all();

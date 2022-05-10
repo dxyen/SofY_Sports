@@ -14,7 +14,7 @@ class categorymodel extends Database {
         }
 
         function getItemsByCategories($typeId){
-            $stmt = $this->db->prepare("SELECT * FROM ITEMS WHERE id_sport_type = ?");
+            $stmt = $this->db->prepare("SELECT ITEMS.id, ITEMS.image, ITEMS.`name`, ITEMS.price, DISCOUNTS.discount FROM ITEMS LEFT JOIN DISCOUNTS ON DISCOUNTS.id_item = ITEMS.id WHERE id_sport_type = ?");
             $stmt->bind_param("i", $typeId);
             $stmt->execute();
             $result = $stmt->get_result();

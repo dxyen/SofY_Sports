@@ -40,6 +40,7 @@
 
             $data = $_POST;
             // var_dump($data);
+            $data['items'] = $this->itemsmodel->getById($data['itemId']);
 
             $result = $this->itemsmodel->storeDiscount($data);
             if ($result == true) {
@@ -50,11 +51,11 @@
                 $_SESSION['alert']['messages'] = $result;
               }
             if ($result) {
-            header("Location: " . DOCUMENT_ROOT . "/admin/discounts");
+                header("Location: " . DOCUMENT_ROOT . "/admin/discounts");
             } else {
-            if (isset($_SERVER["HTTP_REFERER"])) {
-                header("Location: " . $_SERVER["HTTP_REFERER"]);
-            }
+                if (isset($_SERVER["HTTP_REFERER"])) {
+                    header("Location: " . $_SERVER["HTTP_REFERER"]);
+                }
             }
         }
         function delete($id){

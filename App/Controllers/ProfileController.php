@@ -40,7 +40,7 @@
                     $data['message'] = "Bạn không có lịch sử mua hàng nào!";
                 }
                 $data['orderDetail'] = $this->profilemodel->getItemUserByIdOrder($orders);
-                // var_dump($data['order']);
+                // var_dump($data['order']);    
                 $_SESSION['user']['avatar'] = $data['user']['avatar'];
                 // var_dump($_SESSION['user']['avatar']);
             }
