@@ -95,7 +95,7 @@
                                     <i class=" fa fa-star text-warning"></i>
                                 <?php endfor; ?>
                                 <?php for($i = floor($data['avg'][$itemspromotion['id']]); $i< $data['avg'][$itemspromotion['id']]; $i++): ?>
-                                    <i class="fas fa-star-half-alt text-warning"></i>
+                                    <i class="fas fa-star-half-alt text-warning"></i>   
                                 <?php endfor; ?>
                                     <?php if ($data['avg'][$itemspromotion['id']] != 5) :?>
                                         <?php for($i = ceil($data['avg'][$itemspromotion['id']]); $i< 5; $i++): ?>
@@ -107,7 +107,7 @@
                                 <?php endif; ?>
                             </div>
                             <div class="promotion__price">
-                                <div class="promotion__price__1"><?= number_format($itemspromotion['discount'], 0, '', ',') ?>đ</div>
+                                <div class="promotion__price__1"><?= $data['date_time'] >= $itemspromotion['date_start']? number_format($itemspromotion['discount'], 0, '', ',') : number_format($itemspromotion['price'], 0, '', ',') ?>đ</div>
                                 <div class="promotion__price__2"><?= number_format(($itemspromotion['price'])*1.1, 0, '', ',') ?>đ</div>
                             </div>
                             <p class="promotion__info__description">
@@ -191,7 +191,7 @@
                             <?php endif; ?>
                         </div>
                         <div class="all__item__prices">
-                            <div class="all__item__price__1"><?= isset($items['discount'])? number_format($items['discount'], 0, '', ',') : number_format($items['price'], 0, '', ',') ?>đ</div>
+                            <div class="all__item__price__1"><?= isset($items['discount']) && $data['date_time'] >= $items['date_start']? number_format($items['discount'], 0, '', ',') : number_format($items['price'], 0, '', ',') ?>đ</div>
                             <div class="all__item__price__2"><?= number_format(($items['price'])*1.1, 0, '', ',') ?>đ</div>
                         </div>
                     </a>

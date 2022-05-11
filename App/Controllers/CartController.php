@@ -21,6 +21,8 @@ class CartController extends Controller {
                 // print_r($data['item']);
                 // echo '</pre>';
                 
+                $data['date_time'] = date('Y-m-d');
+
                 // lay ra star cua san pham 
                 if ($data['item'] != false) {
                     foreach($data['item'] as $index =>$item){
@@ -83,6 +85,9 @@ class CartController extends Controller {
         function checkBuy(){
             if (isset($_POST)) {
                 // var_dump($_POST);
+                
+                $data['date_time'] = date('Y-m-d');
+
                 $result = $this->cartmodel->order($_POST);
                 if ($result > 0) {
                     $_SESSION['alert']['success'] = true;
@@ -97,7 +102,7 @@ class CartController extends Controller {
                 }
                 foreach($result2 as $index => $item){
                     $data['itemId'] = $item['id'];
-                    $check=$this->cartmodel->orderDetail($result, $item['id'], $item['amount'], isset($item['discount'])? $item['discount'] : $item['price']);
+                    $check=$this->cartmodel->orderDetail($result, $item['id'], $item['amount'], isset($item['discount']) && $data['date_time'] >= $item['date_start']? $item['discount'] : $item['price']);
                     $delete = $this->cartmodel->deleteInCart($data);
                 }
                 header("Location: " . DOCUMENT_ROOT . "/cart");

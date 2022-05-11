@@ -32,13 +32,15 @@
                 $data['avg'] = $avg;
                 // var_dump($avg);
             }
-            
+            $data['date_time'] = date('Y-m-d');
             $this->view("/items/index", $data);
         }
         function search(){
             $keyword = $_GET['keyword'];
             $items = $this->itemsmodel->getByKeyword($keyword);
             
+            $data['date_time'] = date('Y-m-d');
+
             $data['keyword'] = $keyword;
             $data['items'] = $items;
             foreach($data['items'] as $index =>$item){

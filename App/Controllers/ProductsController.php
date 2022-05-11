@@ -17,6 +17,8 @@
                 $idType = $_GET['id'];
             }
 
+            $data['date_time'] = date('Y-m-d');
+            
             $items = $this->productsmodel->getItemsByCategories($idType);
             $data['items'] = $items;
             // echo '<pre>';

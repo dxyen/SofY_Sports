@@ -31,7 +31,7 @@
                             <?php endif; ?>
                         </div>
                         <div class="all__item__prices">
-                            <div class="all__item__price__1"><?= isset($items['discount'])? number_format($items['discount'], 0, '', ',') : number_format($items['price'], 0, '', ',') ?>đ</div>
+                            <div class="all__item__price__1"><?= isset($items['discount']) && $data['date_time'] >= $items['date_start']? number_format($items['discount'], 0, '', ',') : number_format($items['price'], 0, '', ',') ?>đ</div>
                             <div class="all__item__price__2"><?= number_format(($items['price'])*1.1, 0, '', ',') ?>đ</div>
                         </div>
                     </a>

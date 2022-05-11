@@ -30,13 +30,26 @@
             $items = $this->itemsmodel->all($page, $limit);
 
             $data['items'] = $items;
+            // lay gia khuyen mai theo quy dinh thoi gian
+            $data['date_time'] = date('Y-m-d');
+            // foreach($data['items'] as $index =>$item){
+            //     if ($date_time < $item['date_start']) {
+            //         $data['items']['discount'] = "";
+            //     }
+            // }
             $data['page'] = $page;
             $data['totalPage'] = $totalPage;
 
             $itemspromotion =$this->itemsmodel->getItemsPromotion();
             // Lấy items để show promotion
-            $data['promotion'] = $itemspromotion;
-            
+            $data['promotion1'] = $itemspromotion;
+            $data['promotion'] = [];
+            foreach($data['promotion1'] as $index =>$promotion){
+                if ($data['date_time'] >= $promotion['date_start']) {
+                    // print_r("hello");
+                    $data['promotion'][$index] = $promotion;
+                }
+            }
             $data['categories'] = $this->categorymodel->all();
             // lay ra star cua san pham 
             foreach($data['items'] as $index =>$item){
@@ -55,7 +68,7 @@
             $banner = $this->bannermodel->all();
             $data['banner'] = $banner;
             // echo '<pre>';
-            // print_r($data['banner']);
+            // print_r($data);
             // echo '</pre>';
             $this->view("/home/index", $data);
         }

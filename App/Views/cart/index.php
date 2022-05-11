@@ -32,8 +32,8 @@
                                         <p style = "font-size: 20px">Chưa có đánh giá</p>
                                     <?php endif; ?>
                                 </div>
-                                <input type="number" hidden id="priceOfItem<?= $index ?>" value="<?= isset($item['discount'])? $item['discount'] : $item['price'] ?>">
-                                <div class="cart__detail__itemsmini__info__price"><?= isset($item['discount'])? number_format($item['discount'], 0, '', ',') : number_format($item['price'], 0, '', ',') ?>đ</div>
+                                <input type="number" hidden id="priceOfItem<?= $index ?>" value="<?= isset($item['discount'])&& $data['date_time'] >= $item['date_start']? $item['discount'] : $item['price'] ?>">
+                                <div class="cart__detail__itemsmini__info__price"><?= isset($item['discount']) && $data['date_time'] >= $item['date_start']? number_format($item['discount'], 0, '', ',') : number_format($item['price'], 0, '', ',') ?>đ</div>
                                 <label class="cart__detail__itemsmini__info__amount" for="">Số lượng: 
                                     <input onchange="onNumOfProductChange(), update(<?= $_SESSION['user']['id'] ?>, <?= $item['id'] ?>, numOfItem<?= $index ?>)" id="numOfItem<?= $index ?>" type="number" value="<?= $item['amount']?>" min="1" max="99" name="">
                                 </label>
