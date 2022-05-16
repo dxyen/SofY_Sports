@@ -48,13 +48,13 @@
                 $_SESSION['alert']['messages'] = "Đã thêm thành công!";
               }else {
                 $_SESSION['alert']['success'] = false;
-                $_SESSION['alert']['messages'] = $result;
+                $_SESSION['alert']['messages'] = "Sản phẩm đã có trong Discounts";
               }
             if ($result) {
                 header("Location: " . DOCUMENT_ROOT . "/admin/discounts");
             } else {
                 if (isset($_SERVER["HTTP_REFERER"])) {
-                    header("Location: " . $_SERVER["HTTP_REFERER"]);
+                    header("Location: " . DOCUMENT_ROOT . "/admin/discounts");
                 }
             }
         }

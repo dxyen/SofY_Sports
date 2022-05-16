@@ -227,12 +227,24 @@ class itemsmodel extends Database {
 
             $stmt->execute();
             $result = $stmt->affected_rows;
-
+            // var_dump($result);
             if ($result < 1) {
             return false;
             } else {
             return true;
             }
+        }
+        function getAllNumberDiscount(){
+            $sql = "SELECT COUNT(*) FROM DISCOUNTS";
+
+            $result = $this->db->query($sql);
+
+            if ($result->num_rows > 0) {
+            return $result->fetch_row()[0];
+            } else {
+            return false;
+            }
+            return true;
         }
     }
 ?>

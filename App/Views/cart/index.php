@@ -51,7 +51,7 @@
                                         <p>Xóa <?= $item['name']?></p>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
                                         <a href="<?=DOCUMENT_ROOT?>/cart/delete?userId=<?= $_SESSION['user']['id']?>&itemId=<?= $item['id']?>"><button type="button" class="btn btn-danger">Xóa</button></a>
                                     </div>
                                     </div>
@@ -93,7 +93,7 @@
                                 <?php if ($data['item'] == 0) : ?>
                                     <p>Bạn chưa chọn sản phẩm nào!</p>
                                     <div class="modal-footer fs-6">
-                                        <button type="button" class="btn btny btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btny btn-secondary" data-bs-dismiss="modal">Đóng</button>
                                     </div>
                                 <?php else : ?>
                                     <div class="modal-body">
@@ -111,7 +111,7 @@
                                         </div>
                                     </div>
                                     <div class="modal-footer fs-6">
-                                        <button type="button" class="btn btny btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btny btn-secondary" data-bs-dismiss="modal">Đóng</button>
                                         <button class="btn btny btny__primary">Đặt hàng </button>
                                     </div>
                                 <?php endif; ?>

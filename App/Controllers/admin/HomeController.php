@@ -16,6 +16,7 @@
             $data['numOfItems'] = $this->itemsmodel->getAllNumber();
             $data['numOfProducts'] = $this->productsmodel->getAllNumber();
             $data['numOfOrder'] = $this->ordermodel->getAllNumber();
+            $data['numOfDiscounts'] = $this->itemsmodel->getAllNumberDiscount();
 
             $this->view("/admin/home/index", $data);
         }

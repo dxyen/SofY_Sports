@@ -1,6 +1,12 @@
 <?php
 
     return [
+    'home' => [
+        'title' => 'Trang chủ',
+        'name' => 'home',
+        'icon' => 'fas fa-tachometer-alt',
+        'link' => DOCUMENT_ROOT . '/admin/home',
+    ],
     'items' => [
         'title' => 'Quản lý sản phẩm',
         'name' => 'items',

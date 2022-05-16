@@ -23,7 +23,7 @@
     <div class="row">
         <div class="col-lg-3 col-6">
         <!-- small box -->
-        <div class="small-box bg-info">
+        <div class="small-box bg-primary ">
             <div class="inner">
             <h3><?=$data['numOfItems']?></h3>
 
@@ -52,18 +52,33 @@
         </div>
         <!-- ./col -->
         <div class="col-lg-3 col-6">
-        <!-- small box -->
-        <div class="small-box bg-warning">
-            <div class="inner">
-            <h3><?=$data['numOfOrder']?></h3>
+            <!-- small box -->
+            <div class="small-box bg-warning">
+                <div class="inner">
+                    <h3><?=$data['numOfOrder']?></h3>
 
-            <p>Đơn hàng chưa xử lý</p>
+                    <p>Đơn hàng chưa xử lý</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-person-add"></i>
+                </div>
+                <a href="<?= DOCUMENT_ROOT. "/admin/order"?>" class="small-box-footer">Chi tiết <i class="fas fa-arrow-circle-right"></i></a>
             </div>
-            <div class="icon">
-            <i class="ion ion-person-add"></i>
-            </div>
-            <a href="<?= DOCUMENT_ROOT. "/admin/order"?>" class="small-box-footer">Chi tiết <i class="fas fa-arrow-circle-right"></i></a>
         </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+                <div class="inner">
+                    <h3><?=$data['numOfDiscounts']?></h3>
+
+                    <p>Sản phẩm khuyến mãi</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-person-add"></i>
+                </div>
+                <a href="<?= DOCUMENT_ROOT. "/admin/discounts"?>" class="small-box-footer">Chi tiết <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
         </div>
     </div>
 </section>
